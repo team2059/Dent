@@ -5,8 +5,8 @@
 #include "hhlib/input/controller/Joystick.h"
 class HHRobot{
   private:
-    Extreme3dPro *joystick1;
     RobotDrive *hhdrive;
+    Extreme3dPro *joystick1;
   public:
     HHRobot();
     void Init();
