@@ -3,6 +3,7 @@
 HHRobot::HHRobot():
   hhdrive(new RobotDrive(2,0,3,1)),
   gyro(new Gyro(1)),
+  collector(new DentCollector(4, 5, 6, 7)),
   joystick1(new Extreme3dPro(0)){
     hhdrive->SetExpiration(0.1);
     hhdrive->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
@@ -25,6 +26,17 @@ void HHRobot::Handler(){
     hhdrive->Drive(joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("y")*Kp*-gyro->GetAngle());
   }else{
     hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("x"));
+  }
+  if(joystick1->GetJoystickButton(11)){
+    collector->Collect(255);
+  }else if(joystick1->GetJoystickButton(12)){
+    collector->Collect(1);
+  }else if(joystick1->GetJoystickButton(9)){
+    collector->Raise(255);
+  }else if(joystick1->GetJoystickButton(10)){
+    collector->Raise(1);
+  }else{
+    collector->Rest();
   }
   Wait(0.005);
   // hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("x"));
