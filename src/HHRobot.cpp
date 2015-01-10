@@ -28,9 +28,9 @@ void HHRobot::Handler(){
     hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("x"));
   }
   if(joystick1->GetJoystickButton(11)){
-    collector->Collect(255);
+    collector->Collect(-1.0f);
   }else if(joystick1->GetJoystickButton(12)){
-    collector->Collect(1);
+    collector->Collect(1.0f);
   }else if(joystick1->GetJoystickButton(9)){
     collector->Raise(255);
   }else if(joystick1->GetJoystickButton(10)){

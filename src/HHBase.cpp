@@ -21,6 +21,7 @@ void HHBase::DisabledPeriodic(){}
 void HHBase::AutonomousPeriodic(){
 }
 void HHBase::TeleopPeriodic(){
+  hhbot->Handler();
 }
 void HHBase::Test(){}
 START_ROBOT_CLASS(HHBase);

@@ -4,11 +4,11 @@
 //#include ""
 class DentCollector{
   private:
-    Talon *frontLeft, *frontRight, *raiserLeft, *raiserRight;
+    Talon *collectorLeft, *collectorRight, *raiserLeft, *raiserRight;
   public:
     DentCollector(int, int, int, int);
-    void Collect(int);
-    void Raise(int);
+    void Collect(float);
+    void Raise(float);
     void Rest();
 };
 #endif
