@@ -6,6 +6,7 @@
 class HHRobot{
   private:
     RobotDrive *hhdrive;
+    Gyro *gyro;
     Extreme3dPro *joystick1;
   public:
     HHRobot();
