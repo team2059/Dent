@@ -4,7 +4,7 @@ HHRobot::HHRobot():
   hhdrive(new RobotDrive(2,0,3,1)),
   gyro(new Gyro(1)),
   collector(new DentCollector(4, 5, 6, 7)),
-  joystick1(new Extreme3dPro(0)){
+  driveStick(new Extreme3dPro(0)){
     hhdrive->SetExpiration(0.1);
     hhdrive->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
     hhdrive->SetInvertedMotor(RobotDrive::kRearLeftMotor,true);
@@ -13,32 +13,34 @@ void HHRobot::Init(){
   printf("Initing\n");
   printf("Code Version: %f\n",0000.1);
   gyro->Reset();
-  //Put table values initally to avoid annoying refreshing
 }
 //Main function used to handle periodic tasks on the robot
 void HHRobot::Handler(){
   const float Kp = 0.3;
-  if(joystick1->GetJoystickButton(1)==1){
-    hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), 0, joystick1->GetJoystickAxis("x"));
-  }else if(joystick1->GetJoystickButton(2)==1){
-    hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), joystick1->GetJoystickAxis("y"), 0);
-  }else if(joystick1->GetJoystickButton(3)==1){
-    hhdrive->Drive(joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("y")*Kp*-gyro->GetAngle());
+  if(driveStick->GetJoystickButton(1)==1){
+    hhdrive->MecanumDrive_Cartesian(driveStick->GetJoystickAxis("z"), 0, driveStick->GetJoystickAxis("x"));
+  }else if(driveStick->GetJoystickButton(2)==1){
+    hhdrive->MecanumDrive_Cartesian(driveStick->GetJoystickAxis("z"), driveStick->GetJoystickAxis("y"), 0);
+  }else if(driveStick->GetJoystickButton(3)==1){
+    hhdrive->Drive(driveStick->GetJoystickAxis("y"), driveStick->GetJoystickAxis("y")*Kp*-gyro->GetAngle());
   }else{
-    hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("x"));
+    hhdrive->MecanumDrive_Cartesian(driveStick->GetJoystickAxis("z"), driveStick->GetJoystickAxis("y"), driveStick->GetJoystickAxis("x"));
   }
-  if(joystick1->GetJoystickButton(11)){
-    collector->Collect(-1.0f);
-  }else if(joystick1->GetJoystickButton(12)){
-    collector->Collect(1.0f);
-  }else if(joystick1->GetJoystickButton(9)){
-    collector->Raise(255);
-  }else if(joystick1->GetJoystickButton(10)){
-    collector->Raise(1);
+  if(driveStick->GetJoystickButton(11)==1){
+    collector->Collect(driveStick->GetThrottle());
+  }else if(driveStick->GetJoystickButton(12)==1){
+    collector->Collect(-driveStick->GetThrottle());
+  }else if(driveStick->GetJoystickButton(9)==1){
+    collector->Raise(driveStick->GetThrottle());
+  }else if(driveStick->GetJoystickButton(10)==1){
+    collector->Raise(-driveStick->GetThrottle());
   }else{
     collector->Rest();
   }
+  SmartDashboard::PutNumber("hambone1", driveStick->GetThrottle());
+  SmartDashboard::PutNumber("hambone2", driveStick->GetJoystickAxis("joystick"));
+  SmartDashboard::PutNumber("hambone3", driveStick->GetRawJoystickAxis(3));
+  printf("hambone2: %f", driveStick->GetThrottle());
   Wait(0.005);
-  // hhdrive->MecanumDrive_Cartesian(joystick1->GetJoystickAxis("z"), joystick1->GetJoystickAxis("y"), joystick1->GetJoystickAxis("x"));
 }
 // vim: ts=2:sw=2:et

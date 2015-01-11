@@ -9,7 +9,7 @@ class HHRobot{
     RobotDrive *hhdrive;
     Gyro *gyro;
     DentCollector *collector;
-    Extreme3dPro *joystick1;
+    Extreme3dPro *driveStick;
   public:
     HHRobot();
     void Init();
