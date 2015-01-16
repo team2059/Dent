@@ -11,6 +11,21 @@ void HHRobot::Init(){
 }
 //Main function used to handle periodic tasks on the robot
 void HHRobot::Handler(){
-  RobotDrive->handler(DriveStick->GetJoystickAxis("x"),DriveStick->GetJoystickAxis("y"),DriveStick->GetJoystickAxis("z"),0);
+  double x,y,z;
+  if (DriveStick->GetJoystickButton(1)){
+    y = 0;
+    z = 0;
+  }else{
+    y = DriveStick->GetJoystickAxis("y");
+    z = DriveStick->GetJoystickAxis("z");
+  }
+  if (DriveStick->GetJoystickButton(2)){
+    x = 0;
+    z = 0;
+  }else{
+    x = DriveStick->GetJoystickAxis("x");
+    z = DriveStick->GetJoystickAxis("z");
+  }
+  RobotDrive->handler(x,y,z,0);
 }
 // vim: ts=2:sw=2:et
