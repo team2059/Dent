@@ -5,7 +5,7 @@
 #include "hhlib/input/controller/Joystick.h"
 class HHRobot{
   private:
-    RobotDrive *hhdrive;
+    CANTalon *tmpMotor1;
     Extreme3dPro *joystick1;
   public:
     HHRobot();
