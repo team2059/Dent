@@ -3,10 +3,11 @@
 #include <WPILib.h>
 #include "HHBase.h"
 #include "hhlib/input/controller/Joystick.h"
+#include "hhlib/drive/MecanumDrive.h"
 class HHRobot{
   private:
-    CANTalon *tmpMotor1;
-    Extreme3dPro *joystick1;
+    Extreme3dPro *DriveStick;
+    MecanumDrive *RobotDrive;
   public:
     HHRobot();
     void Init();

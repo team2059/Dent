@@ -1,8 +1,9 @@
 #include "HHRobot.h"
 #include "HHBase.h"
 HHRobot::HHRobot():
-  tmpMotor1(new CANTalon(0)),
-  joystick1(new Extreme3dPro(0)){
+  DriveStick(new Extreme3dPro(0)),
+  //FrontRight,FrontLeft,RearRight,RearLeft
+  RobotDrive(new MecanumDrive(40,41,42,43)){
   }
 void HHRobot::Init(){
   printf("Initing\n");
@@ -10,7 +11,6 @@ void HHRobot::Init(){
 }
 //Main function used to handle periodic tasks on the robot
 void HHRobot::Handler(){
-  tmpMotor1->Set(joystick1->GetJoystickAxis("y"));
-  SmartDashboard::PutNumber("tmp",joystick1->GetJoystickAxis("y"));
+  RobotDrive->handler(DriveStick->GetJoystickAxis("x"),DriveStick->GetJoystickAxis("y"),DriveStick->GetJoystickAxis("z"),0);
 }
 // vim: ts=2:sw=2:et
