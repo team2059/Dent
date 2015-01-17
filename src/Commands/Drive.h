@@ -1,17 +1,16 @@
-#ifndef LOWER_H
-#define LOWER_H
+#ifndef DRIVE_H
+#define DRIVE_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
-class Lower: public Command{
+class Drive: public Command{
   public:
-    Lower();
+    Drive();
     void Initialize();
     void Execute();
     bool IsFinished();
     void End();
     void Interrupted();
 };
-
 #endif

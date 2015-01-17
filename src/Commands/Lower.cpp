@@ -1,5 +1,5 @@
 #include "Lower.h"
-Lower::Lower(){
+Lower::Lower() : Command("Lower"){
 }
 void Lower::Initialize(){
 }

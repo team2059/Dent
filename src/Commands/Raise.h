@@ -1,10 +1,10 @@
 #ifndef RAISE_H
 #define RAISE_H
 
-#include "../CommandBase.h"
+#include "Commands/Command.h"
 #include "WPILib.h"
 
-class Raise: public CommandBase{
+class Raise: public Command{
   public:
     Raise();
     void Initialize();
