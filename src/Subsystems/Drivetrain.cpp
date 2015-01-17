@@ -1,5 +1,6 @@
 #include "Drivetrain.h"
 #include "../RobotMap.h"
+#include "../Commands/Drive.h"
 
 Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
   frontLeft=new Talon(0);
@@ -9,6 +10,7 @@ Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
   drive=new RobotDrive(frontLeft, frontRight, backLeft, backRight);
 }
 void Drivetrain::InitDefaultCommand(){
+  SetDefaultCommand(new Drive());
 }
 void Drivetrain::DriveMecanum(float x, float y, float rotation){
   drive->MecanumDrive_Cartesian(x, y, rotation);

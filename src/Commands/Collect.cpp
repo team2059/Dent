@@ -1,5 +1,5 @@
 #include "Collect.h"
-Collect::Collect(){
+Collect::Collect() : Command("Collect"){
 }
 void Collect::Initialize(){
 }

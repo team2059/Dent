@@ -1,10 +1,10 @@
 #ifndef EJECT_H
 #define EJECT_H
 
-#include "../CommandBase.h"
+#include "Commands/Command.h"
 #include "WPILib.h"
 
-class Eject: public CommandBase{
+class Eject: public Command{
   public:
     Eject();
     void Initialize();
