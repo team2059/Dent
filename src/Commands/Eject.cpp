@@ -12,7 +12,6 @@ bool Eject::IsFinished(){
   return false;
 }
 void Eject::End(){
-
 }
 void Eject::Interrupted(){
 }

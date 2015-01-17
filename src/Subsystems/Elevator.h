@@ -2,9 +2,8 @@
 #define ELEVATOR_H
 
 #include "WPILib.h"
-//#include "Commands/PIDSubsystem.h"
-//class Elevator: public PIDSubsystem{
-class Elevator: public Subsystem{
+#include "Commands/PIDSubsystem.h"
+class Elevator: public PIDSubsystem{
   private:
     AnalogPotentiometer *pot;
     Talon *leftMotor, *rightMotor;

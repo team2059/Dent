@@ -9,7 +9,6 @@ bool Collect::IsFinished(){
   return false;
 }
 void Collect::End(){
-
 }
 void Collect::Interrupted(){
 }
