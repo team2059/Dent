@@ -2,8 +2,10 @@
 #define COMMAND_BASE_H
 
 #include <string>
-#include "Commands/Command.h"
-#include "Subsystems/ExampleSubsystem.h"
+//#include "Commands/Drive.h"
+#include "Subsystems/Drivetrain.h"
+#include "Subsystems/Collector.h"
+#include "Subsystems/Elevator.h"
 #include "OI.h"
 #include "WPILib.h"
 

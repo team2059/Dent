@@ -1,7 +1,7 @@
-#include "ExampleSubsystem.h"
+#include "Collector.h"
 #include "../RobotMap.h"
 
-ExampleSubsystem::ExampleSubsystem() : Subsystem("ExampleSubsystem") {
+Collector::Collector() : Subsystem("Collector") {
 }
-void ExampleSubsystem::InitDefaultCommand() {
+void Collector::InitDefaultCommand() {
 }
