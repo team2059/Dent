@@ -2,6 +2,7 @@
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/Elevator.h"
+#include "Commands/Drive.h"
 #include "Commands/Collect.h"
 #include "Commands/Eject.h"
 #include "Commands/Raise.h"
@@ -21,4 +22,3 @@ void CommandBase::init()
   elevator = new Elevator();
   oi = new OI();
 }
-

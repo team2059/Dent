@@ -1,7 +1,6 @@
 #include "Elevator.h"
 #include "../RobotMap.h"
-//Elevator::Elevator() : PIDSubsystem("Elevator", kP_real, kI_real, 0.0){
-Elevator::Elevator() : Subsystem("Elevator"){
+Elevator::Elevator() : PIDSubsystem("Elevator", kP_real, kI_real, 0.0){
   pot=new AnalogPotentiometer(0);
   leftMotor=new Talon(1);
   rightMotor=new Talon(0);

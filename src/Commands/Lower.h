@@ -13,5 +13,4 @@ class Lower: public Command{
     void End();
     void Interrupted();
 };
-
 #endif
