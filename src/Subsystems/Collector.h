@@ -4,9 +4,9 @@
 #include "WPILib.h"
 class Collector: public Subsystem
 {
-private:
-public:
-	Collector();
-	void InitDefaultCommand();
+  private:
+  public:
+    Collector();
+    void InitDefaultCommand();
 };
 #endif

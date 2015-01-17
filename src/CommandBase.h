@@ -2,7 +2,6 @@
 #define COMMAND_BASE_H
 
 #include <string>
-//#include "Commands/Drive.h"
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/Elevator.h"
@@ -10,13 +9,13 @@
 #include "WPILib.h"
 
 class CommandBase: public Command {
-public:
-	CommandBase(char const *name);
-	CommandBase();
-	static void init();
-	static Drivetrain *drivetrain;
-	static Collector *collector;
-	static Elevator *elevator;
-	static OI *oi;
+  public:
+    CommandBase(char const *name);
+    CommandBase();
+    static void init();
+    static Drivetrain *drivetrain;
+    static Collector *collector;
+    static Elevator *elevator;
+    static OI *oi;
 };
 #endif

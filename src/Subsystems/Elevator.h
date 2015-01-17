@@ -4,9 +4,9 @@
 #include "WPILib.h"
 class Elevator: public Subsystem
 {
-private:
-public:
-	Elevator();
-	void InitDefaultCommand();
+  private:
+  public:
+    Elevator();
+    void InitDefaultCommand();
 };
 #endif
