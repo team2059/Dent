@@ -7,6 +7,9 @@
 class HHRobot{
   private:
     Extreme3dPro *DriveStick;
+    //CAN Devices
+    Compressor *AirCompressor;
+    PowerDistributionPanel *PowerDistPanel;
     MecanumDrive *RobotDrive;
   public:
     HHRobot();
