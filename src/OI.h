@@ -5,8 +5,8 @@
 
 class OI
 {
-private:
-public:
-	OI();
+  private:
+  public:
+    OI();
 };
 #endif

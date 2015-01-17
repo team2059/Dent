@@ -5,13 +5,13 @@
 #include "WPILib.h"
 
 class Collect: public CommandBase{
-public:
-	Collect();
-	void Initialize();
-	void Execute();
-	bool IsFinished();
-	void End();
-	void Interrupted();
+  public:
+    Collect();
+    void Initialize();
+    void Execute();
+    bool IsFinished();
+    void End();
+    void Interrupted();
 };
 
 #endif

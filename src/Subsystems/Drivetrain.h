@@ -4,9 +4,9 @@
 #include "WPILib.h"
 class Drivetrain: public Subsystem
 {
-private:
-public:
-	Drivetrain();
-	void InitDefaultCommand();
+  private:
+  public:
+    Drivetrain();
+    void InitDefaultCommand();
 };
 #endif

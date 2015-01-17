@@ -6,7 +6,7 @@ void Collect::Initialize(){
 void Collect::Execute(){
 }
 bool Collect::IsFinished(){
-	return false;
+  return false;
 }
 void Collect::End(){
 

@@ -6,7 +6,7 @@ void Raise::Initialize(){
 void Raise::Execute(){
 }
 bool Raise::IsFinished(){
-	return false;
+  return false;
 }
 void Raise::End(){
 
