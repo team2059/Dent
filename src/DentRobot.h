@@ -1,15 +1,18 @@
 #ifndef DENTROBOT_H
 #define DENTROBOT_H
 #include "WPILib.h"
-#include "Commands/Drive.h"
-#include "Commands/Collect.h"
-#include "Commands/Eject.h"
-#include "Commands/Raise.h"
-#include "Commands/Lower.h"
+#include "OI.h"
+#include "Subsystems/Elevator.h"
+#include "Subsystems/Drivetrain.h"
+#include "Subsystems/Collector.h"
 class DentRobot: public IterativeRobot {
 private:
   Command *driveCommand = NULL;
 public:
+  static OI* oi;
+  static Collector* collector;
+  static Drivetrain* drivetrain;
+  static Elevator* elevator;
   DentRobot();
   void RobotInit();
   void DisabledPeriodic();

@@ -1,11 +1,16 @@
 #include "DentRobot.h"
-DentRobot::DentRobot():
-  driveCommand(new Drive()){
+OI* DentRobot::oi=NULL;
+Collector* DentRobot::collector=NULL;
+Drivetrain* DentRobot::drivetrain=NULL;
+Elevator* DentRobot::elevator=NULL;
+DentRobot::DentRobot(){
+  oi=new OI();
+  collector=new Collector();
+  drivetrain=new Drivetrain();
+  elevator=new Elevator();
   printf("Initialized");
 }
 void DentRobot::RobotInit(){
-  printf("Initializing");
-  CommandBase::init();
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
