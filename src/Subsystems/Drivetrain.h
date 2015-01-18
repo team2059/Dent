@@ -5,7 +5,7 @@
 class Drivetrain: public Subsystem
 {
   private:
-    Talon *frontLeft, *frontRight, *backLeft, *backRight;
+    CANTalon *frontLeft, *frontRight, *backLeft, *backRight;
     RobotDrive *drive;
   public:
     Drivetrain();
