@@ -1,6 +1,7 @@
 #include "Drive.h"
 #include "../DentRobot.h"
 Drive::Drive() : Command("Drive"){
+        Requires(DentRobot::drivetrain);
 }
 void Drive::Initialize(){
 }
