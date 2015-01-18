@@ -1,6 +1,8 @@
 #ifndef DRIVE_H
 #define DRIVE_H
 
+#include "../CommandBase.h"
+#include "../DentRobot.h"
 #include "Commands/Command.h"
 #include "WPILib.h"
 

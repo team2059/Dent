@@ -3,10 +3,10 @@
 #include "../Commands/Drive.h"
 
 Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
-  frontLeft=new Talon(0);
-  frontRight=new Talon(1);
-  backLeft=new Talon(2);
-  backRight=new Talon(3);
+  frontLeft=new CANTalon(40);
+  frontRight=new CANTalon(41);
+  backLeft=new CANTalon(42);
+  backRight=new CANTalon(43);
   drive=new RobotDrive(frontLeft, frontRight, backLeft, backRight);
 }
 void Drivetrain::InitDefaultCommand(){
