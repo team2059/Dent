@@ -5,12 +5,12 @@
 class Drivetrain: public Subsystem
 {
   private:
-    CANTalon *frontLeft, *frontRight, *backLeft, *backRight;
+    CANTalon *rightFront, *leftFront, *rightRear, *leftRear;
     RobotDrive *drive;
   public:
     Drivetrain();
     void InitDefaultCommand();
-    void DriveMecanum(float, float, float);
+    void DriveMecanum(float,float,float,float,float);
     void DriveArcade(float, float);
 };
 #endif

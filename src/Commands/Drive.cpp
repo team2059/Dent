@@ -7,17 +7,22 @@ Drive::Drive() : Command("Drive"){
 void Drive::Initialize(){
 }
 void Drive::Execute(){
-  static float sens=0.7;
-  float x, y, twist;
-  x=DentRobot::oi->GetLeftStick()->GetRawAxis(0);
-  y=DentRobot::oi->GetLeftStick()->GetRawAxis(1);
-  twist=DentRobot::oi->GetLeftStick()->GetRawAxis(2);
-  if(true){
-    x=sens*std::pow(x, 3)+(1.0f-sens)*x;
-    y=sens*std::pow(y, 3)+(1.0f-sens)*y;
+  double x,y,z;
+  //Code to lock the x axis when not holding button 1
+  if (DentRobot::oi->GetLeftStick()->GetRawButton(1)){
+    x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
+    x /= 1.3;
+  }else{
+    x = 0;
   }
-  //DentRobot::drivetrain->DriveMecanum(DentRobot::oi->GetLeftStick()->GetRawAxis(2), DentRobot::oi->GetLeftStick()->GetRawAxis(1), DentRobot::oi->GetLeftStick()->GetRawAxis(0));
-  DentRobot::drivetrain->DriveMecanum(x, y, twist);
+  z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
+  y = DentRobot::oi->GetLeftStick()->GetRawAxis(1);
+  if (DentRobot::oi->GetLeftStick()->GetRawAxis(3)<=0.5){
+      y /= 2;
+      z /= 2;
+  }
+  //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
+  DentRobot::drivetrain->DriveMecanum(x,y,z,0.9,0);
 }
 bool Drive::IsFinished(){
   return false;
