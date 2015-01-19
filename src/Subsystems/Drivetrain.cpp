@@ -3,18 +3,21 @@
 #include "../Commands/Drive.h"
 
 Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
-  frontLeft=new CANTalon(40);
-  frontRight=new CANTalon(41);
-  backLeft=new CANTalon(42);
-  backRight=new CANTalon(43);
-  drive=new RobotDrive(frontLeft, frontRight, backLeft, backRight);
+  rightFront = new CANTalon(40);
+  leftFront = new CANTalon(41);
+  rightRear = new CANTalon(42);
+  leftRear = new CANTalon(43);
 }
 void Drivetrain::InitDefaultCommand(){
   SetDefaultCommand(new Drive());
 }
-void Drivetrain::DriveMecanum(float x, float y, float rotation){
-  drive->MecanumDrive_Cartesian(x, y, rotation);
-}
-void Drivetrain::DriveArcade(float x, float y){
-  drive->ArcadeDrive(x, y);
+void Drivetrain::DriveMecanum(float x, float y, float z, float sensitivity, float gyro){
+    double correctY = (sensitivity*(pow(y,3))+(1-sensitivity)*y);
+    double correctX = -(sensitivity*(pow(x,3))+(1-sensitivity)*x);
+    double correctZ = -z *.5;
+    double slowfactor = 2.5;
+    rightFront->Set((-correctX + correctY - correctZ));
+    leftFront->Set((correctX + correctY + correctZ)*-1);
+    rightRear->Set((correctX + correctY - correctZ));
+    leftRear->Set((-correctX + correctY + correctZ)*-1);
 }
