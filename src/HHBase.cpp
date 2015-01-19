@@ -8,7 +8,6 @@ HHBase::HHBase():
     printf("Done\n");
   }
 void HHBase::RobotInit(){
-  hhbot->Init();
 }
 void HHBase::DisabledInit(){}
 void HHBase::AutonomousInit(){

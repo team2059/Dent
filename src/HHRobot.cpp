@@ -2,7 +2,7 @@
 #include "HHBase.h"
 HHRobot::HHRobot():
   DriveStick(new Extreme3dPro(0)),
-  AirCompressor(new Compressor(30)),
+  AirCompressor(new Compressor(31)),
   PowerDistPanel(new PowerDistributionPanel()),
   //FrontRight,FrontLeft,RearRight,RearLeft
   RobotDrive(new MecanumDrive(40,41,42,43)){
@@ -24,9 +24,8 @@ void HHRobot::Handler(){
   z = DriveStick->GetJoystickAxis("z");
   //X axis, Y axis, Z axis, sensitivity, mode threshold, gyro
   RobotDrive->handler(x,y,z,0.95,DriveStick->GetThrottle(),0);
-
-  //Disables the compressor if the battery voltage is detected to be less than 10 volts
-  if (PowerDistPanel->GetVoltage()<=10){
+  //Compressor Button assignment
+  if (DriveStick->GetJoystickButton(4)){
     AirCompressor->Stop();
   }
 }
