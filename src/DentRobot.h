@@ -5,6 +5,7 @@
 #include "Subsystems/Elevator.h"
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
+#include "Subsystems/AirCompressor.h"
 class DentRobot: public IterativeRobot {
 private:
   Command *driveCommand = NULL;
@@ -13,6 +14,7 @@ public:
   static Collector* collector;
   static Drivetrain* drivetrain;
   static Elevator* elevator;
+  static AirCompressor* airCompressor;
   DentRobot();
   void RobotInit();
   void DisabledPeriodic();
