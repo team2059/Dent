@@ -1,9 +1,9 @@
 *.o
 Debug
 build.make
-src/vision/CMakeFiles/
-src/vision/cmake_install.cmake
-src/vision/CMakeCache.txt
-src/vision/Makefile
-src/vision/vision
-src/vision/vision.cpp
+vision/CMakeFiles/
+vision/cmake_install.cmake
+vision/CMakeCache.txt
+vision/Makefile
+vision/vision
+vision/vision.cpp
