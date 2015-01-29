@@ -3,6 +3,8 @@
 #include "Commands/Raise.h"
 #include "Commands/Collect.h"
 #include "Commands/Eject.h"
+#include "Commands/Compressor/StartCompressing.h"
+#include "Commands/Compressor/StopCompressing.h"
 
 OI::OI() {
   leftStick=new Joystick(0);
