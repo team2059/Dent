@@ -6,9 +6,13 @@ AirCompressor::AirCompressor() : Subsystem("AirCompressor") {
 }
 void AirCompressor::InitDefaultCommand() {
 }
-void AirCompressor::CreateCompressedAir() {
+int AirCompressor::CreateCompressedAir() {
+    printf("compressing and stuff\n");
     compressher->Start();
+    return 0;
 }
-void AirCompressor::StopCreatingCompressedAir() {
+int AirCompressor::StopCreatingCompressedAir() {
+    printf("not compressing and stuff\n");
     compressher->Stop();
+    return 0;
 }

@@ -9,7 +9,7 @@ class AirCompressor: public Subsystem
   public:
     AirCompressor();
     void InitDefaultCommand();
-    void CreateCompressedAir();
-    void StopCreatingCompressedAir();
+    int CreateCompressedAir();
+    int StopCreatingCompressedAir();
 };
 #endif
