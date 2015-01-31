@@ -18,6 +18,9 @@ clean:
 	$(CLEANSER) $(OBJECTS) bin/FRCUserProgram
 
 deploy:
+	@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) 'cat > /home/lvuser/FRCUserProgram2&&rm /home/lvuser/FRCUserProgram;mv /home/lvuser/FRCUserProgram2 /home/lvuser/FRCUserProgram&&. /etc/profile.d/natinst-path.sh;chmod a+x /home/lvuser/FRCUserProgram'
+
+debug:
 	@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) 'cat > /home/lvuser/FRCUserProgram2&&rm /home/lvuser/FRCUserProgram;mv /home/lvuser/FRCUserProgram2 /home/lvuser/FRCUserProgram&&. /etc/profile.d/natinst-path.sh;chmod a+x /home/lvuser/FRCUserProgram;/home/lvuser/run.sh'
 
 putkey:
