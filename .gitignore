@@ -1,4 +1,4 @@
 *.o
 Debug
-src/bin
+bin
 wpilib
