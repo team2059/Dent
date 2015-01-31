@@ -2,8 +2,7 @@
 #define DRIVETRAIN_H
 
 #include "WPILib.h"
-class Drivetrain: public Subsystem
-{
+class Drivetrain: public Subsystem{
   private:
     CANTalon *rightFront, *leftFront, *rightRear, *leftRear;
     RobotDrive *drive;

@@ -3,12 +3,14 @@ OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
 Drivetrain* DentRobot::drivetrain=NULL;
 Elevator* DentRobot::elevator=NULL;
+DIO* DentRobot::dio = NULL;
 AirCompressor * DentRobot::airCompressor=NULL;
 DentRobot::DentRobot(){
   oi=new OI();
   collector=new Collector();
   drivetrain=new Drivetrain();
   elevator=new Elevator();
+  dio = new DIO();
   airCompressor=new AirCompressor();
   printf("Initialized");
 }
