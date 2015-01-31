@@ -2,7 +2,6 @@
 #define DIO_H
 
 #include "WPILib.h"
-#include "Commands/PIDSubsystem.h"
 class DIO{
   private:
     DigitalInput *elevatorTop, *elevatorBottom;

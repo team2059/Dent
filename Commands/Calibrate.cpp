@@ -10,7 +10,7 @@ void Calibrate::Execute(){
   DentRobot::elevator->Run(-0.4f);
 }
 bool Calibrate::IsFinished(){
-  if(DentRobot::DIO->Get()){
+  if(DentRobot::dio->Get(DIO::ELEVATORBOTTOM)){
     // 0.99 is a placeholder for the height of the limit switches
     DentRobot::elevator->SetHeight(0.99);
     return true;
