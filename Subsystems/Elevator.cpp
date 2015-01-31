@@ -13,6 +13,8 @@ float Elevator::GetPotValue(){
   return pot->Get();
 }
 void Elevator::Run(double power){
+  // Height supposed to be the location of the elevator
+  //height+=power;
   leftMotor->Set(power);
   rightMotor->Set(power);
 }
