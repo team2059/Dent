@@ -3,6 +3,7 @@
 #include "WPILib.h"
 #include "OI.h"
 #include "Subsystems/Elevator.h"
+#include "Subsystems/DIO.h"
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/AirCompressor.h"
@@ -14,6 +15,7 @@ public:
   static Collector* collector;
   static Drivetrain* drivetrain;
   static Elevator* elevator;
+  static DIO* dio;
   static AirCompressor* airCompressor;
   DentRobot();
   void RobotInit();
