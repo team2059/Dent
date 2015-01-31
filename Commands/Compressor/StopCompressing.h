@@ -3,7 +3,7 @@
 
 #include "../../CommandBase.h"
 #include "../../DentRobot.h"
-#include "../../Commands/Command.h"
+#include "Commands/Command.h"
 #include "WPILib.h"
 
 class StopCompressing: public Command{
