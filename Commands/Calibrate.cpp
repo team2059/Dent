@@ -11,8 +11,8 @@ void Calibrate::Execute(){
 }
 bool Calibrate::IsFinished(){
   if(DentRobot::dio->Get(DIO::ELEVATORBOTTOM)){
-    // 0.99 is a placeholder for the height of the limit switches
-    DentRobot::elevator->SetHeight(0.99);
+    DentRobot::elevator->ResetEncoder();
+    DentRobot::elevator->SetOffset(0.99);
     return true;
   }
   return false;
