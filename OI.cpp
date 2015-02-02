@@ -14,7 +14,6 @@ OI::OI() {
   rightStick=new Joystick(1);
   //TODO name these buttons to their functions rather to their number
   JoystickButton *left10=new JoystickButton(leftStick, 10);
-  JoystickButton *left11=new JoystickButton(leftStick, 11);
   JoystickButton *right1=new JoystickButton(rightStick, 1);
   JoystickButton *right2=new JoystickButton(rightStick, 2);
   JoystickButton *right3=new JoystickButton(rightStick, 3);
