@@ -5,10 +5,15 @@
 class Collector: public Subsystem
 {
   private:
-    Talon *motor1, *motor2;
+      CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorRight;
+      DigitalInput *boxSwitch;
+      int a,r;
   public:
     Collector();
     void InitDefaultCommand();
-    void Set(float);
+    void MoveArms(float);
+    void MoveRollers(float);
+    bool ArmsDoneMoving();
+    bool BoxCollected();
 };
 #endif
