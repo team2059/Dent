@@ -16,6 +16,7 @@ class Elevator/*: public PIDSubsystem*/{
     float GetPotValue();
     void Run(double);
     void SetOffset(double);
+    void ResetEncoder();
     double GetHeight();
 };
 #endif
