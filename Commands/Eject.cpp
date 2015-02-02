@@ -6,7 +6,6 @@ Eject::Eject() : Command("Eject"){
 void Eject::Initialize(){
 }
 void Eject::Execute(){
-  DentRobot::collector->Set(DentRobot::oi->GetLeftStick()->GetThrottle());
 }
 bool Eject::IsFinished(){
   return false;
