@@ -11,23 +11,23 @@ Collector::Collector() : Subsystem("Collector") {
 void Collector::InitDefaultCommand() {
 }
 void Collector::MoveArms(float a){
-    windowMotorLeft->Set(a);
-    windowMotorRight->Set(-a);
-    a++;
+  windowMotorLeft->Set(a);
+  windowMotorRight->Set(-a);
+  a++;
 }
 void Collector::MoveRollers(float a){
-    collectorMotorLeft->Set(a);
-    collectorMotorRight->Set(-a);
-    r++;
+  collectorMotorLeft->Set(a);
+  collectorMotorRight->Set(-a);
+  r++;
 }
 bool Collector::ArmsDoneMoving(){
-    //TODO calibrate these values or find a sensor to use
-    if(a>=200){
-        return true;
-    }else{
-        return false;
-    }
+  //TODO calibrate these values or find a sensor to use
+  if(a>=200){
+    return true;
+  }else{
+    return false;
+  }
 }
 bool Collector::BoxCollected(){
-    return boxSwitch->Get();
+  return boxSwitch->Get();
 }
