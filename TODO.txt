@@ -1,0 +1,4 @@
+Release for all buttons does not work
+raise is pushed, elevator raises, lower is pushed, elevator lowers, raise is pushed, no effect
+lower is pushed, elevator lowers, raise is pushed, no effect
+dos compressor on compressor start or stop
