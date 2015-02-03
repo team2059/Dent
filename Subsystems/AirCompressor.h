@@ -5,11 +5,11 @@
 class AirCompressor: public Subsystem
 {
   private:
-      Compressor *compressher;
+      Compressor *compressor;
   public:
     AirCompressor();
     void InitDefaultCommand();
-    int CreateCompressedAir();
-    int StopCreatingCompressedAir();
+    void StartCompressing();
+    void StopCompressing();
 };
 #endif

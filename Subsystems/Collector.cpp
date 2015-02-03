@@ -2,31 +2,25 @@
 #include "../RobotMap.h"
 
 Collector::Collector() : Subsystem("Collector") {
-  windowMotorLeft=new CANTalon(50);
-  windowMotorRight=new CANTalon(51);
-  collectorMotorLeft=new CANTalon(52);
-  collectorMotorRight=new CANTalon(53);
-  boxSwitch=new DigitalInput(9);
+  windowMotorLeft=new CANTalon(COLLECTOR_WINDOW_LEFT_CAN);
+  windowMotorRight=new CANTalon(COLLECTOR_WINDOW_RIGHT_CAN);
+  collectorMotorLeft=new CANTalon(COLLECTOR_LEFT_CAN);
+  collectorMotorRight=new CANTalon(COLLECTOR_RIGHT_CAN);
+  boxSwitch=new DigitalInput(COLLECTOR_BOXSWITCH_DIO);
 }
 void Collector::InitDefaultCommand() {
 }
 void Collector::MoveArms(float a){
   windowMotorLeft->Set(a);
   windowMotorRight->Set(-a);
-  a++;
 }
 void Collector::MoveRollers(float a){
   collectorMotorLeft->Set(a);
   collectorMotorRight->Set(-a);
-  r++;
 }
-bool Collector::ArmsDoneMoving(){
-  //TODO calibrate these values or find a sensor to use
-  if(a>=200){
-    return true;
-  }else{
-    return false;
-  }
+bool Collector::ArmSensor(){
+  // TODO: include limit switch code
+  return false;
 }
 bool Collector::BoxCollected(){
   return boxSwitch->Get();
