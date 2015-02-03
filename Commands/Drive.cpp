@@ -2,7 +2,7 @@
 #include <cmath>
 #include "../DentRobot.h"
 Drive::Drive() : Command("Drive"){
-        Requires(DentRobot::drivetrain);
+  Requires(DentRobot::drivetrain);
 }
 void Drive::Initialize(){
 }
@@ -18,8 +18,8 @@ void Drive::Execute(){
   z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
   y = DentRobot::oi->GetLeftStick()->GetRawAxis(1);
   if (DentRobot::oi->GetLeftStick()->GetRawAxis(3)<=0.5){
-      y /= 2;
-      z /= 2;
+    y /= 2;
+    z /= 2;
   }
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
   DentRobot::drivetrain->DriveMecanum(x,y,z,0.9,0);

@@ -16,10 +16,14 @@ OI::OI() {
   JoystickButton *right2=new JoystickButton(rightStick, 2);
   JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right4=new JoystickButton(rightStick, 4);
+  JoystickButton *right5=new JoystickButton(rightStick, 5);
+  JoystickButton *right6=new JoystickButton(rightStick, 6);
   right1->WhenPressed(new OpenCollector());
   right2->WhenPressed(new CloseCollector());
   right3->WhenPressed(new CollectTote());
   right4->WhenPressed(new ReleaseTote());
+  right5->WhenPressed(new StartCompressing());
+  right6->WhenPressed(new StopCompressing());
 }
 Joystick* OI::GetRightStick(){
   return rightStick;

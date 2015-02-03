@@ -8,23 +8,23 @@
 #include "Subsystems/Collector.h"
 #include "Subsystems/AirCompressor.h"
 class DentRobot: public IterativeRobot {
-private:
-  Command *driveCommand = NULL;
-public:
-  static OI* oi;
-  static Collector* collector;
-  static Drivetrain* drivetrain;
-  static Elevator* elevator;
-  static DIO* dio;
-  static AirCompressor* airCompressor;
-  DentRobot();
-  void RobotInit();
-  void DisabledPeriodic();
-  void AutonomousInit();
-  void AutonomousPeriodic();
-  void TeleopInit();
-  void TeleopPeriodic();
-  void TestPeriodic();
+  private:
+    Command *driveCommand = NULL;
+  public:
+    static OI* oi;
+    static Collector* collector;
+    static Drivetrain* drivetrain;
+    static Elevator* elevator;
+    static DIO* dio;
+    static AirCompressor* airCompressor;
+    DentRobot();
+    void RobotInit();
+    void DisabledPeriodic();
+    void AutonomousInit();
+    void AutonomousPeriodic();
+    void TeleopInit();
+    void TeleopPeriodic();
+    void TestPeriodic();
 };
 #endif
 // vim: ts=2:sw=2:et

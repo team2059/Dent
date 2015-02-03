@@ -5,7 +5,7 @@
 class AirCompressor: public Subsystem
 {
   private:
-      Compressor *compressor;
+    Compressor *compressor;
   public:
     AirCompressor();
     void InitDefaultCommand();
