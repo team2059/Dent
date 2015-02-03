@@ -1,13 +1,12 @@
 #include "StartCompressing.h"
-#include <cmath>
 #include "../../DentRobot.h"
 StartCompressing::StartCompressing() : Command("StartCompressing"){
-        Requires(DentRobot::airCompressor);
+  Requires(DentRobot::airCompressor);
 }
 void StartCompressing::Initialize(){
 }
 void StartCompressing::Execute(){
-    DentRobot::airCompressor->CreateCompressedAir();
+  DentRobot::airCompressor->StartCompressing();
 }
 bool StartCompressing::IsFinished(){
   return false;

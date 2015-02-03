@@ -2,17 +2,15 @@
 #include "../RobotMap.h"
 
 AirCompressor::AirCompressor() : Subsystem("AirCompressor") {
-    compressher = new Compressor(31);
+  compressor = new Compressor(COMPRESSOR_CAN);
 }
 void AirCompressor::InitDefaultCommand() {
 }
-int AirCompressor::CreateCompressedAir() {
-    printf("compressing and stuff\n");
-    compressher->Start();
-    return 0;
+void AirCompressor::StartCompressing() {
+  printf("Starting compressor\n");
+  compressor->Start();
 }
-int AirCompressor::StopCreatingCompressedAir() {
-    printf("not compressing and stuff\n");
-    compressher->Stop();
-    return 0;
+void AirCompressor::StopCompressing() {
+  printf("Stopping compressor\n");
+  compressor->Stop();
 }

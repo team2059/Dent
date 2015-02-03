@@ -7,13 +7,12 @@ class Collector: public Subsystem
   private:
       CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorRight;
       DigitalInput *boxSwitch;
-      int a,r;
   public:
     Collector();
     void InitDefaultCommand();
     void MoveArms(float);
     void MoveRollers(float);
-    bool ArmsDoneMoving();
+    bool ArmSensor();
     bool BoxCollected();
 };
 #endif

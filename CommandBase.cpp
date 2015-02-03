@@ -9,7 +9,6 @@
 #include "Commands/OpenCollector.h"
 #include "Commands/CollectTote.h"
 #include "Commands/ReleaseTote.h"
-#include "Commands/Eject.h"
 #include "Commands/Raise.h"
 #include "Commands/Lower.h"
 #include "Commands/Calibrate.h"
@@ -23,8 +22,7 @@ CommandBase::CommandBase(char const *name) : Command(name) {
 }
 CommandBase::CommandBase() : Command() {
 }
-void CommandBase::init()
-{
+void CommandBase::init(){
   drivetrain = new Drivetrain();
   collector = new Collector();
   elevator = new Elevator();
