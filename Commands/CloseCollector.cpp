@@ -14,4 +14,5 @@ bool CloseCollector::IsFinished(){
 void CloseCollector::End(){
 }
 void CloseCollector::Interrupted(){
+  End();
 }

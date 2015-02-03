@@ -14,4 +14,5 @@ bool ReleaseTote::IsFinished(){
 void ReleaseTote::End(){
 }
 void ReleaseTote::Interrupted(){
+  End();
 }

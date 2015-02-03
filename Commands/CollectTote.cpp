@@ -14,4 +14,5 @@ bool CollectTote::IsFinished(){
 void CollectTote::End(){
 }
 void CollectTote::Interrupted(){
+  End();
 }
