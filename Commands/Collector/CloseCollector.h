@@ -1,14 +1,14 @@
-#ifndef OPENCOLLECTOR_H
-#define OPENCOLLECTOR_H
+#ifndef CLOSECOLLECTOR_H
+#define CLOSECOLLECTOR_H
 
 #include "Commands/Command.h"
-#include "../CommandBase.h"
-#include "../DentRobot.h"
+#include "../../CommandBase.h"
+#include "../../DentRobot.h"
 #include "WPILib.h"
 
-class OpenCollector: public Command{
+class CloseCollector: public Command{
   public:
-    OpenCollector();
+    CloseCollector();
     void Initialize();
     void Execute();
     bool IsFinished();
