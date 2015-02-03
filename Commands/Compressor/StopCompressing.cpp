@@ -14,4 +14,5 @@ bool StopCompressing::IsFinished(){
 void StopCompressing::End(){
 }
 void StopCompressing::Interrupted(){
+  End();
 }

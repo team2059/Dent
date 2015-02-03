@@ -14,4 +14,5 @@ bool OpenCollector::IsFinished(){
 void OpenCollector::End(){
 }
 void OpenCollector::Interrupted(){
+  End();
 }

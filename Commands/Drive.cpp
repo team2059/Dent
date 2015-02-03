@@ -30,4 +30,5 @@ bool Drive::IsFinished(){
 void Drive::End(){
 }
 void Drive::Interrupted(){
+  End();
 }
