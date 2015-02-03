@@ -1,14 +1,14 @@
-#ifndef RELEASETOTE_H
-#define RELEASETOTE_H
+#ifndef OPENCOLLECTOR_H
+#define OPENCOLLECTOR_H
 
 #include "Commands/Command.h"
-#include "../CommandBase.h"
-#include "../DentRobot.h"
+#include "../../CommandBase.h"
+#include "../../DentRobot.h"
 #include "WPILib.h"
 
-class ReleaseTote: public Command{
+class OpenCollector: public Command{
   public:
-    ReleaseTote();
+    OpenCollector();
     void Initialize();
     void Execute();
     bool IsFinished();

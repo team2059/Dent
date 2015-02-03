@@ -1,5 +1,5 @@
 #include "Calibrate.h"
-#include "../DentRobot.h"
+#include "../../DentRobot.h"
 // Lowers elevator until it hits the limit switch then sets the height of the elevator to the height of the limit switches
 Calibrate::Calibrate() : Command("Calibrate"){
 }

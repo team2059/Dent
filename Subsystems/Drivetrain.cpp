@@ -1,6 +1,6 @@
 #include "Drivetrain.h"
 #include "../RobotMap.h"
-#include "../Commands/Drive.h"
+#include "../Commands/Drivetrain/Drive.h"
 
 Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
   rightFront = new CANTalon(DRIVE_FRONT_RIGHT_CAN);

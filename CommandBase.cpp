@@ -4,14 +4,14 @@
 #include "Subsystems/Elevator.h"
 #include "Subsystems/DIO.h"
 #include "Subsystems/AirCompressor.h"
-#include "Commands/Drive.h"
-#include "Commands/CloseCollector.h"
-#include "Commands/OpenCollector.h"
-#include "Commands/CollectTote.h"
-#include "Commands/ReleaseTote.h"
-#include "Commands/Raise.h"
-#include "Commands/Lower.h"
-#include "Commands/Calibrate.h"
+//#include "Commands/Drive.h"
+//#include "Commands/CloseCollector.h"
+//#include "Commands/OpenCollector.h"
+//#include "Commands/CollectTote.h"
+//#include "Commands/ReleaseTote.h"
+//#include "Commands/Raise.h"
+//#include "Commands/Lower.h"
+//#include "Commands/Calibrate.h"
 Drivetrain* CommandBase::drivetrain = NULL;
 Collector* CommandBase::collector = NULL;
 Elevator* CommandBase::elevator = NULL;

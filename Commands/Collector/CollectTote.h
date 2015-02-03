@@ -2,8 +2,8 @@
 #define COLLECTTOTE_H
 
 #include "Commands/Command.h"
-#include "../CommandBase.h"
-#include "../DentRobot.h"
+#include "../../CommandBase.h"
+#include "../../DentRobot.h"
 #include "WPILib.h"
 
 class CollectTote: public Command{
