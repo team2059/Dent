@@ -7,10 +7,14 @@ AirCompressor::AirCompressor() : Subsystem("AirCompressor") {
 void AirCompressor::InitDefaultCommand() {
 }
 void AirCompressor::StartCompressing() {
-  printf("Starting compressor\n");
-  compressor->Start();
+  if(compressor->Enabled()){
+    printf("Starting compressor\n");
+    compressor->Start();
+  }
 }
 void AirCompressor::StopCompressing() {
-  printf("Stopping compressor\n");
-  compressor->Stop();
+  if(compressor->Enabled()){
+    printf("Stopping compressor\n");
+    compressor->Stop();
+  }
 }
