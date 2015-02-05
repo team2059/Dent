@@ -11,7 +11,7 @@ class Collector: public Subsystem
     Collector();
     void InitDefaultCommand();
     void MoveArms(float);
-    void MoveRollers(float);
+    void MoveRollers(double);
     bool ArmSensor();
     bool BoxCollected();
 };
