@@ -5,7 +5,7 @@ Lower::Lower() : Command("Lower"){
 void Lower::Initialize(){
 }
 void Lower::Execute(){
-  DentRobot::elevator->Run(-0.4f);
+  DentRobot::elevator->Run((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
 bool Lower::IsFinished(){
   return false;

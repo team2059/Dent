@@ -14,7 +14,8 @@ void Collector::MoveArms(float a){
   windowMotorLeft->Set(a);
   windowMotorRight->Set(-a);
 }
-void Collector::MoveRollers(float a){
+void Collector::MoveRollers(double a){
+  printf("Collector: %f\n", a);
   collectorMotorLeft->Set(a);
   collectorMotorRight->Set(-a);
 }
@@ -23,5 +24,6 @@ bool Collector::ArmSensor(){
   return false;
 }
 bool Collector::BoxCollected(){
-  return boxSwitch->Get();
+  return false;
+  //return boxSwitch->Get();
 }
