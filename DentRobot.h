@@ -7,17 +7,19 @@
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/AirCompressor.h"
+#include "Commands/Autonomous/Autonomous.h"
 class DentRobot: public IterativeRobot {
   private:
     Command *driveCommand = NULL;
   public:
+    DentRobot();
     static OI* oi;
     static Collector* collector;
     static Drivetrain* drivetrain;
     static Elevator* elevator;
     static DIO* dio;
     static AirCompressor* airCompressor;
-    DentRobot();
+    static Autonomous* aut;
     void RobotInit();
     void DisabledPeriodic();
     void AutonomousInit();
