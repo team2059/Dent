@@ -29,3 +29,4 @@ Joystick* OI::GetRightStick(){
 Joystick* OI::GetLeftStick(){
   return leftStick;
 }
+// vim: ts2:sw=2:et

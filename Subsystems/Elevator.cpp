@@ -30,3 +30,4 @@ bool Elevator::GetElevatorBottom(){
 bool Elevator::GetElevatorTop(){
   return elevatorTop->Get();
 }
+// vim: ts2:sw=2:et

@@ -17,3 +17,4 @@ void CloseCollector::End(){
 void CloseCollector::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

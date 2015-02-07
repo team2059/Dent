@@ -25,3 +25,4 @@
 #define COLLECTOR_RIGHT_CAN 9
 
 #endif
+// vim: ts2:sw=2:et
