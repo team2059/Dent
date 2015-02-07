@@ -7,12 +7,15 @@ DIO::DIO(){
 void DIO::InitDefaultCommand(){
 }
 bool DIO::Get(e_dioSig dioSig){
-  if(dioSig == ELEVATORTOP){
-    // The top elevator digitalinput was triggered
-    return elevatorTop->Get();
-  }else if(dioSig == ELEVATORBOTTOM){
-    // The buttom elevator digitalinput was triggered
-    return elevatorBottom->Get();
+  switch (dioSig){
+    case ELEVATORTOP:
+        return elevatorTop->Get();
+        break;
+    case ELEVATORBOTTOM:
+        return elevatorBottom->Get();
+        break;
+    default:
+        return false;
+        break;
   }
-  return false;
 }
