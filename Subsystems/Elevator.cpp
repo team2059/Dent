@@ -10,6 +10,7 @@ Elevator::Elevator()/* : PIDSubsystem("Elevator", kP_real, kI_real, 0.0)*/{
 void Elevator::InitDefaultCommand(){
 }
 void Elevator::Run(double power){
+  printf("Elevator Power: %f\n",power);
   motor->Set(power);
 }
 void Elevator::SetOffset(double ht){

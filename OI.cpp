@@ -21,8 +21,8 @@ OI::OI() {
   left2->WhileHeld(new CloseCollector());
   left3->WhileHeld(new CollectTote());
   left4->WhileHeld(new ReleaseTote());
-  left5->WhileHeld(new Raise());
-  left6->WhileHeld(new Lower());
+  left5->WhenPressed(new Raise());
+  left6->WhenPressed(new Lower());
 }
 Joystick* OI::GetRightStick(){
   return rightStick;
