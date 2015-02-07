@@ -19,7 +19,7 @@ class DentRobot: public IterativeRobot {
     static Elevator* elevator;
     static DIO* dio;
     static AirCompressor* airCompressor;
-    static Autonomous* aut;
+    static CommandGroup* aut;
     void RobotInit();
     void DisabledPeriodic();
     void AutonomousInit();

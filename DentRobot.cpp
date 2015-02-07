@@ -6,7 +6,7 @@ Drivetrain* DentRobot::drivetrain=NULL;
 Elevator* DentRobot::elevator=NULL;
 DIO* DentRobot::dio = NULL;
 AirCompressor* DentRobot::airCompressor=NULL;
-Autonomous* DentRobot::aut=NULL;
+CommandGroup* DentRobot::aut=NULL;
 DentRobot::DentRobot(){
   oi=new OI();
   collector=new Collector();
