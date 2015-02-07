@@ -3,7 +3,7 @@
 
 #include "WPILib.h"
 #include "Commands/PIDSubsystem.h"
-class Elevator/*: public PIDSubsystem*/{
+class Elevator{
   private:
     CANTalon *motor;
     Encoder *elevatorEncoder;
