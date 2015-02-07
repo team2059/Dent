@@ -13,7 +13,7 @@ void AutoDrive::Execute(){
   DentRobot::drivetrain->DriveMecanum(0.5,0,0,0.9,0);
 }
 bool AutoDrive::IsFinished(){
-  return false;
+  return IsTimedOut();
 }
 void AutoDrive::End(){
 }

@@ -18,10 +18,6 @@ void Drive::Execute(){
   if (DentRobot::oi->GetLeftStick()->GetRawButton(2)){
     y=0;
   }
-  if (DentRobot::oi->GetLeftStick()->GetRawAxis(3)<=0.5){
-    y /= 2;
-    z /= 2;
-  }
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
   DentRobot::drivetrain->DriveMecanum(x,y,z,0.9,0);
 }

@@ -4,13 +4,14 @@
 Raise::Raise() : Command("Raise"){
 }
 void Raise::Initialize(){
-  SetTimeout(2.0);
+  SetTimeout(2.5);
 }
 void Raise::Execute(){
-  DentRobot::elevator->Run(-(-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
+  DentRobot::elevator->Run(1.0);
 }
 bool Raise::IsFinished(){
-  if (DentRobot::elevator->GetElevatorTop()||IsTimedOut()){
+  if (!DentRobot::elevator->GetElevatorTop()||IsTimedOut()){
+    printf("Robot stoped raising. Sensor based? %d\n", !DentRobot::elevator->GetElevatorTop());
     return true;
   }else{
     return false;

@@ -4,13 +4,14 @@
 Lower::Lower() : Command("Lower"){
 }
 void Lower::Initialize(){
-  SetTimeout(2.0);
+  SetTimeout(1.0);
 }
 void Lower::Execute(){
-  DentRobot::elevator->Run((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
+  DentRobot::elevator->Run(-1.0);
 }
 bool Lower::IsFinished(){
-  if (DentRobot::elevator->GetElevatorBottom()||IsTimedOut()){
+  if (!DentRobot::elevator->GetElevatorBottom()||IsTimedOut()){
+    printf("Robot stoped lowering. Sensor based? %d\n", !DentRobot::elevator->GetElevatorBottom());
     return true;
   }else{
     return false;
