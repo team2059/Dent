@@ -10,7 +10,7 @@ void Calibrate::Execute(){
   DentRobot::elevator->Run(-0.4f);
 }
 bool Calibrate::IsFinished(){
-  if(DentRobot::dio->Get(DIO::ELEVATORBOTTOM)){
+  if(DentRobot::elevator->GetElevatorBottom()){
     DentRobot::elevator->ResetEncoder();
     DentRobot::elevator->SetOffset(0.99);
     return true;
