@@ -4,4 +4,5 @@
 #include "../Elevator/Raise.h"
 Autonomous::Autonomous(){
   AddSequential(new AutoDrive());
+  AddSequential(new Raise());
 }
