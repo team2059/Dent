@@ -4,16 +4,16 @@
 Lower::Lower() : Command("Lower"){
 }
 void Lower::Initialize(){
-    SetTimeout(2.0);
+  SetTimeout(2.0);
 }
 void Lower::Execute(){
   DentRobot::elevator->Run((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
 bool Lower::IsFinished(){
   if (!DentRobot::dio->Get(DentRobot::dio->ELEVATORBOTTOM) || IsTimedOut()){
-      return true;
+    return true;
   }else{
-      return false;
+    return false;
   }
 }
 void Lower::End(){
