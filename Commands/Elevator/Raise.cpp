@@ -9,7 +9,7 @@ void Raise::Execute(){
   DentRobot::elevator->Run(-(-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
 bool Raise::IsFinished(){
-  return false;
+ return !DentRobot::dio->Get(DentRobot::dio->ELEVATORTOP);
 }
 void Raise::End(){
   DentRobot::elevator->Run(0.0f);
