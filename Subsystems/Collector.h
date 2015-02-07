@@ -10,7 +10,7 @@ class Collector: public Subsystem
   public:
     Collector();
     void InitDefaultCommand();
-    void MoveArms(float);
+    void MoveArms(double);
     void MoveRollers(double);
     bool ArmSensor();
     bool BoxCollected();

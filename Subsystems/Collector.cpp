@@ -10,7 +10,7 @@ Collector::Collector() : Subsystem("Collector") {
 }
 void Collector::InitDefaultCommand() {
 }
-void Collector::MoveArms(float a){
+void Collector::MoveArms(double a){
   windowMotorLeft->Set(a);
   windowMotorRight->Set(-a);
 }

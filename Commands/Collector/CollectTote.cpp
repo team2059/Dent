@@ -3,6 +3,7 @@ CollectTote::CollectTote() : Command("CollectTote"){
   Requires(DentRobot::collector);
 }
 void CollectTote::Initialize(){
+  SetTimeout(2.0);
 }
 void CollectTote::Execute(){
   //TODO check this value to move the motors in the right direction
