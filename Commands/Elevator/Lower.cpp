@@ -10,7 +10,7 @@ void Lower::Execute(){
   DentRobot::elevator->Run((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
 bool Lower::IsFinished(){
-  if (!DentRobot::dio->Get(DentRobot::dio->ELEVATORBOTTOM) || IsTimedOut()){
+  if (DentRobot::elevator->GetElevatorBottom()||IsTimedOut()){
     return true;
   }else{
     return false;

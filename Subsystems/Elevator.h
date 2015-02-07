@@ -9,6 +9,7 @@ class Elevator/*: public PIDSubsystem*/{
     Encoder *elevatorEncoder;
     static constexpr double kP_real=4, kI_real=.0f, kP_simulation=18, kI_simulation=.2;
     double offset, height;
+    DigitalInput *elevatorBottom, *elevatorTop;
   public:
     Elevator();
     void InitDefaultCommand();
@@ -16,5 +17,7 @@ class Elevator/*: public PIDSubsystem*/{
     void SetOffset(double);
     void ResetEncoder();
     double GetHeight();
+    bool GetElevatorTop();
+    bool GetElevatorBottom();
 };
 #endif

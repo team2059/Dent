@@ -5,6 +5,8 @@
 
 // Elevator
 #define ELEVATOR_CAN 1
+#define ELEVATOR_BOTTOM_DIO 0
+#define ELEVATOR_TOP_DIO 1
 
 // Drivetrain
 #define DRIVE_FRONT_LEFT_CAN 2
@@ -17,7 +19,6 @@
 #define COLLECTOR_WINDOW_RIGHT_CAN 7
 #define COLLECTOR_LEFT_CAN 8
 #define COLLECTOR_RIGHT_CAN 9
-#define COLLECTOR_CALIBRATOR_DIO 0
 
 // Compressor
 #define COMPRESSOR_CAN 10

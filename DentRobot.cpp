@@ -4,7 +4,6 @@ OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
 Drivetrain* DentRobot::drivetrain=NULL;
 Elevator* DentRobot::elevator=NULL;
-DIO* DentRobot::dio = NULL;
 AirCompressor* DentRobot::airCompressor=NULL;
 CommandGroup* DentRobot::aut=NULL;
 DentRobot::DentRobot(){
@@ -12,7 +11,6 @@ DentRobot::DentRobot(){
   collector=new Collector();
   drivetrain=new Drivetrain();
   elevator=new Elevator();
-  dio = new DIO();
   airCompressor=new AirCompressor();
   aut=new Autonomous();
   printf("Initialized");

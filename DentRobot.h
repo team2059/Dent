@@ -3,7 +3,6 @@
 #include "WPILib.h"
 #include "OI.h"
 #include "Subsystems/Elevator.h"
-#include "Subsystems/DIO.h"
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/AirCompressor.h"
@@ -17,7 +16,6 @@ class DentRobot: public IterativeRobot {
     static Collector* collector;
     static Drivetrain* drivetrain;
     static Elevator* elevator;
-    static DIO* dio;
     static AirCompressor* airCompressor;
     static CommandGroup* aut;
     void RobotInit();
