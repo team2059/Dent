@@ -7,21 +7,28 @@
 #include "Commands/Collector/ReleaseTote.h"
 
 OI::OI() {
+  // Joysticks
   leftStick=new Joystick(0);
   rightStick=new Joystick(1);
-  //TODO name these buttons to their functions rather to their number
+
+  // Collector
   JoystickButton *right1=new JoystickButton(rightStick, 1);
   JoystickButton *right2=new JoystickButton(rightStick, 2);
+  JoystickButton *left3=new JoystickButton(leftStick, 3);
+  JoystickButton *left4=new JoystickButton(leftStick, 4);
+  right1->WhileHeld(new OpenCollector());
+  right2->WhileHeld(new CloseCollector());
+  left3->WhileHeld(new CollectTote());
+  left4->WhileHeld(new ReleaseTote());
+  // Elevator
   JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right4=new JoystickButton(rightStick, 4);
   JoystickButton *right5=new JoystickButton(rightStick, 5);
   JoystickButton *right6=new JoystickButton(rightStick, 6);
-  right1->WhileHeld(new OpenCollector());
-  right2->WhileHeld(new CloseCollector());
-  right3->WhileHeld(new CollectTote());
-  right4->WhileHeld(new ReleaseTote());
+  right3->WhenPressed(new Lower());
+  right4->WhenPressed(new Lower());
   right5->WhenPressed(new Raise());
-  right6->WhenPressed(new Lower());
+  right6->WhenPressed(new Raise());
 }
 Joystick* OI::GetRightStick(){
   return rightStick;
