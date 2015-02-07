@@ -7,7 +7,7 @@ void OpenCollector::Initialize(){
 }
 void OpenCollector::Execute(){
   //TODO check this value to move the motors in the right direction
-  DentRobot::collector->MoveArms(-0.1f);
+  DentRobot::collector->MoveArms(-0.2f);
 }
 bool OpenCollector::IsFinished(){
   return DentRobot::collector->ArmSensor();

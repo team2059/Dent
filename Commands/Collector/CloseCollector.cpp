@@ -6,7 +6,7 @@ void CloseCollector::Initialize(){
   SetTimeout(0.5);
 }
 void CloseCollector::Execute(){
-  DentRobot::collector->MoveArms(0.1f);
+  DentRobot::collector->MoveArms(0.2f);
 }
 bool CloseCollector::IsFinished(){
   return DentRobot::collector->ArmSensor();
