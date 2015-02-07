@@ -12,7 +12,6 @@ Elevator::Elevator(){
 void Elevator::InitDefaultCommand(){
 }
 void Elevator::Run(double power){
-  printf("Elevator Power: %f\n",power);
   motor->Set(power);
 }
 void Elevator::SetOffset(double ht){
