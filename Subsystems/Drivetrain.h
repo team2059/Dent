@@ -8,8 +8,15 @@ class Drivetrain: public Subsystem{
     RobotDrive *drive;
   public:
     Drivetrain();
+    enum e_motors{
+      FRONTRIGHT,
+      FRONTLEFT,
+      BACKRIGHT,
+      BACKLEFT
+    };
     void InitDefaultCommand();
     void DriveMecanum(float,float,float,float,float);
     void DriveArcade(float, float);
+    void TestMotor(e_motors,float);
 };
 #endif

@@ -20,3 +20,23 @@ void Drivetrain::DriveMecanum(float x, float y, float z, float sensitivity, floa
   rightRear->Set((correctX + correctY - correctZ));
   leftRear->Set((-correctX + correctY + correctZ)*-1);
 }
+
+//Used in pretest
+void Drivetrain::TestMotor(e_motors motor, float power){
+  switch(motor){
+    case FRONTRIGHT:
+      rightFront->Set(power);
+      break;
+    case FRONTLEFT:
+      leftFront->Set(power);
+      break;
+    case BACKRIGHT:
+      rightRear->Set(power);
+      break;
+    case BACKLEFT:
+      leftRear->Set(power);
+      break;
+    default:
+      break;
+  }
+}
