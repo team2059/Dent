@@ -10,7 +10,6 @@ OI::OI() {
   // Joysticks
   leftStick=new Joystick(0);
   rightStick=new Joystick(1);
-
   // Collector
   JoystickButton *right1=new JoystickButton(rightStick, 1);
   JoystickButton *right2=new JoystickButton(rightStick, 2);
@@ -21,14 +20,24 @@ OI::OI() {
   left3->WhileHeld(new CollectTote());
   left4->WhileHeld(new ReleaseTote());
   // Elevator
+  Raise* raise=new Raise();
+  Lower* lower=new Lower();
   JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right4=new JoystickButton(rightStick, 4);
   JoystickButton *right5=new JoystickButton(rightStick, 5);
   JoystickButton *right6=new JoystickButton(rightStick, 6);
-  right3->WhenPressed(new Lower());
-  right4->WhenPressed(new Lower());
-  right5->WhenPressed(new Raise());
-  right6->WhenPressed(new Raise());
+  right3->WhenPressed(lower);
+  right4->WhenPressed(lower);
+  right3->CancelWhenPressed(raise);
+  right4->CancelWhenPressed(raise);
+  right5->WhenPressed(raise);
+  right6->WhenPressed(raise);
+  right5->CancelWhenPressed(lower);
+  right6->CancelWhenPressed(lower);
+  // Cancel
+  JoystickButton *right12=new JoystickButton(rightStick, 12);
+  right12->CancelWhenPressed(raise);
+  right12->CancelWhenPressed(lower);
 }
 Joystick* OI::GetRightStick(){
   return rightStick;

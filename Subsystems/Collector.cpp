@@ -14,7 +14,6 @@ void Collector::MoveArms(double a){
   windowMotorRight->Set(-a);
 }
 void Collector::MoveRollers(double a){
-  printf("Collector: %f\n", a);
   collectorMotorLeft->Set(a);
   collectorMotorRight->Set(-a);
 }
