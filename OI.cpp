@@ -5,7 +5,6 @@
 #include "Commands/Collector/CloseCollector.h"
 #include "Commands/Collector/CollectTote.h"
 #include "Commands/Collector/ReleaseTote.h"
-#include "Commands/Compressor/StartCompressing.h"
 
 OI::OI() {
   leftStick=new Joystick(0);

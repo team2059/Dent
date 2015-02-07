@@ -24,7 +24,4 @@
 #define COLLECTOR_LEFT_CAN 8
 #define COLLECTOR_RIGHT_CAN 9
 
-// Compressor
-#define COMPRESSOR_CAN 10
-
 #endif
