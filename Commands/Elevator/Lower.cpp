@@ -22,3 +22,4 @@ void Lower::End(){
 void Lower::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

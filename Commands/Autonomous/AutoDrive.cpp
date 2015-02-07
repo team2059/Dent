@@ -20,3 +20,4 @@ void AutoDrive::End(){
 void AutoDrive::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

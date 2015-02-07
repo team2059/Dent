@@ -14,7 +14,7 @@ DentRobot::DentRobot(){
   printf("Initialized");
 }
 void DentRobot::RobotInit(){
-    SmartDashboard::PutNumber("CodeVersion",0.001);
+  SmartDashboard::PutNumber("CodeVersion",0.001);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
@@ -38,3 +38,4 @@ void DentRobot::TeleopPeriodic(){
 void DentRobot::TestPeriodic(){
 }
 START_ROBOT_CLASS(DentRobot);
+// vim: ts2:sw=2:et

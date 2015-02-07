@@ -17,3 +17,4 @@ class CollectTote: public Command{
 };
 
 #endif
+// vim: ts2:sw=2:et

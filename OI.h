@@ -13,3 +13,4 @@ class OI
     Joystick* GetLeftStick();
 };
 #endif
+// vim: ts2:sw=2:et
