@@ -1,6 +1,6 @@
 #include "Elevator.h"
 #include "../RobotMap.h"
-Elevator::Elevator()/* : PIDSubsystem("Elevator", kP_real, kI_real, 0.0)*/{
+Elevator::Elevator(){
   motor=new CANTalon(ELEVATOR_CAN);
   elevatorEncoder=new Encoder(0,1,false);
   offset=0;
