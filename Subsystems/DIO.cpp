@@ -9,11 +9,9 @@ void DIO::InitDefaultCommand(){
 bool DIO::Get(e_dioSig dioSig){
   switch (dioSig){
     case ELEVATORTOP:
-        printf("Hit top limit switch\n");
         return elevatorTop->Get();
         break;
     case ELEVATORBOTTOM:
-        printf("Hit top bottom switch\n");
         return elevatorBottom->Get();
         break;
     default:
