@@ -6,11 +6,12 @@ void OpenCollector::Initialize(){
   SetTimeout(0.5);
 }
 void OpenCollector::Execute(){
-  //TODO check this value to move the motors in the right direction
-  DentRobot::collector->MoveArms(-0.2f);
+  DentRobot::collector->MoveArms(0.35);
+  //DentRobot::collector->MoveArms((-DentRobot::oi->GetRightStick()->GetRawAxis(3)+1)/2*.3/.5);
 }
 bool OpenCollector::IsFinished(){
-  return DentRobot::collector->ArmSensor();
+  //return DentRobot::collector->ArmSensor();
+  return IsTimedOut();
 }
 void OpenCollector::End(){
   DentRobot::collector->MoveArms(0.0f);
