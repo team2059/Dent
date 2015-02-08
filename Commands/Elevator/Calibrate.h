@@ -14,3 +14,4 @@ class Calibrate: public Command{
     void Interrupted();
 };
 #endif
+// vim: ts2:sw=2:et

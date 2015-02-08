@@ -7,7 +7,6 @@ void ReleaseTote::Initialize(){
 }
 void ReleaseTote::Execute(){
   //TODO check this value to move the motors in the right direction
-  printf("releasing tote\n");
   // Devide by 2 twice because this speed should be half the collector speed
   DentRobot::collector->MoveRollers((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2/2);
 }
@@ -20,3 +19,4 @@ void ReleaseTote::End(){
 void ReleaseTote::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

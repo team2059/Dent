@@ -1,14 +1,14 @@
-#ifndef AUTONOMOUS_H
-#define AUTONOMOUS_H
+#ifndef CHECKROBOT_H
+#define CHECKROBOT_H
 
 #include "Commands/CommandGroup.h"
 #include "../../CommandBase.h"
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
-class Autonomous: public CommandGroup{
+class CheckRobot: public CommandGroup{
   public:
-    Autonomous();
+    CheckRobot();
 };
 #endif
 // vim: ts2:sw=2:et

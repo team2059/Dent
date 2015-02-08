@@ -7,7 +7,6 @@ void CollectTote::Initialize(){
 }
 void CollectTote::Execute(){
   //TODO check this value to move the motors in the right direction
-  printf("collecting tote\n");
   DentRobot::collector->MoveRollers(-(-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
 bool CollectTote::IsFinished(){
@@ -19,3 +18,4 @@ void CollectTote::End(){
 void CollectTote::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

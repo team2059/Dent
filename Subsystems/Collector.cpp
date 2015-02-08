@@ -6,7 +6,6 @@ Collector::Collector() : Subsystem("Collector") {
   windowMotorRight=new CANTalon(COLLECTOR_WINDOW_RIGHT_CAN);
   collectorMotorLeft=new CANTalon(COLLECTOR_LEFT_CAN);
   collectorMotorRight=new CANTalon(COLLECTOR_RIGHT_CAN);
-  boxSwitch=new DigitalInput(COLLECTOR_CALIBRATOR_DIO);
 }
 void Collector::InitDefaultCommand() {
 }
@@ -15,7 +14,6 @@ void Collector::MoveArms(double a){
   windowMotorRight->Set(-a);
 }
 void Collector::MoveRollers(double a){
-  printf("Collector: %f\n", a);
   collectorMotorLeft->Set(a);
   collectorMotorRight->Set(-a);
 }
@@ -27,3 +25,4 @@ bool Collector::BoxCollected(){
   return false;
   //return boxSwitch->Get();
 }
+// vim: ts2:sw=2:et

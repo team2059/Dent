@@ -40,3 +40,4 @@ void Drivetrain::TestMotor(e_motors motor, float power){
       break;
   }
 }
+// vim: ts2:sw=2:et
