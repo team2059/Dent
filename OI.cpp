@@ -13,12 +13,12 @@ OI::OI() {
   // Collector
   JoystickButton *right1=new JoystickButton(rightStick, 1);
   JoystickButton *right2=new JoystickButton(rightStick, 2);
-  JoystickButton *left3=new JoystickButton(leftStick, 3);
-  JoystickButton *left4=new JoystickButton(leftStick, 4);
-  right1->WhileHeld(new OpenCollector());
-  right2->WhileHeld(new CloseCollector());
-  left3->WhileHeld(new CollectTote());
-  left4->WhileHeld(new ReleaseTote());
+  JoystickButton *left1=new JoystickButton(leftStick, 1);
+  JoystickButton *left2=new JoystickButton(leftStick, 2);
+  right1->WhileHeld(new CloseCollector());
+  right2->WhileHeld(new OpenCollector());
+  left1->WhileHeld(new CollectTote());
+  left2->WhileHeld(new ReleaseTote());
   // Elevator
   Raise* raise=new Raise();
   Lower* lower=new Lower();

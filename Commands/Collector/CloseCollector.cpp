@@ -3,13 +3,21 @@ CloseCollector::CloseCollector() : Command("CloseCollector"){
   Requires(DentRobot::collector);
 }
 void CloseCollector::Initialize(){
-  SetTimeout(0.5);
+  printf("Initialized collector: 0.5\n");
+  SetTimeout(2.5);
 }
 void CloseCollector::Execute(){
-  DentRobot::collector->MoveArms(0.2f);
+  //printf("Closing collector: -0.5f\n");
+  DentRobot::collector->MoveArms(-0.5);
+  //DentRobot::collector->MoveArms(-(-DentRobot::oi->GetRightStick()->GetRawAxis(3)+1)/2*.3/.5);
 }
 bool CloseCollector::IsFinished(){
-  return DentRobot::collector->ArmSensor();
+  if(DentRobot::collector->ArmSensor()||IsTimedOut()){
+    printf("Stopped Closing: %d, %d\n",DentRobot::collector->ArmSensor(), IsTimedOut());
+    return true;
+  }else{
+    return false;
+  }
 }
 void CloseCollector::End(){
   DentRobot::collector->MoveArms(0.0f);

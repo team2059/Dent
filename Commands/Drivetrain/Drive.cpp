@@ -12,12 +12,12 @@ void Drive::Execute(){
   x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
   z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
   y = DentRobot::oi->GetLeftStick()->GetRawAxis(1);
-  if (DentRobot::oi->GetLeftStick()->GetRawButton(1)){
-    x=0;
-  }
-  if (DentRobot::oi->GetLeftStick()->GetRawButton(2)){
-    y=0;
-  }
+  //if (DentRobot::oi->GetLeftStick()->GetRawButton(1)){
+  //  x=0;
+  //}
+  //if (DentRobot::oi->GetLeftStick()->GetRawButton(2)){
+  //  y=0;
+  //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
   DentRobot::drivetrain->DriveMecanum(x,y,z,0.9,0);
 }
