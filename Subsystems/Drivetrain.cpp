@@ -20,4 +20,4 @@ void Drivetrain::DriveMecanum(float x, float y, float z, float sensitivity, floa
   rightRear->Set((correctX + correctY - correctZ));
   leftRear->Set((-correctX + correctY + correctZ)*-1);
 }
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et
