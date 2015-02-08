@@ -5,7 +5,7 @@
 class Collector: public Subsystem
 {
   private:
-    CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorRight;
+    CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorBottom, *collectorMotorRight;
   public:
     Collector();
     void InitDefaultCommand();

@@ -5,6 +5,7 @@ Collector::Collector() : Subsystem("Collector") {
   windowMotorLeft=new CANTalon(COLLECTOR_WINDOW_LEFT_CAN);
   windowMotorRight=new CANTalon(COLLECTOR_WINDOW_RIGHT_CAN);
   collectorMotorLeft=new CANTalon(COLLECTOR_LEFT_CAN);
+  collectorMotorBottom=new CANTalon(COLLECTOR_BOTTOM_CAN);
   collectorMotorRight=new CANTalon(COLLECTOR_RIGHT_CAN);
 }
 void Collector::InitDefaultCommand() {
@@ -15,6 +16,7 @@ void Collector::MoveArms(double a){
 }
 void Collector::MoveRollers(double a){
   collectorMotorLeft->Set(a);
+  collectorMotorBottom->Set(a);
   collectorMotorRight->Set(-a);
 }
 bool Collector::ArmSensor(){
