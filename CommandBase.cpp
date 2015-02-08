@@ -16,4 +16,4 @@ void CommandBase::init(){
   elevator = new Elevator();
   oi = new OI();
 }
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et

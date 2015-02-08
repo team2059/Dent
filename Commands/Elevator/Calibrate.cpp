@@ -23,4 +23,4 @@ void Calibrate::End(){
 void Calibrate::Interrupted(){
   End();
 }
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et

@@ -38,4 +38,4 @@ void DentRobot::TeleopPeriodic(){
 void DentRobot::TestPeriodic(){
 }
 START_ROBOT_CLASS(DentRobot);
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et
