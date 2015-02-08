@@ -13,10 +13,11 @@ void AutoDrive::Execute(){
   DentRobot::drivetrain->DriveMecanum(0.5,0,0,0.9,0);
 }
 bool AutoDrive::IsFinished(){
-  return false;
+  return IsTimedOut();
 }
 void AutoDrive::End(){
 }
 void AutoDrive::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

@@ -10,7 +10,7 @@ void Calibrate::Execute(){
   DentRobot::elevator->Run(-0.4f);
 }
 bool Calibrate::IsFinished(){
-  if(DentRobot::dio->Get(DIO::ELEVATORBOTTOM)){
+  if(DentRobot::elevator->GetElevatorBottom()){
     DentRobot::elevator->ResetEncoder();
     DentRobot::elevator->SetOffset(0.99);
     return true;
@@ -23,3 +23,4 @@ void Calibrate::End(){
 void Calibrate::Interrupted(){
   End();
 }
+// vim: ts2:sw=2:et

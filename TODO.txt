@@ -1,2 +1,0 @@
-Compressor isn't in use
-  (dos compressor on compressor start or stop)?

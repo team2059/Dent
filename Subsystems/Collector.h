@@ -6,7 +6,6 @@ class Collector: public Subsystem
 {
   private:
     CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorRight;
-    DigitalInput *boxSwitch;
   public:
     Collector();
     void InitDefaultCommand();
@@ -16,3 +15,4 @@ class Collector: public Subsystem
     bool BoxCollected();
 };
 #endif
+// vim: ts2:sw=2:et
