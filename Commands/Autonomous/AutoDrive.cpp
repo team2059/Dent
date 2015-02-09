@@ -1,5 +1,4 @@
 #include "AutoDrive.h"
-#include <cmath>
 #include "../../DentRobot.h"
 // Drive for a short while then stop. Just for testing
 AutoDrive::AutoDrive() : Command("AutoDrive"){
