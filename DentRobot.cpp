@@ -4,12 +4,14 @@ OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
 Drivetrain* DentRobot::drivetrain=NULL;
 Elevator* DentRobot::elevator=NULL;
+BinElevator* DentRobot::binElevator=NULL;
 CommandGroup* DentRobot::aut=NULL;
 DentRobot::DentRobot(){
   oi=new OI();
   collector=new Collector();
   drivetrain=new Drivetrain();
   elevator=new Elevator();
+  binElevator=new BinElevator();
   aut=new Autonomous();
   printf("Initialized");
 }

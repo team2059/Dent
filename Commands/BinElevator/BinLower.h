@@ -1,12 +1,12 @@
-#ifndef CALIBRATE_H
-#define CALIBRATE_H
+#ifndef BINLOWER_H
+#define BINLOWER_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
-class Calibrate: public Command{
+class BinLower: public Command{
   public:
-    Calibrate();
+    BinLower();
     void Initialize();
     void Execute();
     bool IsFinished();

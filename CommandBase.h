@@ -5,6 +5,7 @@
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/Elevator.h"
+#include "Subsystems/BinElevator.h"
 #include "OI.h"
 #include "WPILib.h"
 
@@ -16,6 +17,7 @@ class CommandBase: public Command {
     static Drivetrain *drivetrain;
     static Collector *collector;
     static Elevator *elevator;
+    static BinElevator *binElevator;
     static OI *oi;
 };
 #endif
