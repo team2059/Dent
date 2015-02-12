@@ -2,26 +2,20 @@
 #include "../RobotMap.h"
 Elevator::Elevator(){
   motor=new CANTalon(ELEVATOR_CAN);
-  elevatorEncoder=new Encoder(0,1,false);
-  offset=0;
-  height=0;
+  elevatorEncoder=new Encoder(ELEVATOR_ENCODERA,ELEVATOR_ENCODERB,false);
   elevatorBottom=new DigitalInput(ELEVATOR_BOTTOM_DIO);
   elevatorTop=new DigitalInput(ELEVATOR_TOP_DIO);
-  //SetAbsoluteTolerance(0.004);
 }
 void Elevator::InitDefaultCommand(){
 }
 void Elevator::Run(double power){
   motor->Set(power);
 }
-void Elevator::SetOffset(double ht){
-  offset=ht;
-}
 void Elevator::ResetEncoder(){
   elevatorEncoder->Reset();
 }
 double Elevator::GetHeight(){
-  return elevatorEncoder->Get()+offset;
+  return elevatorEncoder->Get();
 }
 bool Elevator::GetElevatorBottom(){
   return elevatorBottom->Get();
