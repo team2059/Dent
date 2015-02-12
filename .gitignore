@@ -1,4 +1,4 @@
 *.o
-Makefile
-wpilib
+Debug
 bin
+wpilib
