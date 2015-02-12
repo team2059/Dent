@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 BinElevator::BinElevator(){
   motor=new CANTalon(BINELEVATOR_CAN);
-  elevatorEncoder=new Encoder(0,1,false);
+  elevatorEncoder=new Encoder(BINELEVATOR_ENCODERA,BINELEVATOR_ENCODERB,false);
   offset=0;
   height=0;
   elevatorBottom=new DigitalInput(BINELEVATOR_BOTTOM_DIO);
