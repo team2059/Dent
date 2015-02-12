@@ -1,2 +1,3 @@
 *.o
-Debug
+bin
+wpilib
