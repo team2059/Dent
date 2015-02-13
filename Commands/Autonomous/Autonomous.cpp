@@ -7,15 +7,45 @@
 #include "../Collector/CloseCollector.h"
 #include "../Collector/OpenCollector.h"
 #include "../Collector/CollectTote.h"
-Autonomous::Autonomous(){
-  AddSequential(new Raise());
-  AddSequential(new Lower());
-  AddParallel(new OpenCollector());
-  AddParallel(new CloseCollector());
-  AddSequential(new Turn());
-  AddParallel(new AutoDrive());
-  AddParallel(new CloseCollector());
-  AddParallel(new CollectTote());
-  AddSequential(new Turn());
+Autonomous::Autonomous(int seq){
+  SmartDashboard::GetNumber("Auto Wait Time");
+  switch(seq){
+    case 0:
+      // Just for testing
+      AddSequential(new Raise());
+      AddSequential(new Lower());
+      AddSequential(new OpenCollector());
+      AddSequential(new CloseCollector());
+      AddSequential(new Turn());
+      AddParallel(new AutoDrive(0.5));
+      AddParallel(new CloseCollector());
+      AddSequential(new CollectTote());
+      AddSequential(new Turn());
+      break;
+    case 1:
+      // Drive forward a bit, turn around, collect tote then bin
+      AddParallel(new Raise());
+      AddSequential(new AutoDrive(0.5));
+      AddSequential(new Turn());
+      AddSequential(new Turn());
+      AddSequential(new CollectTote());
+      break;
+    case 2:
+      // Drive forward a bit, turn around, collect tote then bin
+      AddParallel(new Raise());
+      AddParallel(new AutoDrive(0.5));
+      AddSequential(new Turn());
+      AddSequential(new Turn());
+      AddSequential(new CollectTote());
+      break;
+    case 3:
+      // Wait a desigated value, drive to Auto Zone (TM)
+      Wait(SmartDashboard::GetNumber("Auto Wait Time"));
+      AddSequential(new AutoDrive(2.0));
+      break;
+    default:
+      printf("Invalid seq: %d\n", seq);
+      break;
+  }
 }
 // vim: ts=2:sw=2:et

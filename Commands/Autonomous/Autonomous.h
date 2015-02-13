@@ -8,7 +8,7 @@
 
 class Autonomous: public CommandGroup{
   public:
-    Autonomous();
+    Autonomous(int);
 };
 #endif
 // vim: ts=2:sw=2:et

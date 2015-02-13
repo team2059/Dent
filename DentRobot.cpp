@@ -13,9 +13,11 @@ DentRobot::DentRobot(){
   drivetrain=new Drivetrain();
   elevator=new Elevator();
   binElevator=new BinElevator();
-  aut=new Autonomous();
+  aut=new Autonomous(0);
   CameraServer::GetInstance()->SetQuality(25);
   CameraServer::GetInstance()->StartAutomaticCapture("cam0");
+  SmartDashboard::PutNumber("Auto Wait Time", 1.0);
+  SmartDashboard::PutNumber("Auto Sequence", 0);
   printf("Initialized");
 }
 void DentRobot::RobotInit(){
