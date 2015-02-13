@@ -4,7 +4,7 @@
 Lower::Lower() : Command("Lower"){
 }
 void Lower::Initialize(){
-  SetTimeout(1.0);
+  SetTimeout(2.5);
 }
 void Lower::Execute(){
   DentRobot::elevator->Run(-1.0);
@@ -23,4 +23,4 @@ void Lower::End(){
 void Lower::Interrupted(){
   End();
 }
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et
