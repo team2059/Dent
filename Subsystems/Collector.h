@@ -5,7 +5,7 @@
 class Collector: public Subsystem
 {
   private:
-    CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorRight;
+    CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorBottom, *collectorMotorRight;
   public:
     Collector();
     void InitDefaultCommand();
@@ -15,4 +15,4 @@ class Collector: public Subsystem
     bool BoxCollected();
 };
 #endif
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et

@@ -1,14 +1,12 @@
-#ifndef COLLECTTOTE_H
-#define COLLECTTOTE_H
+#ifndef BINRAISE_H
+#define BINRAISE_H
 
 #include "Commands/Command.h"
-#include "../../CommandBase.h"
-#include "../../DentRobot.h"
 #include "WPILib.h"
 
-class CollectTote: public Command{
+class BinRaise: public Command{
   public:
-    CollectTote();
+    BinRaise();
     void Initialize();
     void Execute();
     bool IsFinished();

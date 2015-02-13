@@ -1,12 +1,14 @@
-#ifndef CALIBRATE_H
-#define CALIBRATE_H
+#ifndef TURN_H
+#define TURN_H
 
 #include "Commands/Command.h"
+#include "../../CommandBase.h"
+#include "../../DentRobot.h"
 #include "WPILib.h"
 
-class Calibrate: public Command{
+class Turn: public Command{
   public:
-    Calibrate();
+    Turn();
     void Initialize();
     void Execute();
     bool IsFinished();
@@ -14,4 +16,4 @@ class Calibrate: public Command{
     void Interrupted();
 };
 #endif
-// vim: ts2:sw=2:et
+// vim: ts=2:sw=2:et
