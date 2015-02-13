@@ -5,6 +5,7 @@
 #include "../../RobotMap.h"
 CheckDrive::CheckDrive(int motorID) : CommandGroup("CheckDrive"){
   Requires(DentRobot::drivetrain);
+  motor = motorID;
 }
 void CheckDrive::Initialize(){
   SetTimeout(1.0);
