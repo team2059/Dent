@@ -8,7 +8,7 @@
 
 class AutoDrive: public Command{
   public:
-    AutoDrive();
+    AutoDrive(double);
     void Initialize();
     void Execute();
     bool IsFinished();
