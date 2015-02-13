@@ -20,8 +20,8 @@ OI::OI() {
   left1->WhileHeld(new CollectTote());
   left2->WhileHeld(new ReleaseTote());
   // Elevator
-  Raise* raise=new Raise();
-  Lower* lower=new Lower();
+  raise=new Raise();
+  lower=new Lower();
   JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right4=new JoystickButton(rightStick, 4);
   JoystickButton *right5=new JoystickButton(rightStick, 5);

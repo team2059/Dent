@@ -1,4 +1,5 @@
 #include "DentRobot.h"
+#include "OI.h"
 #include "Commands/Autonomous/Autonomous.h"
 OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
@@ -32,12 +33,17 @@ void DentRobot::AutonomousPeriodic(){
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::TeleopInit(){
-  //if (aut != NULL){
-  //  aut->Cancel();
-  //}
+  if (aut != NULL){
+    aut->Cancel();
+  }
 }
 void DentRobot::TeleopPeriodic(){
   Scheduler::GetInstance()->Run();
+  // TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
+  if(elevator->GetUseEncoder()&&elevator->GetHeight()<=-1.0){
+    // Raise the elevator if it dips below elevatorTop
+    oi->raise->Start();
+  }
 }
 void DentRobot::TestPeriodic(){
 }

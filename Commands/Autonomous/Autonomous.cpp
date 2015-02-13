@@ -8,11 +8,10 @@
 #include "../Collector/OpenCollector.h"
 #include "../Collector/CollectTote.h"
 Autonomous::Autonomous(){
-  //AddSequential(new Raise());
-  //AddSequential(new Lower());
-  //AddSequential(new AutoDrive());
   AddSequential(new Raise());
   AddSequential(new Lower());
+  AddParallel(new OpenCollector());
+  AddParallel(new CloseCollector());
   AddSequential(new Turn());
   AddParallel(new AutoDrive());
   AddParallel(new CloseCollector());

@@ -18,6 +18,10 @@ bool Raise::IsFinished(){
   }
 }
 void Raise::End(){
+  // If the elevator is at the top
+  if(DentRobot::elevator->GetElevatorTop()){
+    DentRobot::elevator->SetUseEncoder(true);
+  }
   DentRobot::elevator->Run(0.0f);
 }
 void Raise::Interrupted(){
