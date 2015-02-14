@@ -3,7 +3,7 @@ CloseCollector::CloseCollector() : Command("CloseCollector"){
 }
 void CloseCollector::Initialize(){
   printf("Initialized collector: 0.5\n");
-  SetTimeout(.5);
+  SetTimeout(1);
 }
 void CloseCollector::Execute(){
   //printf("Closing collector: -0.5f\n");
