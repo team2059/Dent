@@ -21,7 +21,7 @@ void Drive::Execute(){
   DentRobot::drivetrain->DriveMecanum(x,y,z,0.9,0);
 }
 bool Drive::IsFinished(){
-  return false;
+  return IsTimedOut();
 }
 void Drive::End(){
 }

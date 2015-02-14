@@ -11,7 +11,7 @@ void RollOut::Execute(){
   DentRobot::collector->MoveRollers((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2/2);
 }
 bool RollOut::IsFinished(){
-  return DentRobot::collector->BoxCollected();
+  return IsTimedOut();
 }
 void RollOut::End(){
   DentRobot::collector->MoveRollers(0.0f);
