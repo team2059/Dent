@@ -8,7 +8,7 @@
 
 class AutoDrive: public Command{
   private:
-    double *power;
+    double power;
   public:
     AutoDrive(double);
     AutoDrive(double, double);
