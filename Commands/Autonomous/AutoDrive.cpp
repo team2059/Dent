@@ -25,6 +25,7 @@ bool AutoDrive::IsFinished(){
   return IsTimedOut();
 }
 void AutoDrive::End(){
+  DentRobot::drivetrain->DriveMecanum(0.0,0.0,0.0,0.9,0.0);
 }
 void AutoDrive::Interrupted(){
   End();

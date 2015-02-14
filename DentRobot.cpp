@@ -16,12 +16,12 @@ DentRobot::DentRobot(){
   aut=new Autonomous(0);
   CameraServer::GetInstance()->SetQuality(25);
   CameraServer::GetInstance()->StartAutomaticCapture("cam0");
-  SmartDashboard::PutNumber("Auto Wait Time", 1.0);
-  SmartDashboard::PutNumber("Auto Sequence", 0);
+  //SmartDashboard::PutNumber("Auto Wait Time", 1.0);
+  //SmartDashboard::PutNumber("Auto Sequence", 0);
   printf("Initialized");
 }
 void DentRobot::RobotInit(){
-  SmartDashboard::PutNumber("CodeVersion",0.001);
+  //SmartDashboard::PutNumber("CodeVersion",0.001);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
