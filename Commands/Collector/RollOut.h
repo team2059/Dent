@@ -1,14 +1,14 @@
-#ifndef COLLECTTOTE_H
-#define COLLECTTOTE_H
+#ifndef ROLLOUT_H
+#define ROLLOUT_H
 
 #include "Commands/Command.h"
 #include "../../CommandBase.h"
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
-class CollectTote: public Command{
+class RollOut: public Command{
   public:
-    CollectTote();
+    RollOut();
     void Initialize();
     void Execute();
     bool IsFinished();

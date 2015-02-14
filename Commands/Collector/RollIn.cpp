@@ -1,22 +1,22 @@
-#include "CollectTote.h"
-CollectTote::CollectTote() : Command("CollectTote"){
+#include "RollIn.h"
+RollIn::RollIn() : Command("RollIn"){
   Requires(DentRobot::collector);
 }
-void CollectTote::Initialize(){
-  printf("Initialized CollectTote\n");
+void RollIn::Initialize(){
+  printf("Initialized RollIn\n");
   SetTimeout(2.0);
 }
-void CollectTote::Execute(){
+void RollIn::Execute(){
   //TODO check this value to move the motors in the right direction
   DentRobot::collector->MoveRollers(-(-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
-bool CollectTote::IsFinished(){
+bool RollIn::IsFinished(){
   return DentRobot::collector->BoxCollected()||IsTimedOut();
 }
-void CollectTote::End(){
+void RollIn::End(){
   DentRobot::collector->MoveRollers(0.0);
 }
-void CollectTote::Interrupted(){
+void RollIn::Interrupted(){
   End();
 }
 // vim: ts=2:sw=2:et

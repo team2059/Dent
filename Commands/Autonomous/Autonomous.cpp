@@ -6,7 +6,7 @@
 #include "Turn.h"
 #include "../Collector/CloseCollector.h"
 #include "../Collector/OpenCollector.h"
-#include "../Collector/CollectTote.h"
+#include "../Collector/RollIn.h"
 Autonomous::Autonomous(int seq){
   SmartDashboard::GetNumber("Auto Wait Time");
   switch(seq){
@@ -19,7 +19,7 @@ Autonomous::Autonomous(int seq){
       AddSequential(new Turn());
       AddParallel(new AutoDrive(0.5));
       AddParallel(new CloseCollector());
-      AddSequential(new CollectTote());
+      AddSequential(new RollIn());
       AddSequential(new Turn());
       break;
     case 1:
@@ -28,7 +28,7 @@ Autonomous::Autonomous(int seq){
       AddSequential(new AutoDrive(0.5));
       AddSequential(new Turn());
       AddSequential(new Turn());
-      AddSequential(new CollectTote());
+      AddSequential(new RollIn());
       break;
     case 2:
       // Drive forward a bit, turn around, collect tote then bin
@@ -36,7 +36,7 @@ Autonomous::Autonomous(int seq){
       AddParallel(new AutoDrive(0.5));
       AddSequential(new Turn());
       AddSequential(new Turn());
-      AddSequential(new CollectTote());
+      AddSequential(new RollIn());
       break;
     case 3:
       // Wait a desigated value, drive to Auto Zone (TM)

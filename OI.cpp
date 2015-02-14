@@ -3,8 +3,8 @@
 #include "Commands/Elevator/Raise.h"
 #include "Commands/Collector/OpenCollector.h"
 #include "Commands/Collector/CloseCollector.h"
-#include "Commands/Collector/CollectTote.h"
-#include "Commands/Collector/ReleaseTote.h"
+#include "Commands/Collector/RollIn.h"
+#include "Commands/Collector/RollOut.h"
 
 OI::OI() {
   // Joysticks
@@ -17,8 +17,8 @@ OI::OI() {
   JoystickButton *left2=new JoystickButton(leftStick, 2);
   right1->WhileHeld(new CloseCollector());
   right2->WhileHeld(new OpenCollector());
-  left1->WhileHeld(new CollectTote());
-  left2->WhileHeld(new ReleaseTote());
+  left1->WhileHeld(new RollIn());
+  left2->WhileHeld(new RollOut());
   // Elevator
   raise=new Raise();
   lower=new Lower();
