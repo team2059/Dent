@@ -10,8 +10,6 @@ class Collector: public Subsystem
     Collector();
     void InitDefaultCommand();
     void MoveRollers(double);
-    bool ArmSensor();
-    bool BoxCollected();
 };
 #endif
 // vim: ts=2:sw=2:et
