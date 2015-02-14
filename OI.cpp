@@ -5,6 +5,8 @@
 #include "Commands/Collector/CloseCollector.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
+#include "Commands/BinElevator/BinLower.h"
+#include "Commands/BinElevator/BinRaise.h"
 
 OI::OI() {
   // Joysticks
@@ -34,10 +36,21 @@ OI::OI() {
   right6->WhenPressed(raise);
   right5->CancelWhenPressed(lower);
   right6->CancelWhenPressed(lower);
+  // BinElevator
+  binRaise=new BinRaise();
+  binLower=new BinLower();
+  JoystickButton *right7=new JoystickButton(rightStick, 7);
+  JoystickButton *right8=new JoystickButton(rightStick, 8);
+  right7->WhenPressed(binLower);
+  right7->CancelWhenPressed(binRaise);
+  right8->WhenPressed(binRaise);
+  right8->CancelWhenPressed(binLower);
   // Cancel
   JoystickButton *right12=new JoystickButton(rightStick, 12);
   right12->CancelWhenPressed(raise);
   right12->CancelWhenPressed(lower);
+  right12->CancelWhenPressed(binRaise);
+  right12->CancelWhenPressed(binLower);
 }
 Joystick* OI::GetRightStick(){
   return rightStick;
