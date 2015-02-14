@@ -15,6 +15,8 @@ bool Turn::IsFinished(){
   return IsTimedOut();
 }
 void Turn::End(){
+  // Stop driving
+  DentRobot::drivetrain->DriveMecanum(0.0,0.0,0.0,0.9,0.0);
 }
 void Turn::Interrupted(){
   End();

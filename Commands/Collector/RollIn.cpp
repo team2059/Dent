@@ -1,6 +1,5 @@
 #include "RollIn.h"
 RollIn::RollIn() : Command("RollIn"){
-  Requires(DentRobot::collector);
 }
 void RollIn::Initialize(){
   printf("Initialized RollIn\n");
