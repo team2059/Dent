@@ -24,27 +24,21 @@ OI::OI() {
   // Elevator
   raise=new Raise();
   lower=new Lower();
-  JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right4=new JoystickButton(rightStick, 4);
-  JoystickButton *right5=new JoystickButton(rightStick, 5);
   JoystickButton *right6=new JoystickButton(rightStick, 6);
-  right3->WhenPressed(lower);
   right4->WhenPressed(lower);
-  right3->CancelWhenPressed(raise);
   right4->CancelWhenPressed(raise);
-  right5->WhenPressed(raise);
   right6->WhenPressed(raise);
-  right5->CancelWhenPressed(lower);
   right6->CancelWhenPressed(lower);
   // BinElevator
+  JoystickButton *right3=new JoystickButton(rightStick, 3);
+  JoystickButton *right5=new JoystickButton(rightStick, 5);
   binRaise=new BinRaise();
   binLower=new BinLower();
-  JoystickButton *right7=new JoystickButton(rightStick, 7);
-  JoystickButton *right8=new JoystickButton(rightStick, 8);
-  right7->WhenPressed(binLower);
-  right7->CancelWhenPressed(binRaise);
-  right8->WhenPressed(binRaise);
-  right8->CancelWhenPressed(binLower);
+  right3->WhenPressed(binLower);
+  right3->CancelWhenPressed(binRaise);
+  right5->WhenPressed(binRaise);
+  right5->CancelWhenPressed(binLower);
   // Cancel
   JoystickButton *right12=new JoystickButton(rightStick, 12);
   right12->CancelWhenPressed(raise);
