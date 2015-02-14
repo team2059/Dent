@@ -12,7 +12,7 @@ class OI
     OI();
     Joystick* GetRightStick();
     Joystick* GetLeftStick();
-    Command *raise, *lower;
+    Command *raise, *lower, *binLower, *binRaise;
 };
 #endif
 // vim: ts=2:sw=2:et
