@@ -4,8 +4,6 @@
 #include "../Elevator/Lower.h"
 #include "AutoDrive.h"
 #include "Turn.h"
-#include "../Collector/CloseCollector.h"
-#include "../Collector/OpenCollector.h"
 #include "../Collector/RollIn.h"
 #include "../Collector/CollectTote.h"
 Autonomous::Autonomous(int seq){
@@ -16,11 +14,8 @@ Autonomous::Autonomous(int seq){
       AddSequential(new CollectTote());
       //AddSequential(new Raise());
       //AddSequential(new Lower());
-      //AddSequential(new OpenCollector());
-      //AddSequential(new CloseCollector());
       //AddSequential(new Turn());
       //AddParallel(new AutoDrive(0.5));
-      //AddParallel(new CloseCollector());
       //AddSequential(new RollIn());
       //AddSequential(new Turn());
       break;

@@ -1,8 +1,6 @@
 #include "OI.h"
 #include "Commands/Elevator/Lower.h"
 #include "Commands/Elevator/Raise.h"
-#include "Commands/Collector/OpenCollector.h"
-#include "Commands/Collector/CloseCollector.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
 #include "Commands/BinElevator/BinLower.h"
@@ -13,12 +11,8 @@ OI::OI() {
   leftStick=new Joystick(0);
   rightStick=new Joystick(1);
   // Collector
-  JoystickButton *right1=new JoystickButton(rightStick, 1);
-  JoystickButton *right2=new JoystickButton(rightStick, 2);
   JoystickButton *left1=new JoystickButton(leftStick, 1);
   JoystickButton *left2=new JoystickButton(leftStick, 2);
-  right1->WhileHeld(new CloseCollector());
-  right2->WhileHeld(new OpenCollector());
   left1->WhileHeld(new RollIn());
   left2->WhileHeld(new RollOut());
   // Elevator

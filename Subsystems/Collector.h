@@ -5,11 +5,10 @@
 class Collector: public Subsystem
 {
   private:
-    CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorBottom, *collectorMotorRight;
+    CANTalon *collectorMotorLeft, *collectorMotorBottom, *collectorMotorRight;
   public:
     Collector();
     void InitDefaultCommand();
-    void MoveArms(double);
     void MoveRollers(double);
     bool ArmSensor();
     bool BoxCollected();
