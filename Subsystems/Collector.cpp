@@ -7,7 +7,6 @@ Collector::Collector() : Subsystem("Collector"){
   collectorMotorRamp=new CANTalon(COLLECTOR_RAMP_CAN);
   collectorMotorRight=new CANTalon(COLLECTOR_RIGHT_CAN);
   sonarAnalog=new AnalogInput(COLLECTOR_SONAR_ANALOG);
-  sonarDigital=new DigitalOutput(COLLECTOR_RIGHT_CAN);
 }
 void Collector::InitDefaultCommand(){
 }
