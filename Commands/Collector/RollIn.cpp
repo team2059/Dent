@@ -7,7 +7,7 @@ void RollIn::Initialize(){
 }
 void RollIn::Execute(){
   double throttle=DentRobot::oi->GetLeftThrottle();
-  double cvt=throttle*DentRobot::collector->GetSonarDistance()/0.4/5;
+  double cvt=throttle*DentRobot::collector->GetSonarDistance()/0.4;
   if(cvt>=1.0){
     DentRobot::collector->MoveRollers(1.0);
   }else{
