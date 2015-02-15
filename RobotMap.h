@@ -30,6 +30,8 @@
 #define COLLECTOR_LEFT_CAN 8
 #define COLLECTOR_BOTTOM_CAN 10
 #define COLLECTOR_RIGHT_CAN 9
+#define COLLECTOR_SONAR_DIO 6
+#define COLLECTOR_SONAR_ANALOG 3
 
 #endif
 // vim: ts=2:sw=2:et

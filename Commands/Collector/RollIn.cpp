@@ -7,7 +7,7 @@ void RollIn::Initialize(){
 }
 void RollIn::Execute(){
   //TODO check this value to move the motors in the right direction
-  DentRobot::collector->MoveRollers(-(-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
+  DentRobot::collector->MoveRollers((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
 }
 bool RollIn::IsFinished(){
   return IsTimedOut();
