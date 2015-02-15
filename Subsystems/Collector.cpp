@@ -6,6 +6,8 @@ Collector::Collector() : Subsystem("Collector"){
   collectorMotorBottom=new CANTalon(COLLECTOR_BOTTOM_CAN);
   collectorMotorRamp=new CANTalon(COLLECTOR_RAMP_CAN);
   collectorMotorRight=new CANTalon(COLLECTOR_RIGHT_CAN);
+  sonarAnalog=new AnalogInput(COLLECTOR_SONAR_ANALOG);
+  sonarDigital=new DigitalOutput(COLLECTOR_RIGHT_CAN);
 }
 void Collector::InitDefaultCommand(){
 }
@@ -14,5 +16,9 @@ void Collector::MoveRollers(double a){
   collectorMotorBottom->Set(a);
   collectorMotorRamp->Set(a);
   collectorMotorRight->Set(-a);
+  GetSonarDistance();
+}
+float Collector::GetSonarDistance(){
+  printf("Sonar Distance %f\n",sonarAnalog->GetAverageValue());
 }
 // vim: ts=2:sw=2:et

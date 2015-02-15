@@ -10,7 +10,7 @@ void BinLower::Execute(){
   DentRobot::binElevator->Run(-1.0);
 }
 bool BinLower::IsFinished(){
-  if (!DentRobot::binElevator->GetElevatorBottom()||IsTimedOut()){
+  if (/*!DentRobot::binElevator->GetElevatorBottom()||*/IsTimedOut()){
     printf("Robot stoped BinLowering. Sensor based? %d\n", !DentRobot::binElevator->GetElevatorBottom());
     return true;
   }else{
