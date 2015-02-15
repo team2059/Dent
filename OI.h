@@ -10,9 +10,11 @@ class OI
     Joystick *leftStick, *rightStick;
   public:
     OI();
+    Command *raise, *lower, *binLower, *binRaise;
     Joystick* GetRightStick();
     Joystick* GetLeftStick();
-    Command *raise, *lower, *binLower, *binRaise;
+    double GetLeftThrottle();
+    double GetRightThrottle();
 };
 #endif
 // vim: ts=2:sw=2:et

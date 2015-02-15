@@ -6,8 +6,13 @@ void RollIn::Initialize(){
   SetTimeout(2.0);
 }
 void RollIn::Execute(){
-  //TODO check this value to move the motors in the right direction
-  DentRobot::collector->MoveRollers((-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
+  double throttle=DentRobot::oi->GetLeftThrottle();
+  double cvt=throttle*DentRobot::collector->GetSonarDistance()/0.4/5;
+  if(cvt>=1.0){
+    DentRobot::collector->MoveRollers(1.0);
+  }else{
+    DentRobot::collector->MoveRollers(cvt);
+  }
 }
 bool RollIn::IsFinished(){
   return IsTimedOut();

@@ -46,4 +46,10 @@ Joystick* OI::GetRightStick(){
 Joystick* OI::GetLeftStick(){
   return leftStick;
 }
+double OI::GetRightThrottle(){
+  return (-rightStick->GetRawAxis(3)+1.0)/2;
+}
+double OI::GetLeftThrottle(){
+  return (-leftStick->GetRawAxis(3)+1.0)/2;
+}
 // vim: ts=2:sw=2:et
