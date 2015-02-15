@@ -18,8 +18,8 @@ bool Raise::IsFinished(){
   //  DentRobot::elevator->stoppedAtSensor=false;
   //  return true;
   //}else if (!DentRobot::elevator->GetElevatorTop()) {
-  if (!DentRobot::elevator->GetElevatorTop()||IsTimedOut()){
-    printf("Robot stopped raising. Sensor based? %d\n", !DentRobot::elevator->GetElevatorTop());
+  if (!DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle()||IsTimedOut()){
+    printf("Robot stopped raising. Sensor based? %d\n", !DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle());
     return true;
   }else{
     return false;

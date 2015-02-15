@@ -12,7 +12,7 @@ class Collector: public Subsystem
     Collector();
     void InitDefaultCommand();
     void MoveRollers(double);
-    float GetSonarDistance();
+    double GetSonarDistance();
 };
 #endif
 // vim: ts=2:sw=2:et
