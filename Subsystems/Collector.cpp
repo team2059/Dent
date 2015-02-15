@@ -19,6 +19,6 @@ void Collector::MoveRollers(double a){
   GetSonarDistance();
 }
 float Collector::GetSonarDistance(){
-  printf("Sonar Distance %f\n",sonarAnalog->GetAverageValue());
+  printf("Sonar Distance %f\n",sonarAnalog->GetAverageVoltage());
 }
 // vim: ts=2:sw=2:et
