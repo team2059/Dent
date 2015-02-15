@@ -12,6 +12,7 @@ Autonomous::Autonomous(int seq){
     case 0:
       // Just for testing
       AddSequential(new CollectTote());
+      AddSequential(new Turn());
       //AddSequential(new Raise());
       //AddSequential(new Lower());
       //AddSequential(new Turn());
