@@ -21,7 +21,7 @@ DentRobot::DentRobot(){
   printf("Initialized\n");
 }
 void DentRobot::RobotInit(){
-  //SmartDashboard::PutNumber("CodeVersion",0.001);
+  //SmartDashboard::PutNumber("CodeVersion",1.0);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
