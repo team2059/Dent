@@ -1,14 +1,14 @@
-#ifndef OPENCOLLECTOR_H
-#define OPENCOLLECTOR_H
+#ifndef ROLLOUT_H
+#define ROLLOUT_H
 
 #include "Commands/Command.h"
 #include "../../CommandBase.h"
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
-class OpenCollector: public Command{
+class RollOut: public Command{
   public:
-    OpenCollector();
+    RollOut();
     void Initialize();
     void Execute();
     bool IsFinished();

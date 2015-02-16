@@ -9,6 +9,7 @@ EXEC=bin/FRCUserProgram
 CLEANSER=rm -r
 
 all : $(OBJECTS)
+	if [ ! -d bin ];then mkdir bin; fi
 	$(CC) -L$(WPILIB)/lib $(LDFLAGS) -o $(EXEC) $(OBJECTS) -lwpi
 
 %.o : %.cpp
@@ -17,10 +18,10 @@ all : $(OBJECTS)
 clean:
 	$(CLEANSER) $(OBJECTS) bin/FRCUserProgram
 
-deploy:
+deploy: all
 	@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) 'cat > /home/lvuser/FRCUserProgram2&&rm /home/lvuser/FRCUserProgram;mv /home/lvuser/FRCUserProgram2 /home/lvuser/FRCUserProgram&&. /etc/profile.d/natinst-path.sh;chmod a+x /home/lvuser/FRCUserProgram'
 
-debug:
+debug: all
 	@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) 'cat > /home/lvuser/FRCUserProgram2&&rm /home/lvuser/FRCUserProgram;mv /home/lvuser/FRCUserProgram2 /home/lvuser/FRCUserProgram&&. /etc/profile.d/natinst-path.sh;chmod a+x /home/lvuser/FRCUserProgram;/home/lvuser/run.sh'
 
 putkey:

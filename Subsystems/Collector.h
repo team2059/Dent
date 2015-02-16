@@ -5,14 +5,14 @@
 class Collector: public Subsystem
 {
   private:
-    CANTalon *windowMotorLeft, *windowMotorRight, *collectorMotorLeft, *collectorMotorBottom, *collectorMotorRight;
+    CANTalon *collectorMotorLeft, *collectorMotorBottom, *collectorMotorRamp, *collectorMotorRight;
+    AnalogInput *sonarAnalog;
+    DigitalOutput *sonarDigital;
   public:
     Collector();
     void InitDefaultCommand();
-    void MoveArms(double);
     void MoveRollers(double);
-    bool ArmSensor();
-    bool BoxCollected();
+    double GetSonarDistance();
 };
 #endif
 // vim: ts=2:sw=2:et

@@ -7,8 +7,11 @@
 #include "WPILib.h"
 
 class AutoDrive: public Command{
+  private:
+    double power;
   public:
-    AutoDrive();
+    AutoDrive(double);
+    AutoDrive(double, double);
     void Initialize();
     void Execute();
     bool IsFinished();

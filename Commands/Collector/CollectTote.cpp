@@ -1,22 +1,9 @@
 #include "CollectTote.h"
-CollectTote::CollectTote() : Command("CollectTote"){
-  Requires(DentRobot::collector);
-}
-void CollectTote::Initialize(){
-  printf("Initialized CollectTote\n");
-  SetTimeout(2.0);
-}
-void CollectTote::Execute(){
-  //TODO check this value to move the motors in the right direction
-  DentRobot::collector->MoveRollers(-(-DentRobot::oi->GetLeftStick()->GetRawAxis(3)+1.0)/2);
-}
-bool CollectTote::IsFinished(){
-  return DentRobot::collector->BoxCollected()||IsTimedOut();
-}
-void CollectTote::End(){
-  DentRobot::collector->MoveRollers(0.0);
-}
-void CollectTote::Interrupted(){
-  End();
+#include "../../DentRobot.h"
+#include "../Autonomous/AutoDrive.h"
+#include "RollIn.h"
+CollectTote::CollectTote(){
+  AddParallel(new AutoDrive(1.0, -0.75));
+  AddSequential(new RollIn());
 }
 // vim: ts=2:sw=2:et

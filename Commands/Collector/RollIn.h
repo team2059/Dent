@@ -1,14 +1,14 @@
-#ifndef CLOSECOLLECTOR_H
-#define CLOSECOLLECTOR_H
+#ifndef ROLLIN_H
+#define ROLLIN_H
 
 #include "Commands/Command.h"
 #include "../../CommandBase.h"
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
-class CloseCollector: public Command{
+class RollIn: public Command{
   public:
-    CloseCollector();
+    RollIn();
     void Initialize();
     void Execute();
     bool IsFinished();

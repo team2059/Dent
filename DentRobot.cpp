@@ -1,4 +1,5 @@
 #include "DentRobot.h"
+#include "OI.h"
 #include "Commands/Autonomous/Autonomous.h"
 OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
@@ -12,13 +13,15 @@ DentRobot::DentRobot(){
   drivetrain=new Drivetrain();
   elevator=new Elevator();
   binElevator=new BinElevator();
-  aut=new Autonomous();
+  aut=new Autonomous(0);
   CameraServer::GetInstance()->SetQuality(25);
   CameraServer::GetInstance()->StartAutomaticCapture("cam0");
-  printf("Initialized");
+  //SmartDashboard::PutNumber("Auto Wait Time", 1.0);
+  //SmartDashboard::PutNumber("Auto Sequence", 0);
+  printf("Initialized\n");
 }
 void DentRobot::RobotInit(){
-  SmartDashboard::PutNumber("CodeVersion",0.001);
+  //SmartDashboard::PutNumber("CodeVersion",1.0);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
@@ -32,12 +35,17 @@ void DentRobot::AutonomousPeriodic(){
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::TeleopInit(){
-  //if (aut != NULL){
-  //  aut->Cancel();
-  //}
+  if (aut != NULL){
+    aut->Cancel();
+  }
 }
 void DentRobot::TeleopPeriodic(){
   Scheduler::GetInstance()->Run();
+  // TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
+  if(elevator->GetUseEncoder()&&elevator->GetHeight()<=-1.0){
+    // Raise the elevator if it dips below elevatorTop
+    oi->raise->Start();
+  }
 }
 void DentRobot::TestPeriodic(){
 }
