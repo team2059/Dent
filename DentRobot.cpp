@@ -1,5 +1,6 @@
 #include "DentRobot.h"
 #include "OI.h"
+#include "RobotMap.h"
 #include "Commands/Autonomous/Autonomous.h"
 OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
