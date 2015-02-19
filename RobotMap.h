@@ -3,6 +3,8 @@
 
 #include "WPILib.h"
 
+#define CODE_VERSION 1.0
+
 // Elevator
 #define ELEVATOR_CAN 1
 #define ELEVATOR_BOTTOM_DIO 9
