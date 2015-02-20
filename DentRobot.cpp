@@ -19,7 +19,7 @@ DentRobot::DentRobot(){
   CameraServer::GetInstance()->StartAutomaticCapture("cam0");
   //SmartDashboard::PutNumber("Auto Wait Time", 1.0);
   //SmartDashboard::PutNumber("Auto Sequence", 0);
-  printf("Initialized\n");
+  printf("The robot is on\n");
 }
 void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("CodeVersion",CODE_VERSION);
