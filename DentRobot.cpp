@@ -33,6 +33,7 @@ void DentRobot::AutonomousInit(){
   }
 }
 void DentRobot::AutonomousPeriodic(){
+  printf("Running auto.\n");
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::TeleopInit(){
