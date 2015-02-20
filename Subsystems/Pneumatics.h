@@ -1,13 +1,13 @@
-#ifndef PNUEMATICS_H
-#define PNUEMATICS_H
+#ifndef PNEUMATICS_H
+#define PNEUMATICS_H
 
 #include "WPILib.h"
-class Pnuematics: public Subsystem
+class Pneumatics: public Subsystem
 {
   private:
     Solenoid *solenoid1, *solenoid2;
   public:
-    Pnuematics();
+    Pneumatics();
     void InitDefaultCommand();
     void SetOpen(bool);
 };

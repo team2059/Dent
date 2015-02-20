@@ -8,12 +8,14 @@ Drivetrain* DentRobot::drivetrain=NULL;
 Elevator* DentRobot::elevator=NULL;
 BinElevator* DentRobot::binElevator=NULL;
 CommandGroup* DentRobot::aut=NULL;
+Pneumatics* DentRobot::pneumatics=NULL;
 DentRobot::DentRobot(){
   oi=new OI();
   collector=new Collector();
   drivetrain=new Drivetrain();
   elevator=new Elevator();
   binElevator=new BinElevator();
+  pneumatics=new Pneumatics();
   aut=new Autonomous(0);
   CameraServer::GetInstance()->SetQuality(25);
   CameraServer::GetInstance()->StartAutomaticCapture("cam0");

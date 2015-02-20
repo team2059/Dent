@@ -6,6 +6,7 @@
 #include "Subsystems/Collector.h"
 #include "Subsystems/Elevator.h"
 #include "Subsystems/BinElevator.h"
+#include "Subsystems/Pneumatics.h"
 #include "OI.h"
 #include "WPILib.h"
 
@@ -18,6 +19,7 @@ class CommandBase: public Command {
     static Collector *collector;
     static Elevator *elevator;
     static BinElevator *binElevator;
+    static Pneumatics *pneumatics;
     static OI *oi;
 };
 #endif
