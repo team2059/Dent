@@ -1,13 +1,13 @@
-#include "Pnuematics.h"
+#include "Pneumatics.h"
 #include "../RobotMap.h"
 
-Pnuematics::Pnuematics() : Subsystem("Pnuematics"){
+Pneumatics::Pneumatics() : Subsystem("Pneumatics"){
   solenoid1 = new Solenoid(BINELEVATOR_SOLDENOID_ONE);
   solenoid2 = new Solenoid(BINELEVATOR_SOLDENOID_TWO);
 }
-void Pnuematics::InitDefaultCommand(){
+void Pneumatics::InitDefaultCommand(){
 }
-void Pnuematics::SetOpen(bool k){
+void Pneumatics::SetOpen(bool k){
   if(k){
     solenoid1->Set(true);
     solenoid2->Set(false);
