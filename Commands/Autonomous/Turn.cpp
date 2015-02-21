@@ -1,8 +1,9 @@
 #include "Turn.h"
 #include "../../DentRobot.h"
 // Drive for a short while then stop. Just for testing
-Turn::Turn() : Command("Turn"){
+Turn::Turn(int k) : Command("Turn"){
   Requires(DentRobot::drivetrain);
+  degrees=k;
   SetTimeout(0.85);
 }
 void Turn::Initialize(){
