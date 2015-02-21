@@ -22,7 +22,7 @@ Autonomous::Autonomous(int seq){
       break;
     case 1:
       // Drive forward a bit, turn around, collect tote then bin
-      AddSequential(new AutoDrive(0.5));
+      AddSequential(new AutoDrive(1.0,-0.75));
       AddSequential(new Turn(180));
       AddSequential(new RollIn(1.0));
       AddSequential(new Raise());
@@ -30,13 +30,13 @@ Autonomous::Autonomous(int seq){
     case 2:
       // Drive forward a bit, turn around, collect tote then bin
       AddParallel(new Raise());
-      AddParallel(new AutoDrive(0.5));
+      AddSequential(new AutoDrive(1.0,-0.75));
       AddSequential(new Turn(180));
       AddSequential(new RollIn(1.0));
       break;
     case 3:
       //Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(2.0));
+      AddSequential(new AutoDrive(1.0,-0.75));
       break;
     default:
       printf("Invalid seq: %d\n", seq);
