@@ -7,8 +7,10 @@
 #include "WPILib.h"
 
 class RollIn: public Command{
+  private:
+    double rawSpeed;
   public:
-    RollIn();
+    RollIn(double);
     void Initialize();
     void Execute();
     bool IsFinished();
