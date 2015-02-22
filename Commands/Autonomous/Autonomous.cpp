@@ -1,4 +1,5 @@
 #include "Autonomous.h"
+#include "Commands/CommandGroup.h"
 #include "../../DentRobot.h"
 #include "../Elevator/Raise.h"
 #include "../Elevator/Lower.h"

@@ -7,7 +7,9 @@
 #include "Commands/BinElevator/BinRaise.h"
 #include "Commands/BinElevator/BinCloseArms.h"
 #include "Commands/BinElevator/BinOpenArms.h"
-
+#include "Commands/Collector/CollectTote.h"
+#include "Commands/Collector/ReleaseTote.h"
+#include "Commands/Test/CheckRobot.h"
 OI::OI() {
   // Joysticks
   leftStick=new Joystick(0);
@@ -45,6 +47,10 @@ OI::OI() {
   right12->CancelWhenPressed(lower);
   right12->CancelWhenPressed(binRaise);
   right12->CancelWhenPressed(binLower);
+  // Basic motor test
+  CheckRobot* checkRobot=new CheckRobot();
+  JoystickButton *left7=new JoystickButton(leftStick, 7);
+  left7->WhenPressed(checkRobot);
 }
 Joystick* OI::GetRightStick(){
   return rightStick;
