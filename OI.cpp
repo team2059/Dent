@@ -7,8 +7,8 @@
 #include "Commands/BinElevator/BinRaise.h"
 #include "Commands/BinElevator/BinCloseArms.h"
 #include "Commands/BinElevator/BinOpenArms.h"
-#include "Commands/Collector/CollectTote.h"
-#include "Commands/Collector/ReleaseTote.h"
+#include "Commands/Autonomous/CollectTote.h"
+#include "Commands/Autonomous/ReleaseTote.h"
 #include "Commands/Test/CheckRobot.h"
 OI::OI() {
   // Joysticks

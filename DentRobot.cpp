@@ -16,7 +16,6 @@ DentRobot::DentRobot(){
   elevator=new Elevator();
   binElevator=new BinElevator();
   pneumatics=new Pneumatics();
-  aut=new Autonomous(0);
   CameraServer::GetInstance()->SetQuality(25);
   CameraServer::GetInstance()->StartAutomaticCapture("cam0");
   //SmartDashboard::PutNumber("Auto Wait Time", 1.0);
@@ -25,11 +24,30 @@ DentRobot::DentRobot(){
 }
 void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("CodeVersion",CODE_VERSION);
+  // Autonomous
+  // Sequence of autonomous command
+  SmartDashboard::PutNumber("Auto Sequence",1.0);
+  SmartDashboard::PutNumber("Auto Wait Time",1.0);
+  // If the robot will be picking up three totes in sequence 3
+  SmartDashboard::PutBoolean("Three totes", true);
+  // TODO: Calibrate the following two values
+  // Distance (in time) to auto zone
+  SmartDashboard::PutNumber("Auto Zone Distance", 1.0);
+  // Distance (in time) to auto tote (used in sequence 3)
+  SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
+
+  // Elevators
+  SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
+  SmartDashboard::PutBoolean("Bin Elevator Top", false);
+  SmartDashboard::PutBoolean("Elevator Bottom", false);
+  SmartDashboard::PutBoolean("Elevator Top", false);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::AutonomousInit(){
+  aut=new Autonomous(SmartDashboard::GetNumber("Auto Sequence"));
+  printf("Enabling Auto Sequence %f\n",SmartDashboard::GetNumber("Auto Sequence"));
   if(aut != NULL){
     aut->Start();
   }
