@@ -7,8 +7,16 @@ Dent was designed to have a fast mecanum drivetrain with ground clearance to tra
 - X-Axis - Drive forwards and backwards
 - Y-Axis - Strafes left and right
 - Z-Axis - Turns left and right
+- Throttle-Axis - Adjusts collector speed
 - Button 1 - Collects totes
 - Button 2 - Dispenses totes
 - Button 7 - Enable robot test
 
 #####Driver Secondary Joystick (USB 1)
+- Button 3 - Lowers bin elevator
+- Button 4 - Lowers tote elevator
+- Button 5 - Raises bin elevator
+- Button 6 - Raises tote elevator
+- Button 7 - Opens bin arms
+- Button 8 - Closes bin arms
+- Button 12 - Universal cancel button
