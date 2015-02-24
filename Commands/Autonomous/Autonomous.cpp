@@ -6,7 +6,7 @@
 #include "AutoDrive.h"
 #include "Turn.h"
 #include "../Collector/RollIn.h"
-#include "../Collector/CollectTote.h"
+#include "CollectTote.h"
 Autonomous::Autonomous(int seq){
   //SmartDashboard::GetNumber("Auto Wait Time");
   switch(seq){
@@ -14,30 +14,33 @@ Autonomous::Autonomous(int seq){
       // Just for testing
       AddSequential(new CollectTote());
       AddSequential(new Turn(90));
-      //AddSequential(new Raise());
-      //AddSequential(new Lower());
-      //AddSequential(new Turn());
-      //AddParallel(new AutoDrive(0.5));
-      //AddSequential(new RollIn());
-      //AddSequential(new Turn());
       break;
     case 1:
-      // Drive forward a bit, turn around, collect tote then bin
-      AddSequential(new AutoDrive(1.0,-0.75));
-      AddSequential(new Turn(180));
-      AddSequential(new RollIn(1.0));
-      AddSequential(new Raise());
+      // Wait a desigated value, drive to Auto Zone (TM)
+      Wait(SmartDashboard::GetNumber("Auto Wait Time"));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
       break;
     case 2:
-      // Drive forward a bit, turn around, collect tote then bin
-      AddParallel(new Raise());
-      AddSequential(new AutoDrive(1.0,-0.75));
-      AddSequential(new Turn(180));
-      AddSequential(new RollIn(1.0));
+      // Get one tote and go to auto
+      AddSequential(new CollectTote());
+      AddSequential(new Turn(90));
       break;
     case 3:
-      //Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(1.0,-0.75));
+      // Collect three totes, drive to Auto Zone (TM)
+      printf("Waiting: %f\n",SmartDashboard::GetNumber("Auto Wait Time"));
+      Wait(SmartDashboard::GetNumber("Auto Wait Time"));
+      printf("Done");
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
+      AddSequential(new CollectTote());
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
+      AddSequential(new CollectTote());
+      printf("Three totes?: %d\n",SmartDashboard::GetBoolean("Three totes"));
+      if(SmartDashboard::GetBoolean("Three totes")){
+        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
+        AddSequential(new CollectTote());
+      }
+      AddSequential(new Turn(90));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
       break;
     default:
       printf("Invalid seq: %d\n", seq);

@@ -1,7 +1,7 @@
 #include "ReleaseTote.h"
 #include "../../DentRobot.h"
-#include "RollOut.h"
-#include "../Autonomous/AutoDrive.h"
+#include "AutoDrive.h"
+#include "../Collector/RollOut.h"
 ReleaseTote::ReleaseTote(){
   AddParallel(new RollOut());
   AddParallel(new AutoDrive(0.5, 0.75));
