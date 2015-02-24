@@ -7,6 +7,7 @@
 #include "Turn.h"
 #include "../Collector/RollIn.h"
 #include "CollectTote.h"
+#include "ReleaseTote.h"
 Autonomous::Autonomous(int seq){
   //SmartDashboard::GetNumber("Auto Wait Time");
   switch(seq){
@@ -21,9 +22,10 @@ Autonomous::Autonomous(int seq){
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
       break;
     case 2:
-      // Get one tote and go to auto
+      // Get one tote and go to Auto Zone (TM)
       AddSequential(new CollectTote());
       AddSequential(new Turn(90));
+      AddSequential(new ReleaseTote());
       break;
     case 3:
       // Collect three totes, drive to Auto Zone (TM)
@@ -41,6 +43,7 @@ Autonomous::Autonomous(int seq){
       }
       AddSequential(new Turn(90));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
+      AddSequential(new ReleaseTote());
       break;
     default:
       printf("Invalid seq: %d\n", seq);
