@@ -7,8 +7,8 @@ Pneumatics::Pneumatics() : Subsystem("Pneumatics"){
 }
 void Pneumatics::InitDefaultCommand(){
 }
-void Pneumatics::SetOpen(bool k){
-  if(k){
+void Pneumatics::SetOpen(bool state){
+  if(state){
     solenoid1->Set(true);
     solenoid2->Set(false);
   }else{
