@@ -16,8 +16,8 @@ DentRobot::DentRobot(){
   elevator=new Elevator();
   binElevator=new BinElevator();
   pneumatics=new Pneumatics();
-  CameraServer::GetInstance()->SetQuality(25);
-  CameraServer::GetInstance()->StartAutomaticCapture("cam0");
+  //CameraServer::GetInstance()->SetQuality(25);
+  //CameraServer::GetInstance()->StartAutomaticCapture("cam0");
   //SmartDashboard::PutNumber("Auto Wait Time", 1.0);
   //SmartDashboard::PutNumber("Auto Sequence", 0);
   printf("The robot is on\n");
@@ -48,9 +48,9 @@ void DentRobot::DisabledPeriodic(){
 void DentRobot::AutonomousInit(){
   aut=new Autonomous(SmartDashboard::GetNumber("Auto Sequence"));
   printf("Enabling Auto Sequence %f\n",SmartDashboard::GetNumber("Auto Sequence"));
-  if(aut != NULL){
-    aut->Start();
-  }
+  //if(aut != NULL){
+  //  aut->Start();
+  //}
 }
 void DentRobot::AutonomousPeriodic(){
   printf("Running auto.\n");
