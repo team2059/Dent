@@ -1,16 +1,17 @@
 #include "AutoDrive.h"
 #include "../../DentRobot.h"
 // Drive for a short while then stop. Just for testing
-AutoDrive::AutoDrive(double duration, double p=-0.75) : Command("AutoDrive"){
+AutoDrive::AutoDrive(double duration, double xtmp=-0.75, double ytmp=0) : Command("AutoDrive"){
   Requires(DentRobot::drivetrain);
   SetTimeout(duration);
-  power=p;
+  speed=xtmp;
+  strafe=ytmp;
 }
 void AutoDrive::Initialize(){
 }
 void AutoDrive::Execute(){
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
-  DentRobot::drivetrain->DriveMecanum(0.0,power,0.0,0.9,0.0);
+  DentRobot::drivetrain->DriveMecanum(strafe,speed,0.0,0.9,0.0);
 }
 bool AutoDrive::IsFinished(){
   return IsTimedOut();

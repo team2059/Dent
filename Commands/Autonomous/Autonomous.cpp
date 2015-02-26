@@ -13,13 +13,12 @@ Autonomous::Autonomous(int seq){
   switch(seq){
     case 0:
       // Just for testing
-      AddSequential(new CollectTote());
-      AddSequential(new Turn(90));
+      AddSequential(new AutoDrive(.5,0,.25));
       break;
     case 1:
       // Wait a desigated value, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75,0));
       break;
     case 2:
       // Get one tote and go to Auto Zone (TM)
@@ -32,22 +31,22 @@ Autonomous::Autonomous(int seq){
       printf("Waiting: %f\n",SmartDashboard::GetNumber("Auto Wait Time"));
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
       printf("Done");
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75,0));
       AddSequential(new CollectTote());
       AddSequential(new Raise());
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75,0));
       AddSequential(new CollectTote());
       AddSequential(new Lower());
       AddSequential(new Raise());
       printf("Three totes?: %d\n",SmartDashboard::GetBoolean("Three totes"));
       if(SmartDashboard::GetBoolean("Three totes")){
-        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
+        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75,0));
         AddSequential(new CollectTote());
         AddSequential(new Lower());
         AddSequential(new Raise());
       }
       AddSequential(new Turn(90));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75,0));
       AddSequential(new ReleaseTote());
       break;
     default:
