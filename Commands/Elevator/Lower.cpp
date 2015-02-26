@@ -4,7 +4,7 @@
 Lower::Lower() : Command("Lower"){
 }
 void Lower::Initialize(){
-  SetTimeout(2.5);
+  SetTimeout(3.0);
 }
 void Lower::Execute(){
   DentRobot::elevator->Run(-1.0);
