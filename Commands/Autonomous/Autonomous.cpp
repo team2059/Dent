@@ -34,12 +34,17 @@ Autonomous::Autonomous(int seq){
       printf("Done");
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
       AddSequential(new CollectTote());
+      AddSequential(new Raise());
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
       AddSequential(new CollectTote());
+      AddSequential(new Lower());
+      AddSequential(new Raise());
       printf("Three totes?: %d\n",SmartDashboard::GetBoolean("Three totes"));
       if(SmartDashboard::GetBoolean("Three totes")){
         AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), -0.75));
         AddSequential(new CollectTote());
+        AddSequential(new Lower());
+        AddSequential(new Raise());
       }
       AddSequential(new Turn(90));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75));
