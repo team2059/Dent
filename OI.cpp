@@ -31,16 +31,16 @@ OI::OI() {
   // BinElevator
   JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right5=new JoystickButton(rightStick, 5);
-  JoystickButton *right7=new JoystickButton(rightStick, 7);
-  JoystickButton *right8=new JoystickButton(rightStick, 8);
+  //JoystickButton *right7=new JoystickButton(rightStick, 7);
+  //JoystickButton *right8=new JoystickButton(rightStick, 8);
+  //right7->WhenPressed(new BinOpenArms());
+  //right8->WhenPressed(new BinCloseArms());
   binRaise=new BinRaise();
   binLower=new BinLower();
   right3->WhenPressed(binLower);
   right3->CancelWhenPressed(binRaise);
   right5->WhenPressed(binRaise);
   right5->CancelWhenPressed(binLower);
-  right7->WhenPressed(new BinOpenArms());
-  right8->WhenPressed(new BinCloseArms());
   // Cancel
   JoystickButton *right12=new JoystickButton(rightStick, 12);
   right12->CancelWhenPressed(raise);
