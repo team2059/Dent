@@ -35,8 +35,8 @@ OI::OI() {
   //JoystickButton *right8=new JoystickButton(rightStick, 8);
   //right7->WhenPressed(new BinOpenArms());
   //right8->WhenPressed(new BinCloseArms());
-  binRaise=new BinRaise();
-  binLower=new BinLower();
+  binRaise=new BinRaise(3.0);
+  binLower=new BinLower(2.0);
   right3->WhenPressed(binLower);
   right3->CancelWhenPressed(binRaise);
   right5->WhenPressed(binRaise);
