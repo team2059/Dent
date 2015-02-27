@@ -24,7 +24,9 @@ Autonomous::Autonomous(int seq){
       // Get one tote and go to Auto Zone (TM)
       AddSequential(new CollectTote());
       AddSequential(new Turn(90));
+      AddSequential(new AutoDrive(2.0, 1.0, 0.0));
       AddSequential(new ReleaseTote());
+      AddSequential(new AutoDrive(0.5, -1.0, 0.0));
       break;
     case 3:
       // Collect three totes, drive to Auto Zone (TM)
