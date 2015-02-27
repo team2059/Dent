@@ -3,6 +3,8 @@
 #include "../../DentRobot.h"
 #include "../Elevator/Raise.h"
 #include "../Elevator/Lower.h"
+#include "../BinElevator/BinRaise.h"
+#include "../BinElevator/BinLower.h"
 #include "AutoDrive.h"
 #include "Turn.h"
 #include "../Collector/RollIn.h"
@@ -18,15 +20,15 @@ Autonomous::Autonomous(int seq){
     case 1:
       // Wait a desigated value, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -0.75,0));
+      AddSequential(new BinRaise(1.2));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0,1));
+      AddSequential(new BinLower(.9));
+      //AddSequential(new AutoDrive(1.2, -0.75,0));
       break;
     case 2:
-      // Get one tote and go to Auto Zone (TM)
-      AddSequential(new CollectTote());
-      AddSequential(new Turn(90));
-      AddSequential(new AutoDrive(2.0, 1.0, 0.0));
-      AddSequential(new ReleaseTote());
-      AddSequential(new AutoDrive(0.5, -1.0, 0.0));
+      // Wait a desigated value, drive to Auto Zone (TM)
+      Wait(SmartDashboard::GetNumber("Auto Wait Time"));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0,1));
       break;
     case 3:
       // Collect three totes, drive to Auto Zone (TM)

@@ -5,8 +5,10 @@
 #include "WPILib.h"
 
 class BinLower: public Command{
+  private:
+    float timeout;
   public:
-    BinLower();
+    BinLower(float);
     void Initialize();
     void Execute();
     bool IsFinished();
