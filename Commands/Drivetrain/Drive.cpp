@@ -6,11 +6,11 @@ Drive::Drive() : Command("Drive"){
 void Drive::Initialize(){
 }
 void Drive::Execute(){
-  double x,y,z;
-  //Code to lock the x axis when not holding button 1
+  double x, y, z;
   x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
   z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
   y = DentRobot::oi->GetLeftStick()->GetRawAxis(1);
+  //Code to lock the x axis when not holding button 1
   //if (DentRobot::oi->GetLeftStick()->GetRawButton(1)){
   //  x=0;
   //}
@@ -18,7 +18,7 @@ void Drive::Execute(){
   //  y=0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
-  DentRobot::drivetrain->DriveMecanum(x,y,z,0.9,0);
+  DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9, 0.0);
 }
 bool Drive::IsFinished(){
   return IsTimedOut();
