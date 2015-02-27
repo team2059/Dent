@@ -26,14 +26,14 @@ double Elevator::GetHeight(){
   return elevatorEncoder->Get();
 }
 bool Elevator::GetElevatorBottom(){
-  SmartDashboard::PutBoolean("Elevator Bottom", elevatorBottom->Get());
+  SmartDashboard::PutBoolean("Elevator Bottom", !elevatorBottom->Get());
   return elevatorBottom->Get();
 }
 bool Elevator::GetElevatorMiddle(){
   return elevatorMiddle->Get();
 }
 bool Elevator::GetElevatorTop(){
-  SmartDashboard::PutBoolean("Elevator Top", elevatorTop->Get());
+  SmartDashboard::PutBoolean("Elevator Top", !elevatorTop->Get());
   return elevatorTop->Get();
 }
 void Elevator::SetUseEncoder(bool param){

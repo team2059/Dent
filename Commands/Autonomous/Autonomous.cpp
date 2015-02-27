@@ -20,15 +20,16 @@ Autonomous::Autonomous(int seq){
     case 1:
       // Wait a desigated value, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -.8,0));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.8,0.0));
       break;
     case 2:
       // Wait a desigated value, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
+      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       AddSequential(new BinRaise(1.2));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0,1));
-      AddSequential(new BinLower(.9));
-      //AddSequential(new AutoDrive(1.2, -0.75,0));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"),0.75,0.0));
+      //AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0,-1.0));
+      AddSequential(new BinLower(1.0));
       break;
     case 3:
       // Collect three totes, drive to Auto Zone (TM)
