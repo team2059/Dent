@@ -18,8 +18,6 @@ DentRobot::DentRobot(){
   pneumatics=new Pneumatics();
   //CameraServer::GetInstance()->SetQuality(25);
   //CameraServer::GetInstance()->StartAutomaticCapture("cam0");
-  //SmartDashboard::PutNumber("Auto Wait Time", 1.0);
-  //SmartDashboard::PutNumber("Auto Sequence", 0);
   printf("The robot is on\n");
 }
 void DentRobot::RobotInit(){
@@ -35,7 +33,7 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("Auto Zone Distance", 2.8);
   // Distance (in time) to auto tote (used in sequence 3)
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
-  SmartDashboard::PutNumber("TurnAmount", 2);
+  SmartDashboard::PutNumber("TurnAmount", 2.0);
 
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);

@@ -21,14 +21,14 @@ Autonomous::Autonomous(int seq){
     case 1:
       // Drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, 0.8));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.8));
       break;
     case 2:
       // Collect a tote, turn, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       AddSequential(new BinRaise(1.2));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, 0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
       AddSequential(new BinLower(1.0));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
@@ -37,22 +37,22 @@ Autonomous::Autonomous(int seq){
       printf("Waiting: %f\n", SmartDashboard::GetNumber("Auto Wait Time"));
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
       printf("Done");
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, 0.75));
       AddSequential(new CollectTote());
       AddSequential(new Raise());
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, 0.75));
       AddSequential(new CollectTote());
       AddSequential(new Lower());
       AddSequential(new Raise());
       printf("Three totes?: %d\n", SmartDashboard::GetBoolean("Three totes"));
       if(SmartDashboard::GetBoolean("Three totes")){
-        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, -0.75));
+        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, 0.75));
         AddSequential(new CollectTote());
         AddSequential(new Lower());
         AddSequential(new Raise());
       }
       AddSequential(new Turn(90));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0, -0.75));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0, 0.75));
       AddSequential(new ReleaseTote());
       break;
     default:
