@@ -30,6 +30,7 @@ Autonomous::Autonomous(int seq){
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"),0.75,0.0));
       //AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0,-1.0));
       AddSequential(new BinLower(1.0));
+      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 3:
       // Collect three totes, drive to Auto Zone (TM)
