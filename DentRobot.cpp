@@ -48,9 +48,9 @@ void DentRobot::DisabledPeriodic(){
 void DentRobot::AutonomousInit(){
   aut=new Autonomous(SmartDashboard::GetNumber("Auto Sequence"));
   printf("Enabling Auto Sequence %f\n",SmartDashboard::GetNumber("Auto Sequence"));
-  //if(aut != NULL){
-  //  aut->Start();
-  //}
+  if(aut != NULL){
+    aut->Start();
+  }
 }
 void DentRobot::AutonomousPeriodic(){
   printf("Running auto.\n");
