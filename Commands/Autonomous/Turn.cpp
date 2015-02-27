@@ -9,7 +9,7 @@ void Turn::Initialize(){
 }
 void Turn::Execute(){
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
-  DentRobot::drivetrain->DriveMecanum(0.0,0.0,0.65,0.9,0.0);
+  DentRobot::drivetrain->DriveMecanum(0.0,0.0,0.6,0.9,0.0);
 }
 bool Turn::IsFinished(){
   return IsTimedOut();

@@ -32,10 +32,10 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutBoolean("Three totes", true);
   // TODO: Calibrate the following two values
   // Distance (in time) to auto zone
-  SmartDashboard::PutNumber("Auto Zone Distance", 3.0);
+  SmartDashboard::PutNumber("Auto Zone Distance", 2.8);
   // Distance (in time) to auto tote (used in sequence 3)
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
-  SmartDashboard::PutNumber("TurnAmount",1.9);
+  SmartDashboard::PutNumber("TurnAmount",2);
 
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
