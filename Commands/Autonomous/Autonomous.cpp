@@ -28,7 +28,7 @@ Autonomous::Autonomous(int seq){
     case 2:
       // Wait a desigated value, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0,1));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), -.8,0));
       break;
     case 3:
       // Collect three totes, drive to Auto Zone (TM)

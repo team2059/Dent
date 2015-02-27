@@ -32,7 +32,7 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutBoolean("Three totes", true);
   // TODO: Calibrate the following two values
   // Distance (in time) to auto zone
-  SmartDashboard::PutNumber("Auto Zone Distance", 5.7);
+  SmartDashboard::PutNumber("Auto Zone Distance", 4.2);
   // Distance (in time) to auto tote (used in sequence 3)
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
 
