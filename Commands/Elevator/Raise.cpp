@@ -4,7 +4,7 @@
 Raise::Raise() : Command("Raise"){
 }
 void Raise::Initialize(){
-  SetTimeout(3.0);
+  SetTimeout(3.5);
 }
 void Raise::Execute(){
   DentRobot::elevator->Run(1.0);

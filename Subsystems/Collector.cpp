@@ -15,7 +15,7 @@ void Collector::MoveRollers(double a){
   collectorMotorBottom->Set(-a);
   collectorMotorRamp->Set(a);
   collectorMotorRight->Set(-a);
-  printf("Roller power: %f\n",a);
+  printf("Roller power: %f\n", a);
 }
 double Collector::GetSonarDistance(){
   return sonarAnalog->GetAverageVoltage();

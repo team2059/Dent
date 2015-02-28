@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 Elevator::Elevator(){
   motor=new CANTalon(ELEVATOR_CAN);
-  elevatorEncoder=new Encoder(ELEVATOR_ENCODERA,ELEVATOR_ENCODERB,false);
+  elevatorEncoder=new Encoder(ELEVATOR_ENCODERA, ELEVATOR_ENCODERB, false);
   elevatorBottom=new DigitalInput(ELEVATOR_BOTTOM_DIO);
   elevatorMiddle=new DigitalInput(ELEVATOR_MIDDLE_DIO);
   elevatorTop=new DigitalInput(ELEVATOR_TOP_DIO);
@@ -26,12 +26,14 @@ double Elevator::GetHeight(){
   return elevatorEncoder->Get();
 }
 bool Elevator::GetElevatorBottom(){
+  SmartDashboard::PutBoolean("Elevator Bottom", !elevatorBottom->Get());
   return elevatorBottom->Get();
 }
 bool Elevator::GetElevatorMiddle(){
   return elevatorMiddle->Get();
 }
 bool Elevator::GetElevatorTop(){
+  SmartDashboard::PutBoolean("Elevator Top", !elevatorTop->Get());
   return elevatorTop->Get();
 }
 void Elevator::SetUseEncoder(bool param){

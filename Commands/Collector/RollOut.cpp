@@ -8,7 +8,7 @@ void RollOut::Initialize(){
 void RollOut::Execute(){
   //TODO check this value to move the motors in the right direction
   // Devide by 2 twice because this speed should be half the collector speed
-  DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle());
+  DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle() * 0.8);
 }
 bool RollOut::IsFinished(){
   return IsTimedOut();

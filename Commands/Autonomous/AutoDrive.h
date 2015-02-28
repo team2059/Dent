@@ -8,10 +8,10 @@
 
 class AutoDrive: public Command{
   private:
-    double power;
+    double x, y;
   public:
     AutoDrive(double);
-    AutoDrive(double, double);
+    AutoDrive(double, double, double);
     void Initialize();
     void Execute();
     bool IsFinished();

@@ -1,10 +1,11 @@
 #include "BinRaise.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinRaise::BinRaise() : Command("BinRaise"){
+BinRaise::BinRaise(float t) : Command("BinRaise"){
+  timeout=t;
 }
 void BinRaise::Initialize(){
-  SetTimeout(3.0);
+  SetTimeout(timeout);
 }
 void BinRaise::Execute(){
   DentRobot::binElevator->Run(1.0);

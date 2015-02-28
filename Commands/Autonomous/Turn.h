@@ -7,8 +7,10 @@
 #include "WPILib.h"
 
 class Turn: public Command{
+  private:
+    int degrees;
   public:
-    Turn();
+    Turn(int);
     void Initialize();
     void Execute();
     bool IsFinished();

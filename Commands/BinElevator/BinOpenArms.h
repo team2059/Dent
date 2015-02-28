@@ -1,16 +1,12 @@
-#ifndef ROLLIN_H
-#define ROLLIN_H
+#ifndef BINOPENARMS_H
+#define BINOPENARMS_H
 
 #include "Commands/Command.h"
-#include "../../CommandBase.h"
-#include "../../DentRobot.h"
 #include "WPILib.h"
 
-class RollIn: public Command{
-  private:
-    double rawSpeed;
+class BinOpenArms: public Command{
   public:
-    RollIn(double);
+    BinOpenArms();
     void Initialize();
     void Execute();
     bool IsFinished();
