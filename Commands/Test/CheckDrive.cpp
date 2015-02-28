@@ -13,16 +13,16 @@ void CheckDrive::Initialize(){
 void CheckDrive::Execute(){
   switch(motor){
     case DRIVE_FRONT_LEFT_CAN:
-      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->FRONTLEFT,1);
+      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->FRONTLEFT, 1);
       break;
     case DRIVE_FRONT_RIGHT_CAN:
-      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->FRONTRIGHT,1);
+      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->FRONTRIGHT, 1);
       break;
     case DRIVE_BACK_LEFT_CAN:
-      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->BACKLEFT,1);
+      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->BACKLEFT, 1);
       break;
     case DRIVE_BACK_RIGHT_CAN:
-      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->BACKRIGHT,1);
+      DentRobot::drivetrain->TestMotor(DentRobot::drivetrain->BACKRIGHT, 1);
       break;
     default:
       break;
