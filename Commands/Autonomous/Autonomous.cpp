@@ -51,7 +51,7 @@ Autonomous::Autonomous(int seq){
         AddSequential(new Lower());
         AddSequential(new Raise());
       }
-      AddSequential(new Turn(90));
+      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0, 0.75));
       AddSequential(new ReleaseTote());
       break;
