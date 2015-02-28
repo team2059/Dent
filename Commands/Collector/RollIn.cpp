@@ -11,7 +11,7 @@ void RollIn::Execute(){
   if(cvt>=1.0){
     DentRobot::collector->MoveRollers(1.0);
   }else{
-    DentRobot::collector->MoveRollers(cvt);
+    DentRobot::collector->MoveRollers(cvt*1.5);
   }
 }
 bool RollIn::IsFinished(){
