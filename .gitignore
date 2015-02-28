@@ -2,3 +2,7 @@
 Debug
 bin
 wpilib
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+vision
