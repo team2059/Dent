@@ -12,56 +12,67 @@
 #include "Commands/Test/CheckRobot.h"
 OI::OI() {
   // Joysticks
-  leftStick=new Joystick(0);
+  leftController=new Joystick(0);
   rightStick=new Joystick(1);
-  // Collector
-  JoystickButton *left1=new JoystickButton(leftStick, 1);
-  JoystickButton *left2=new JoystickButton(leftStick, 2);
-  left1->WhileHeld(new RollIn(GetLeftThrottle()));
-  left2->WhileHeld(new RollOut());
-  // Elevator
-  raise=new Raise();
-  lower=new Lower();
-  JoystickButton *right4=new JoystickButton(rightStick, 4);
-  JoystickButton *right6=new JoystickButton(rightStick, 6);
-  right4->WhenPressed(lower);
-  right4->CancelWhenPressed(raise);
-  right6->WhenPressed(raise);
-  right6->CancelWhenPressed(lower);
-  // BinElevator
-  JoystickButton *right3=new JoystickButton(rightStick, 3);
-  JoystickButton *right5=new JoystickButton(rightStick, 5);
-  //JoystickButton *right7=new JoystickButton(rightStick, 7);
-  //JoystickButton *right8=new JoystickButton(rightStick, 8);
-  //right7->WhenPressed(new BinOpenArms());
-  //right8->WhenPressed(new BinCloseArms());
-  binRaise=new BinRaise(3.0);
-  binLower=new BinLower(2.0);
-  right3->WhenPressed(binLower);
-  right3->CancelWhenPressed(binRaise);
-  right5->WhenPressed(binRaise);
-  right5->CancelWhenPressed(binLower);
-  // Cancel
-  JoystickButton *right12=new JoystickButton(rightStick, 12);
-  right12->CancelWhenPressed(raise);
-  right12->CancelWhenPressed(lower);
-  right12->CancelWhenPressed(binRaise);
-  right12->CancelWhenPressed(binLower);
-  // Basic motor test
-  CheckRobot* checkRobot=new CheckRobot();
-  JoystickButton *left7=new JoystickButton(leftStick, 7);
-  left7->WhenPressed(checkRobot);
+  // Main buttons
+  leftA = new JoystickButton(leftController, 1);
+  leftB = new JoystickButton(leftController, 2);
+  leftX = new JoystickButton(leftController, 3);
+  leftY = new JoystickButton(leftController, 4);
+  // Left and right uttons
+  leftLB = new JoystickButton(leftController, 5);
+  leftRB = new JoystickButton(leftController, 6);
+  leftBack = new JoystickButton(leftController, 7);
+  leftStart = new JoystickButton(leftController, 8);
+  // Left, right stick press 
+  leftLPress = new JoystickButton(leftController, 9);
+  leftRPress = new JoystickButton(leftController, 10);
 }
-Joystick* OI::GetRightStick(){
-  return rightStick;
+float OI::GetLeftAxis(std::string stick, std::string axis){
+  if(stick=="left"){
+    if(axis=="x"){
+      return leftController->GetX();
+    }else if(axis=="y"){
+      return -leftController->GetY();
+    }else if(axis=="trigger"){
+      //TODO: Figure out what axis this is
+      return -4;
+    }
+  }else if(stick=="right"){
+    if(axis=="x"){
+      return leftController->GetTwist();
+    }else if(axis=="y"){
+      return -leftController->GetRawAxis(4);
+    }else if(axis=="trigger"){
+      //TODO: Figure out what axis this is
+      return -4;
+    }
+  }
+  //TODO: Fix this placeholder for NULL 
+  return -5;
 }
-Joystick* OI::GetLeftStick(){
-  return leftStick;
-}
-double OI::GetRightThrottle(){
-  return (-rightStick->GetRawAxis(3)+1.0)/2;
-}
-double OI::GetLeftThrottle(){
-  return (-leftStick->GetRawAxis(3)+1.0)/2;
+bool OI::GetLeftButton(std::string button){
+    if(button=="a"){
+      return leftA->Get();
+    }else if(button=="b"){
+      return leftB->Get();
+    }else if(button=="x"){
+      return leftX->Get();
+    }else if(button=="y"){
+      return leftY->Get();
+    }else if(button=="lb"){
+      return leftLB->Get();
+    }else if(button=="rb"){
+      return leftRB->Get();
+    }else if(button=="back"){
+      return leftBack->Get();
+    }else if(button=="start"){
+      return leftStart->Get();
+    }else if(button=="lpress"){
+      return leftLPress->Get();
+    }else if(button=="rpress"){
+      return leftRPress->Get();
+    }
+    return false;
 }
 // vim: ts=2:sw=2:et

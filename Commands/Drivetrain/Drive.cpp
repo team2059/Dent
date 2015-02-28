@@ -7,9 +7,9 @@ void Drive::Initialize(){
 }
 void Drive::Execute(){
   double x, y, z;
-  x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
-  y = -DentRobot::oi->GetLeftStick()->GetRawAxis(1);
-  z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
+  x = DentRobot::oi->GetLeftAxis("left", "x");
+  y = DentRobot::oi->GetLeftAxis("left", "y");
+  z = DentRobot::oi->GetLeftAxis("right", "x");
   //Code to lock the x axis when not holding button 1
   //if (DentRobot::oi->GetLeftStick()->GetRawButton(1)){
   //  x=0;

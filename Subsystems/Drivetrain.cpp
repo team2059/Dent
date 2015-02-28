@@ -15,7 +15,8 @@ void Drivetrain::DriveMecanum(float x, float y, float z, float sensitivity, floa
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
   double correctZ = -z * 0.5;
-  if (DentRobot::oi->GetLeftStick()->GetRawButton(9)){
+  // If they're holding the right button, slow down
+  if (DentRobot::oi->GetLeftButton("rb")){
     correctY /= SmartDashboard::GetNumber("DriveSpeedReductionThresh");
   }
   rightFront->Set((-correctX + correctY - correctZ));

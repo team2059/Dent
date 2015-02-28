@@ -6,9 +6,10 @@ void RollOut::Initialize(){
   SetTimeout(2.0);
 }
 void RollOut::Execute(){
-  //TODO check this value to move the motors in the right direction
-  // Devide by 2 twice because this speed should be half the collector speed
-  DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle() * 0.8);
+  //TODO: figure out how to implement this with an Xbox controller
+  //DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle() * 0.8);
+  //Will just move at .8 power for now
+  DentRobot::collector->MoveRollers(-0.8);
 }
 bool RollOut::IsFinished(){
   return IsTimedOut();
