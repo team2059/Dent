@@ -42,6 +42,8 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutBoolean("Bin Elevator Top", false);
   SmartDashboard::PutBoolean("Elevator Bottom", false);
   SmartDashboard::PutBoolean("Elevator Top", false);
+  //Drive speed
+  SmartDashboard::PutNumber("DriveSpeedReductionThresh",2);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
