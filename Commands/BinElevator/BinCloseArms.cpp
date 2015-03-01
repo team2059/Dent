@@ -4,11 +4,10 @@
 BinCloseArms::BinCloseArms() : Command("BinCloseArms"){
 }
 void BinCloseArms::Initialize(){
-  //Should never need to use this
   SetTimeout(0.5);
 }
 void BinCloseArms::Execute(){
-  DentRobot::pneumatics->SetOpen(true);
+  DentRobot::pneumatics->SetOpen(false);
 }
 bool BinCloseArms::IsFinished(){
   return true;
