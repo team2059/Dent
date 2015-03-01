@@ -10,7 +10,7 @@ class Turn: public Command{
   private:
     int degrees;
   public:
-    Turn(int);
+    Turn(double);
     void Initialize();
     void Execute();
     bool IsFinished();
