@@ -1,7 +1,7 @@
 #include "BinRaise.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinRaise::BinRaise(float t) : Command("BinRaise"){
+BinRaise::BinRaise(double t) : Command("BinRaise"){
   timeout=t;
 }
 void BinRaise::Initialize(){
