@@ -13,7 +13,8 @@
  */
 class AutoDrive: public Command{
   private:
-    double x, y;
+    double x, //<! The x value of the simulated joystick value
+           y; //<! The y value of the simulated joystick value
   public:
     /**
      * @brief Constructs AutoDrive

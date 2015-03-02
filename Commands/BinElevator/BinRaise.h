@@ -9,7 +9,7 @@
  */
 class BinRaise: public Command{
   private:
-    float timeout;
+    float timeout; //<! The timeout
   public:
     /**
      * @brief Constructs BinRaise

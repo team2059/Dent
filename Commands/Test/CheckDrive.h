@@ -11,7 +11,7 @@
  */
 class CheckDrive: public CommandGroup{
   private:
-    int motor;
+    int motor; //<! TODO
   public:
     /**
      * @brief TODO

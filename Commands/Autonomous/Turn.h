@@ -13,7 +13,6 @@
  */
 class Turn: public Command{
   private:
-    int degrees;
   public:
     /**
      * @brief Constructs Turn
