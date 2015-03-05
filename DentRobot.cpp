@@ -24,16 +24,16 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);
   // Autonomous
   // Sequence of autonomous command
-  SmartDashboard::PutNumber("Auto Sequence", 2.0);
+  SmartDashboard::PutNumber("Auto Sequence", 1.0);
   SmartDashboard::PutNumber("Auto Wait Time", 3.0);
   // If the robot will be picking up three totes in sequence 3
   SmartDashboard::PutBoolean("Three totes", true);
   // TODO: Calibrate the following two values
   // Distance (in time) to auto zone
-  SmartDashboard::PutNumber("Auto Zone Distance", 2.8);
+  SmartDashboard::PutNumber("Auto Zone Distance", 2.1);
   // Distance (in time) to auto tote (used in sequence 3)
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
-  SmartDashboard::PutNumber("TurnAmount", 2.0);
+  SmartDashboard::PutNumber("TurnAmount", 1.8);
 
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);

@@ -22,6 +22,7 @@ Autonomous::Autonomous(int seq){
       // Drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.8));
+      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 2:
       // Collect a tote, turn, drive to Auto Zone (TM)
