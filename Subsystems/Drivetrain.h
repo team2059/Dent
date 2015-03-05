@@ -15,9 +15,9 @@ class Drivetrain: public Subsystem{
       BACKLEFT
     };
     void InitDefaultCommand();
-    void DriveMecanum(float, float, float, float, float);
-    void DriveArcade(float, float);
-    void TestMotor(e_motors, float);
+    void DriveMecanum(double, double, double, double, double);
+    void DriveArcade(double, double);
+    void TestMotor(e_motors, double);
 };
 #endif
 // vim: ts=2:sw=2:et
