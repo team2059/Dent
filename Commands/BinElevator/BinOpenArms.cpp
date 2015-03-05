@@ -4,7 +4,6 @@
 BinOpenArms::BinOpenArms() : Command("BinOpenArms"){
 }
 void BinOpenArms::Initialize(){
-  //Should never need to use this
   SetTimeout(0.5);
 }
 void BinOpenArms::Execute(){

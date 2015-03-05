@@ -11,7 +11,7 @@ Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
 void Drivetrain::InitDefaultCommand(){
   SetDefaultCommand(new Drive());
 }
-void Drivetrain::DriveMecanum(float x, float y, float z, float sensitivity, float gyro){
+void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, double gyro){
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
   double correctZ = -z * 0.5;
@@ -25,7 +25,7 @@ void Drivetrain::DriveMecanum(float x, float y, float z, float sensitivity, floa
 }
 
 //Used in pretest
-void Drivetrain::TestMotor(e_motors motor, float power){
+void Drivetrain::TestMotor(e_motors motor, double power){
   switch(motor){
     case FRONTRIGHT:
       rightFront->Set(power);

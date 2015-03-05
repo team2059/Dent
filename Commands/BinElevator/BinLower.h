@@ -6,9 +6,9 @@
 
 class BinLower: public Command{
   private:
-    float timeout;
+    double timeout;
   public:
-    BinLower(float);
+    BinLower(double);
     void Initialize();
     void Execute();
     bool IsFinished();

@@ -6,9 +6,9 @@
 
 class BinRaise: public Command{
   private:
-    float timeout;
+    double timeout;
   public:
-    BinRaise(float);
+    BinRaise(double);
     void Initialize();
     void Execute();
     bool IsFinished();
