@@ -42,7 +42,7 @@ Autonomous::Autonomous(int seq){
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 4:
-      // Collect one, two, or three totes, drive to Auto Zone (TM)
+      // Collect one, two, or three totes, drive to Auto Zone (TM), release totes
       printf("Waiting: %f\n", SmartDashboard::GetNumber("Auto Wait Time"));
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
       printf("Done");
@@ -73,7 +73,7 @@ Autonomous::Autonomous(int seq){
       //TODO: Implement this
       break;
     case 7:
-      // Same as auto 4 with (Three|Two) totes checked, collect bin, drive to Auto Zone (TM)
+      // Same as auto 4 with (Three|Two) totes checked, collect bin, drive to Auto Zone (TM), release totes
       //TODO: Implement this
       break;
     default:
