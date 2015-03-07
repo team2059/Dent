@@ -63,10 +63,13 @@
 + Elevator Top - Status of the top elevator sensor
 + DriveSpeedReductionThresh - Maximum y value of the joystick when driving
 + Auto Sequence - The sequence of autonomous to run
-  1. Drive to auto zone, turn
-  2. Lower BinElevator, collect bin, turn, drive to AutoZone, turn
-  3. Raise BinElevator, turn, drive to AutoZone, turn
-  4. Collect 1, 2, or 3 totes, turn, drive to AutoZone, turn
-  5. Same as auto 4, but navigate around bins (not implemented)
-  6. Collect 1 bin then 1 tote (not implemented)
-  7. Collect 3 totes, collect bin, drive to AutoZone (not implemented)
+
+##### Auto
+
+1. Drive to auto zone, turn
+2. Lower BinElevator, collect bin, turn, drive to AutoZone, turn
+3. Raise BinElevator, turn, drive to AutoZone, turn
+4. Collect 1, 2, or 3 totes, turn, drive to AutoZone, turn
+5. Same as auto 4, but navigate around bins (not implemented)
+6. Collect 1 bin then 1 tote (not implemented)
+7. Collect 3 totes, collect bin, drive to AutoZone (not implemented)
