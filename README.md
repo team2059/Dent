@@ -30,7 +30,7 @@
 + Run `ssh admin@rrio-ip.local '/home/lvuser/FRCUserProgram'` to execute the program
 
 ### Usage
-##### Left Joystick (USB 0)
+#### Left Joystick (USB 0)
 + X-Axis - Drive forwards and backwards
 + Y-Axis - Strafes left and right
 + Z-Axis - Turns left and right
@@ -39,7 +39,7 @@
 + Button 2 - Eject totes
 + Button 7 - Check robot
 
-##### Right Joystick (USB 1)
+#### Right Joystick (USB 1)
 + Button 3 - Lowers bin elevator
 + Button 4 - Lowers main elevator
 + Button 5 - Raises bin elevator
@@ -48,7 +48,8 @@
 + Button 8 - Closes bin arms (unused)
 + Button 12 - Cancel raising and lowering for both elevators
 
-#### Dashboard
+### Dashboard
+#### Configuration
 + CodeVersion - The current version of the code
 + Auto Wait Time - The amount of time to wait for any autonomous to run (default: 2.0)
 + Two totes - Collect a second tote if using Auto Sequence 4 or 5 (default: true)
@@ -64,8 +65,7 @@
 + DriveSpeedReductionThresh - Maximum y value of the joystick when driving
 + Auto Sequence - The sequence of autonomous to run
 
-##### Auto
-
+#### Autonomous
 1. Drive to auto zone, turn
 2. Lower BinElevator, collect bin, turn, drive to AutoZone, turn
 3. Raise BinElevator, turn, drive to AutoZone, turn
