@@ -6,7 +6,7 @@
 
 class Raise: public Command{
   public:
-    Raise();
+    Raise(double timeout=3.5);
     void Initialize();
     void Execute();
     bool IsFinished();

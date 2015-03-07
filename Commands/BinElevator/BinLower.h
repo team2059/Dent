@@ -6,7 +6,6 @@
 
 class BinLower: public Command{
   private:
-    double timeout;
   public:
     BinLower(double);
     void Initialize();

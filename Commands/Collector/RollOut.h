@@ -8,7 +8,7 @@
 
 class RollOut: public Command{
   public:
-    RollOut();
+    RollOut(double timeout = 2.0);
     void Initialize();
     void Execute();
     bool IsFinished();

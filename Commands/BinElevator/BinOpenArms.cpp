@@ -1,10 +1,10 @@
 #include "BinOpenArms.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinOpenArms::BinOpenArms() : Command("BinOpenArms"){
+BinOpenArms::BinOpenArms(double timeout) : Command("BinOpenArms"){
+  SetTimeout(timeout);
 }
 void BinOpenArms::Initialize(){
-  SetTimeout(0.5);
 }
 void BinOpenArms::Execute(){
   DentRobot::pneumatics->SetOpen(true);

@@ -6,7 +6,6 @@
 
 class BinRaise: public Command{
   private:
-    double timeout;
   public:
     BinRaise(double);
     void Initialize();

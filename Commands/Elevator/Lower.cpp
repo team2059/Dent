@@ -1,10 +1,10 @@
 #include "Lower.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-Lower::Lower() : Command("Lower"){
+Lower::Lower(double timeout) : Command("Lower"){
+  SetTimeout(timeout);
 }
 void Lower::Initialize(){
-  SetTimeout(3.0);
 }
 void Lower::Execute(){
   DentRobot::elevator->Run(-1.0);

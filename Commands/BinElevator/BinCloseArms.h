@@ -6,7 +6,7 @@
 
 class BinCloseArms: public Command{
   public:
-    BinCloseArms();
+    BinCloseArms(double timeout = 0.5);
     void Initialize();
     void Execute();
     bool IsFinished();

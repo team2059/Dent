@@ -1,10 +1,10 @@
 #include "Raise.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-Raise::Raise() : Command("Raise"){
+Raise::Raise(double timeout) : Command("Raise"){
+  SetTimeout(timeout);
 }
 void Raise::Initialize(){
-  SetTimeout(3.5);
 }
 void Raise::Execute(){
   DentRobot::elevator->Run(1.0);

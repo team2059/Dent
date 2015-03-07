@@ -6,7 +6,7 @@
 
 class Lower: public Command{
   public:
-    Lower();
+    Lower(double timeout=3.0);
     void Initialize();
     void Execute();
     bool IsFinished();

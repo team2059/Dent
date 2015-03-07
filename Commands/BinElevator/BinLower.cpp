@@ -1,11 +1,10 @@
 #include "BinLower.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinLower::BinLower(double t) : Command("BinLower"){
-  timeout=t;
+BinLower::BinLower(double timeout) : Command("BinLower"){
+  SetTimeout(timeout);
 }
 void BinLower::Initialize(){
-  SetTimeout(timeout);
 }
 void BinLower::Execute(){
   DentRobot::binElevator->Run(-1.0);

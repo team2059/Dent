@@ -6,7 +6,7 @@
 
 class BinOpenArms: public Command{
   public:
-    BinOpenArms();
+    BinOpenArms(double);
     void Initialize();
     void Execute();
     bool IsFinished();

@@ -1,6 +1,6 @@
 #include "RollIn.h"
-RollIn::RollIn(double k) : Command("RollIn"){
-  rawSpeed=k;
+RollIn::RollIn(double speed) : Command("RollIn"){
+  rawSpeed=speed;
 }
 void RollIn::Initialize(){
   printf("Initialized RollIn\n");

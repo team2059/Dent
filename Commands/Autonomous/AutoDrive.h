@@ -10,8 +10,7 @@ class AutoDrive: public Command{
   private:
     double x, y;
   public:
-    AutoDrive(double);
-    AutoDrive(double, double, double);
+    AutoDrive(double duration, double xtmp = 0.0, double ytmp = -0.75);
     void Initialize();
     void Execute();
     bool IsFinished();

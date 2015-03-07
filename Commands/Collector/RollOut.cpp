@@ -1,9 +1,9 @@
 #include "RollOut.h"
-RollOut::RollOut() : Command("RollOut"){
+RollOut::RollOut(double timeout) : Command("RollOut"){
   Requires(DentRobot::collector);
+  SetTimeout(timeout);
 }
 void RollOut::Initialize(){
-  SetTimeout(2.0);
 }
 void RollOut::Execute(){
   //TODO check this value to move the motors in the right direction
