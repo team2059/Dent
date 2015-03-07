@@ -6,7 +6,7 @@ SOURCES=$(shell find -type f -name "*.cpp")
 OBJECTS=$(SOURCES:.cpp=.o)
 WPILIB=/var/frc/wpilib
 EXEC=bin/FRCUserProgram
-CLEANSER=rm -r
+CLEANSER=rm -f
 
 all : $(OBJECTS)
 	if [ ! -d bin ];then mkdir bin; fi
