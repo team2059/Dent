@@ -18,10 +18,10 @@ OI::OI() {
   JoystickButton *left1=new JoystickButton(leftStick, 1);
   JoystickButton *left2=new JoystickButton(leftStick, 2);
   left1->WhileHeld(new RollIn(GetLeftThrottle()));
-  left2->WhileHeld(new RollOut());
+  left2->WhileHeld(new RollOut(2.0));
   // Elevator
-  raise=new Raise();
-  lower=new Lower();
+  raise=new Raise(3.5);
+  lower=new Lower(3.0);
   JoystickButton *right4=new JoystickButton(rightStick, 4);
   JoystickButton *right6=new JoystickButton(rightStick, 6);
   right4->WhenPressed(lower);

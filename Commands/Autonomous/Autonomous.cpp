@@ -25,7 +25,7 @@ Autonomous::Autonomous(int seq){
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 2:
-      // Lower BinElevator, collect bin, turn, drive to AutoZone (TM) 
+      // Lower BinElevator, collect bin, turn, drive to AutoZone (TM)
       AddSequential(new BinLower(0.5));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Bin Distance"), 0, 0.75));
       AddSequential(new BinRaise(1.0));
@@ -49,16 +49,16 @@ Autonomous::Autonomous(int seq){
       printf("Done");
       AddSequential(new CollectTote());
       if(SmartDashboard::GetBoolean("Two totes")){
-        AddSequential(new Raise());
+        AddSequential(new Raise(3.5));
         AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, 0.75));
         AddSequential(new CollectTote());
-        AddSequential(new Lower());
-        AddSequential(new Raise());
+        AddSequential(new Lower(3.0));
+        AddSequential(new Raise(3.5));
         if(SmartDashboard::GetBoolean("Three totes")){
           AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0, 0.75));
           AddSequential(new CollectTote());
-          AddSequential(new Lower());
-          AddSequential(new Raise());
+          AddSequential(new Lower(3.0));
+          AddSequential(new Raise(3.5));
         }
       }
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));

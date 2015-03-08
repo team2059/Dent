@@ -6,8 +6,16 @@
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
+/**
+ * @brief Releases one tote
+ *
+ * Rolls collector wheels out and drives backwards in parallel
+ */
 class ReleaseTote: public CommandGroup{
   public:
+    /**
+     * @brief Constructs ReleaseTote
+     */
     ReleaseTote();
 };
 #endif

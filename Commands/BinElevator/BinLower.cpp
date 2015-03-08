@@ -1,7 +1,7 @@
 #include "BinLower.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinLower::BinLower(double timeout) : Command("BinLower"){
+BinLower::BinLower(float timeout) : Command("BinLower"){
   SetTimeout(timeout);
 }
 void BinLower::Initialize(){
