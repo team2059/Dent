@@ -1,5 +1,4 @@
 *.o
-Debug
 bin
 wpilib
 CMakeCache.txt
