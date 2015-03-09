@@ -26,4 +26,6 @@
 *   -# @ref ReleaseTote
 *   -# @ref CheckDrive
 *   -# @ref CheckRobot
+* 
+* Note: Recycling containers are referred to bins throughout the project
 */
