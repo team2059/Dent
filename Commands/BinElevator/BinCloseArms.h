@@ -14,7 +14,7 @@ class BinCloseArms: public Command{
     /**
      * @brief Constructs BinCloseArms
      *
-     * @param timeout The timeout 
+     * @param timeout The timeout
      */
     BinCloseArms(double timeout = 0.5);
     /**

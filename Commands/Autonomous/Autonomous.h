@@ -11,7 +11,7 @@
  *
  * Contains three sequences selectable from the SmartDashboard
  * All sequences will wait for the SmartDashboard value "Auto Wait Time"
- * 
+ *
  * Sequence 0: Used for testing only
  *
  * Sequence 1: Drives forward "Auto Zone Distance" at -0.8 power
