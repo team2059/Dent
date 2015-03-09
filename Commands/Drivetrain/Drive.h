@@ -2,7 +2,7 @@
 #define DRIVE_H
 
 #include "Commands/Command.h"
-#include "../../CommandBase.h"
+#include "../../DentRobot.h"
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
