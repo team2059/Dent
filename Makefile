@@ -19,10 +19,10 @@ clean:
 	$(CLEANSER) $(OBJECTS) bin/FRCUserProgram
 
 deploy:
-	@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) 'cat > /home/lvuser/FRCUserProgram2&&rm /home/lvuser/FRCUserProgram;mv /home/lvuser/FRCUserProgram2 /home/lvuser/FRCUserProgram&&. /etc/profile.d/natinst-path.sh;chmod a+x /home/lvuser/FRCUserProgram'
+		@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram'
 
 debug:
-	@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) 'cat > /home/lvuser/FRCUserProgram2&&rm /home/lvuser/FRCUserProgram;mv /home/lvuser/FRCUserProgram2 /home/lvuser/FRCUserProgram&&. /etc/profile.d/natinst-path.sh;chmod a+x /home/lvuser/FRCUserProgram;/home/lvuser/run.sh'
+		@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram;/home/lvuser/run.sh'
 
 putkey:
 	@test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh -v admin@$(REMOTEIP) 'cat >> /tmp/key;mkdir -p ~/.ssh;cat /tmp/key >> ~/.ssh/authorized_keys;rm /tmp/key'
