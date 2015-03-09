@@ -7,7 +7,6 @@ class BinElevator{
   private:
     CANTalon *motor;
     Encoder *elevatorEncoder;
-    static constexpr double kP_real=4, kI_real=.0f, kP_simulation=18, kI_simulation=.2;
     DigitalInput *elevatorBottom, *elevatorTop;
   public:
     BinElevator();
