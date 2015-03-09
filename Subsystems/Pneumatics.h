@@ -2,8 +2,7 @@
 #define PNEUMATICS_H
 
 #include "WPILib.h"
-class Pneumatics: public Subsystem
-{
+class Pneumatics: public Subsystem{
   private:
     Solenoid *solenoid1, *solenoid2;
   public:

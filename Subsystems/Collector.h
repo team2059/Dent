@@ -7,8 +7,7 @@
  * 
  * Uses four motors, two on the sides, one on the bottom, and one on the ramp to collect and eject totes
  */
-class Collector: public Subsystem
-{
+class Collector: public Subsystem{
   private:
     CANTalon *collectorMotorLeft,   //<! Left collector motor
              *collectorMotorBottom, //<! Bottom collctor motor

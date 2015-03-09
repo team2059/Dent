@@ -10,9 +10,9 @@ Elevator* CommandBase::elevator = NULL;
 BinElevator* CommandBase::binElevator = NULL;
 Pneumatics* CommandBase::pneumatics=NULL;
 OI* CommandBase::oi = NULL;
-CommandBase::CommandBase(char const *name) : Command(name) {
+CommandBase::CommandBase(char const *name) : Command(name){
 }
-CommandBase::CommandBase() : Command() {
+CommandBase::CommandBase() : Command(){
 }
 void CommandBase::init(){
   drivetrain = new Drivetrain();

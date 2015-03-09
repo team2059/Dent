@@ -10,7 +10,7 @@
 #include "OI.h"
 #include "WPILib.h"
 
-class CommandBase: public Command {
+class CommandBase: public Command{
   public:
     CommandBase(char const *name);
     CommandBase();
