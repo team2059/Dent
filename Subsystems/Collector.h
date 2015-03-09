@@ -9,7 +9,7 @@
  */
 class Collector: public Subsystem{
   private:
-    CANTalon *collectorMotorLeft,   //<! Left collector motor
+    Victor *collectorMotorLeft,   //<! Left collector motor
              *collectorMotorBottom, //<! Bottom collctor motor
              *collectorMotorRamp,   //<! Ramp collctor motor
              *collectorMotorRight;  //<! Right collector motor

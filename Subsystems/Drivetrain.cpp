@@ -3,10 +3,10 @@
 #include "../Commands/Drivetrain/Drive.h"
 
 Drivetrain::Drivetrain(): Subsystem("Drivetrain"){
-  rightFront = new CANTalon(DRIVE_FRONT_RIGHT_CAN);
-  leftFront = new CANTalon(DRIVE_FRONT_LEFT_CAN);
-  rightRear = new CANTalon(DRIVE_BACK_RIGHT_CAN);
-  leftRear = new CANTalon(DRIVE_BACK_LEFT_CAN);
+  rightFront = new Victor(DRIVE_FRONT_RIGHT);
+  leftFront = new Victor(DRIVE_FRONT_LEFT);
+  rightRear = new Victor(DRIVE_BACK_RIGHT);
+  leftRear = new Victor(DRIVE_BACK_LEFT);
 }
 void Drivetrain::InitDefaultCommand(){
   SetDefaultCommand(new Drive());

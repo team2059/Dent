@@ -9,7 +9,7 @@
  */
 class Drivetrain: public Subsystem{
   private:
-    CANTalon *rightFront, //<! Front right motor
+    Victor *rightFront, //<! Front right motor
              *leftFront, //<! Front left motor
              *rightRear, //<! Back right motor
              *leftRear; //<! Back left motor

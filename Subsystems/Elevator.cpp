@@ -1,7 +1,7 @@
 #include "Elevator.h"
 #include "../RobotMap.h"
 Elevator::Elevator(){
-  motor=new CANTalon(ELEVATOR_CAN);
+  motor=new Victor(ELEVATOR);
   elevatorEncoder=new Encoder(ELEVATOR_ENCODERA, ELEVATOR_ENCODERB, false);
   elevatorBottom=new DigitalInput(ELEVATOR_BOTTOM_DIO);
   elevatorMiddle=new DigitalInput(ELEVATOR_MIDDLE_DIO);

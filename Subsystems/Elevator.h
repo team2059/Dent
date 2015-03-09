@@ -7,7 +7,7 @@
  */
 class Elevator{
   private:
-    CANTalon *motor; //<! The elevator motor
+    Victor *motor; //<! The elevator motor
     Encoder *elevatorEncoder; //<! The elevator encoder (unused)
     DigitalInput *elevatorBottom, //<! The bottom elevator sensor
                  *elevatorMiddle, //<! The middle elevator sensor

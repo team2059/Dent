@@ -2,10 +2,10 @@
 #include "../RobotMap.h"
 
 Collector::Collector(): Subsystem("Collector"){
-  collectorMotorLeft=new CANTalon(COLLECTOR_LEFT_CAN);
-  collectorMotorBottom=new CANTalon(COLLECTOR_BOTTOM_CAN);
-  collectorMotorRamp=new CANTalon(COLLECTOR_RAMP_CAN);
-  collectorMotorRight=new CANTalon(COLLECTOR_RIGHT_CAN);
+  collectorMotorLeft=new Victor(COLLECTOR_LEFT);
+  collectorMotorBottom=new Victor(COLLECTOR_BOTTOM);
+  collectorMotorRamp=new Victor(COLLECTOR_RAMP);
+  collectorMotorRight=new Victor(COLLECTOR_RIGHT);
   sonarAnalog=new AnalogInput(COLLECTOR_SONAR_ANALOG);
 }
 void Collector::InitDefaultCommand(){
