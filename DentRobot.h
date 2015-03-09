@@ -45,7 +45,7 @@ class DentRobot: public IterativeRobot {
      */
     static BinElevator* binElevator;
     /**
-     * @brief The Pneumatics system (UNUSED)
+     * @brief The Pneumatics system (unused)
      */
     static Pneumatics* pneumatics;
     /**

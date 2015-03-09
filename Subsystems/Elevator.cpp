@@ -8,7 +8,6 @@ Elevator::Elevator(){
   elevatorTop=new DigitalInput(ELEVATOR_TOP_DIO);
   // Checks if the elevator is drifting
   useEncoder=false;
-  stoppedAtSensor=false;
 }
 void Elevator::InitDefaultCommand(){
 }

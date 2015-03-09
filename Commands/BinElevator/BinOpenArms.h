@@ -4,8 +4,16 @@
 #include "Commands/Command.h"
 #include "WPILib.h"
 
+/**
+ * @brief Opens bin arms (unused)
+ */
 class BinOpenArms: public Command{
   public:
+    /**
+     * @brief Constructs BinOpenArms
+     *
+     * @param double The timeout
+     */
     BinOpenArms(double);
     /**
      * @brief Constructs BinOpenArms

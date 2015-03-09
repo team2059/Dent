@@ -19,9 +19,9 @@ class AutoDrive: public Command{
     /**
      * @brief Constructs AutoDrive
      *
-     * @param double Timeout in seconds
-     * @param double Joystick x value (default: 0.0)
-     * @param double Joystick y value (default: 0.75)
+     * @param duration Timeout in seconds
+     * @param xtmp Joystick x value (default: 0.0)
+     * @param ytmp Joystick y value (default: 0.75)
      */
     AutoDrive(double duration, double xtmp = 0.0, double ytmp = -0.75);
     /**

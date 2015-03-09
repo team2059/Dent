@@ -15,11 +15,11 @@ class Collector: public Subsystem
              *collectorMotorRamp,   //<! Ramp collctor motor
              *collectorMotorRight;  //<! Right collector motor
     /**
-     * @brief Analog input for sonar (UNUSED)
+     * @brief Analog input for sonar (unused)
      */
     AnalogInput *sonarAnalog;
     /**
-     * @brief Digital output for sonar (UNUSED)
+     * @brief Digital output for sonar (unused)
      */
     DigitalOutput *sonarDigital;
   public:
@@ -38,7 +38,7 @@ class Collector: public Subsystem
      */
     void MoveRollers(double);
     /**
-     * @brief Gets the distance of the sonar (UNUSED)
+     * @brief Gets the distance of the sonar (unused)
      *
      * @return The sonar distance
      */
