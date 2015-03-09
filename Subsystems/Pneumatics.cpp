@@ -1,7 +1,7 @@
 #include "Pneumatics.h"
 #include "../RobotMap.h"
 
-Pneumatics::Pneumatics() : Subsystem("Pneumatics"){
+Pneumatics::Pneumatics(): Subsystem("Pneumatics"){
   solenoid1 = new Solenoid(BINELEVATOR_SOLDENOID_ONE);
   solenoid2 = new Solenoid(BINELEVATOR_SOLDENOID_TWO);
 }

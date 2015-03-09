@@ -1,6 +1,6 @@
 #include "Drive.h"
 #include "../../DentRobot.h"
-Drive::Drive() : Command("Drive"){
+Drive::Drive(): Command("Drive"){
   Requires(DentRobot::drivetrain);
 }
 void Drive::Initialize(){
@@ -11,10 +11,10 @@ void Drive::Execute(){
   y = -DentRobot::oi->GetLeftStick()->GetRawAxis(1);
   z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
   // Lock the x axis when not holding button 1
-  //if (DentRobot::oi->GetLeftStick()->GetRawButton(1)){
+  //if(DentRobot::oi->GetLeftStick()->GetRawButton(1)){
   //  x=0;
   //}
-  //if (DentRobot::oi->GetLeftStick()->GetRawButton(2)){
+  //if(DentRobot::oi->GetLeftStick()->GetRawButton(2)){
   //  y=0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro

@@ -1,7 +1,7 @@
 #include "BinCloseArms.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinCloseArms::BinCloseArms(double timeout) : Command("BinCloseArms"){
+BinCloseArms::BinCloseArms(double timeout): Command("BinCloseArms"){
   SetTimeout(timeout);
 }
 void BinCloseArms::Initialize(){

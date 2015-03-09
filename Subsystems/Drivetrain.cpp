@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 #include "../Commands/Drivetrain/Drive.h"
 
-Drivetrain::Drivetrain() : Subsystem("Drivetrain"){
+Drivetrain::Drivetrain(): Subsystem("Drivetrain"){
   rightFront = new CANTalon(DRIVE_FRONT_RIGHT_CAN);
   leftFront = new CANTalon(DRIVE_FRONT_LEFT_CAN);
   rightRear = new CANTalon(DRIVE_BACK_RIGHT_CAN);
@@ -15,7 +15,7 @@ void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, 
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
   double correctZ = -z * 0.5;
-  if (DentRobot::oi->GetLeftStick()->GetRawButton(9)){
+  if(DentRobot::oi->GetLeftStick()->GetRawButton(9)){
     correctY /= SmartDashboard::GetNumber("DriveSpeedReductionThresh");
   }
   rightFront->Set((-correctX + correctY - correctZ));

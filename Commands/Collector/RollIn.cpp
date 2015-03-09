@@ -1,5 +1,5 @@
 #include "RollIn.h"
-RollIn::RollIn(double speed) : Command("RollIn"){
+RollIn::RollIn(double speed): Command("RollIn"){
   rawSpeed=speed;
 }
 void RollIn::Initialize(){
