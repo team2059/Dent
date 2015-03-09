@@ -1,6 +1,6 @@
 #include "Turn.h"
 #include "../../DentRobot.h"
-Turn::Turn(double timeout) : Command("Turn"){
+Turn::Turn(double timeout): Command("Turn"){
   Requires(DentRobot::drivetrain);
   SetTimeout(timeout);
 }

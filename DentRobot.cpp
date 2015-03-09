@@ -43,7 +43,7 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutBoolean("Elevator Bottom", false);
   SmartDashboard::PutBoolean("Elevator Top", false);
   //Drive speed
-  SmartDashboard::PutNumber("DriveSpeedReductionThresh",2);
+  SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
@@ -60,7 +60,7 @@ void DentRobot::AutonomousPeriodic(){
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::TeleopInit(){
-  if (aut != NULL){
+  if(aut != NULL){
     aut->Cancel();
   }
 }

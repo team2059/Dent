@@ -1,7 +1,7 @@
 #include "Raise.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-Raise::Raise(double timeout) : Command("Raise"){
+Raise::Raise(double timeout): Command("Raise"){
   SetTimeout(timeout);
 }
 void Raise::Initialize(){
@@ -13,12 +13,12 @@ bool Raise::IsFinished(){
   //if(!DentRobot::elevator->GetElevatorMiddle()){
   //  DentRobot::elevator->stoppedAtSensor=true;
   //}
-  //if ((DentRobot::elevator->stoppedAtSensor)){
+  //if((DentRobot::elevator->stoppedAtSensor)){
   //  printf("Stopped at the middle sensor\n");
   //  DentRobot::elevator->stoppedAtSensor=false;
   //  return true;
-  //}else if (!DentRobot::elevator->GetElevatorTop()) {
-  if (!DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle()||IsTimedOut()){
+  //}else if(!DentRobot::elevator->GetElevatorTop()){
+  if(!DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle()||IsTimedOut()){
     printf("Robot stopped raising. Sensor based? %d\n", !DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle());
     return true;
   }else{

@@ -13,7 +13,7 @@
  *
  * Features a 4-motor collector, 4-motor mecanum drivetrain, two one-motor elevators
  */
-class DentRobot: public IterativeRobot {
+class DentRobot: public IterativeRobot{
   private:
     /**
      * @brief The default driving command

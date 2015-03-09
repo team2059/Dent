@@ -3,7 +3,7 @@
 #include "Commands/CommandGroup.h"
 #include "../../DentRobot.h"
 #include "../../RobotMap.h"
-CheckDrive::CheckDrive(int motorID) : CommandGroup("CheckDrive"){
+CheckDrive::CheckDrive(int motorID): CommandGroup("CheckDrive"){
   Requires(DentRobot::drivetrain);
   motor = motorID;
 }

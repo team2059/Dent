@@ -1,7 +1,7 @@
 #include "AutoDrive.h"
 #include "../../DentRobot.h"
 // Drive for a short while then stop. Just for testing
-AutoDrive::AutoDrive(double duration, double xtmp, double ytmp) : Command("AutoDrive"){
+AutoDrive::AutoDrive(double duration, double xtmp, double ytmp): Command("AutoDrive"){
   Requires(DentRobot::drivetrain);
   SetTimeout(duration);
   x=xtmp;

@@ -7,8 +7,7 @@
 /**
  * @brief Controls the robot with joysticks
  */
-class OI
-{
+class OI{
   private:
     Joystick *leftStick, *rightStick;
   public:
