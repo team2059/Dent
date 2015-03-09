@@ -17,9 +17,9 @@ class RollIn: public Command{
     /**
      * @brief Constructs RollIn
      *
-     * @param double Timeout in seconds
+     * @param double Speed to roll the collector
      */
-    RollIn(double);
+    RollIn(double speed);
     /**
      * @brief Initializes the class
      */

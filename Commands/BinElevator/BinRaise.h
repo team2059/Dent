@@ -9,15 +9,13 @@
  */
 class BinRaise: public Command{
   private:
-    float timeout; //<! The timeout
   public:
-    BinRaise(double);
     /**
      * @brief Constructs BinRaise
      *
-     * @param float Timeout in seconds
+     * @param timeout Timeout in seconds
      */
-    BinRaise(float);
+    BinRaise(double timeout);
     /**
      * @brief Initializes the class
      */

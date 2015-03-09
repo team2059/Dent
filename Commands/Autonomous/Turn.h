@@ -17,9 +17,9 @@ class Turn: public Command{
     /**
      * @brief Constructs Turn
      *
-     * @param double Timeout in seconds
+     * @param timeout Timeout in seconds
      */
-    Turn(double);
+    Turn(double timeout);
     /**
      * @brief Initializes the class
      */

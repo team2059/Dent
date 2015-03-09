@@ -11,11 +11,12 @@
  */
 class BinCloseArms: public Command{
   public:
-    BinCloseArms(double timeout = 0.5);
     /**
      * @brief Constructs BinCloseArms
+     *
+     * @param timeout The timeout 
      */
-    BinCloseArms();
+    BinCloseArms(double timeout = 0.5);
     /**
      * @brief Initializes the class
      */

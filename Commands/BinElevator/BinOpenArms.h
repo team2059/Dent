@@ -12,9 +12,9 @@ class BinOpenArms: public Command{
     /**
      * @brief Constructs BinOpenArms
      *
-     * @param double The timeout
+     * @param timeout The timeout
      */
-    BinOpenArms(double);
+    BinOpenArms(double timeout);
     /**
      * @brief Constructs BinOpenArms
      */

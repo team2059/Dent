@@ -25,9 +25,9 @@ class Autonomous: public CommandGroup{
     /**
      * @brief Constructs Autonomous
      *
-     * @param int The sequence to run
+     * @param seq The sequence to run
      */
-    Autonomous(int);
+    Autonomous(int seq=0);
 };
 #endif
 // vim: ts=2:sw=2:et
