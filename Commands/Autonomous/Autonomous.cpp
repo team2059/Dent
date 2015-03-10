@@ -3,8 +3,8 @@
 #include "../../DentRobot.h"
 #include "../Elevator/Raise.h"
 #include "../Elevator/Lower.h"
-#include "../BinElevator/BinRaise.h"
-#include "../BinElevator/BinLower.h"
+#include "../ContainerElevator/ContainerRaise.h"
+#include "../ContainerElevator/ContainerLower.h"
 #include "AutoDrive.h"
 #include "Turn.h"
 #include "../Collector/RollIn.h"
@@ -25,21 +25,21 @@ Autonomous::Autonomous(int seq){
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 2:
-      // Lower BinElevator, collect bin, turn, drive to AutoZone (TM)
-      AddSequential(new BinLower(0.5));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Bin Distance"), 0, 0.75));
-      AddSequential(new BinRaise(1.0));
+      // Lower ContainerElevator, collect container, turn, drive to AutoZone (TM)
+      AddSequential(new ContainerLower(0.5));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Container Distance"), 0, 0.75));
+      AddSequential(new ContainerRaise(1.0));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 3:
-      // Collect a tote with BinElevator, turn, drive to Auto Zone (TM)
+      // Collect a tote with ContainerElevator, turn, drive to Auto Zone (TM)
       Wait(SmartDashboard::GetNumber("Auto Wait Time"));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
-      AddSequential(new BinRaise(1.2));
+      AddSequential(new ContainerRaise(1.2));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
-      AddSequential(new BinLower(1.0));
+      AddSequential(new ContainerLower(1.0));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 4:
@@ -66,15 +66,15 @@ Autonomous::Autonomous(int seq){
       AddSequential(new ReleaseTote());
       break;
     case 5:
-      // Same as auto 4, but navigate around bins
+      // Same as auto 4, but navigate around containers
       //TODO: Implement this
       break;
     case 6:
-      // Collect 1 bin and 1 tote
+      // Collect 1 container and 1 tote
       //TODO: Implement this
       break;
     case 7:
-      // Same as auto 4 with (Three|Two) totes checked, collect bin, drive to Auto Zone (TM), release totes
+      // Same as auto 4 with (Three|Two) totes checked, collect container, drive to Auto Zone (TM), release totes
       //TODO: Implement this
       break;
     default:

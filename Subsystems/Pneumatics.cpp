@@ -2,8 +2,8 @@
 #include "../RobotMap.h"
 
 Pneumatics::Pneumatics(): Subsystem("Pneumatics"){
-  solenoid1 = new Solenoid(BINELEVATOR_SOLDENOID_ONE);
-  solenoid2 = new Solenoid(BINELEVATOR_SOLDENOID_TWO);
+  solenoid1 = new Solenoid(CONTAINER_ELEVATOR_SOLDENOID_ONE);
+  solenoid2 = new Solenoid(CONTAINER_ELEVATOR_SOLDENOID_TWO);
 }
 void Pneumatics::InitDefaultCommand(){
 }

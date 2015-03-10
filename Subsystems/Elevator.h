@@ -25,7 +25,7 @@ class Elevator{
     /**
      * @brief Runs the elevator
      *
-     * @param double The power to run the bin elevator (-1.0 to 1.0)
+     * @param double The power to run the container elevator (-1.0 to 1.0)
      */
     void Run(double);
     /**
