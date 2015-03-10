@@ -33,7 +33,7 @@ class DentRobot: public IterativeRobot{
      */
     static Collector* collector;
     /**
-     * @brief The 4-motor mechanum Drivetrain
+     * @brief The 4-motor mecanum Drivetrain
      */
     static Drivetrain* drivetrain;
     /**
