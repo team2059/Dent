@@ -29,7 +29,7 @@ class DentRobot: public IterativeRobot{
      */
     static OI* oi;
     /**
-     * @brief The 4-motor Collctor
+     * @brief The 4-motor Collector
      */
     static Collector* collector;
     /**
