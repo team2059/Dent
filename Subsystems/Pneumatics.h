@@ -5,7 +5,7 @@
 /**
  * @brief Pneumatics on the robot (unused)
 * 
-* For opening or closing the bin arms
+* For opening or closing the container arms
  */
 class Pneumatics: public Subsystem{
   private:

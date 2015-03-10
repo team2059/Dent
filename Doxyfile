@@ -1046,11 +1046,11 @@ GENERATE_CHI           = NO
 
 CHM_INDEX_ENCODING     =
 
-# If the GENERATE_HTMLHELP tag is set to YES, the BINARY_TOC flag
-# controls whether a binary table of contents is generated (YES) or a
+# If the GENERATE_HTMLHELP tag is set to YES, the CONTAINER_ARY_TOC flag
+# controls whether a containerary table of contents is generated (YES) or a
 # normal table of contents (NO) in the .chm file.
 
-BINARY_TOC             = NO
+CONTAINER_ARY_TOC             = NO
 
 # The TOC_EXPAND flag can be set to YES to add extra items for group members
 # to the contents of the HTML help documentation and to the tree view.
@@ -1265,7 +1265,7 @@ SEARCHDATA_FILE        = searchdata.xml
 
 # When SERVER_BASED_SEARCH AND EXTERNAL_SEARCH are both enabled the
 # EXTERNAL_SEARCH_ID tag can be used as an identifier for the project. This is
-# useful in combination with EXTRA_SEARCH_MAPPINGS to search through multiple
+# useful in comcontaineration with EXTRA_SEARCH_MAPPINGS to search through multiple
 # projects and redirect the results back to the right project.
 
 EXTERNAL_SEARCH_ID     =
@@ -1663,7 +1663,7 @@ EXTERNAL_PAGES         = YES
 # The PERL_PATH should be the absolute path and name of the perl script
 # interpreter (i.e. the result of `which perl').
 
-PERL_PATH              = /usr/bin/perl
+PERL_PATH              = /usr/container/perl
 
 #---------------------------------------------------------------------------
 # Configuration options related to the dot tool

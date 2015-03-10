@@ -1,20 +1,20 @@
 /**
 * @mainpage Dent
 * 
-* The Hitchhikers Team 2015 robot, Dent. Features an elevator, bin elevator, and mecanum drive
+* The Hitchhikers Team 2015 robot, Dent. Features an elevator, container elevator, and mecanum drive
 * @section Subsystems
 *   -# @ref Drivetrain
-*   -# @ref BinElevator
+*   -# @ref ContainerElevator
 *   -# @ref Elevator
 *   -# @ref Collector
 *   -# @ref Pneumatics (unused)
 * @section Commands
 *   -# @ref AutoDrive
 *   -# @ref Turn
-*   -# @ref BinCloseArms
-*   -# @ref BinLower
-*   -# @ref BinOpenArms
-*   -# @ref BinRaise
+*   -# @ref ContainerCloseArms
+*   -# @ref ContainerLower
+*   -# @ref ContainerOpenArms
+*   -# @ref ContainerRaise
 *   -# @ref RollIn
 *   -# @ref RollOut
 *   -# @ref Drive
@@ -27,5 +27,4 @@
 *   -# @ref CheckDrive
 *   -# @ref CheckRobot
 * 
-* Note: Recycling containers are referred to bins throughout the project
 */

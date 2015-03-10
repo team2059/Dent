@@ -1,30 +1,28 @@
-#ifndef BINOPENARMS_H
-#define BINOPENARMS_H
+#ifndef CONTAINER_CLOSEARMS_H
+#define CONTAINER_CLOSEARMS_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Opens bin arms (unused)
+ * @brief Closes CONTAINER_ElevatorArms (NOT USED)
+ *
+ * Sets the solenoid to close the arms of the CONTAINER_Elevator
  */
-class BinOpenArms: public Command{
+class CONTAINER_CloseArms: public Command{
   public:
     /**
-     * @brief Constructs BinOpenArms
+     * @brief Constructs CONTAINER_CloseArms
      *
      * @param timeout The timeout
      */
-    BinOpenArms(double timeout);
-    /**
-     * @brief Constructs BinOpenArms
-     */
-    BinOpenArms();
+    CONTAINER_CloseArms(double timeout = 0.5);
     /**
      * @brief Initializes the class
      */
     void Initialize();
     /**
-     * @brief Sets the solenoid to open the arms
+     * @brief Sets the solenoid to close the arms
      */
     void Execute();
     /**
@@ -42,5 +40,6 @@ class BinOpenArms: public Command{
      */
     void Interrupted();
 };
+
 #endif
 // vim: ts=2:sw=2:et

@@ -6,8 +6,8 @@
 + [Mecanum drivetrain](Subsystems/Drivetrain.cpp)
 + [Collector](Subsystems/Collector.cpp) to collect totes in main elevator
 + [Internal elevator](Subsystems/Elevator.cpp) for totes
-+ [External elevator](Subsystems/BinElevator.cpp) for bins or totes
-+ [Pneumatics](Subsystems/Pneumatics.cpp) for opening/closing bin elevator arms (unused)
++ [External elevator](Subsystems/ContainerElevator.cpp) for containers or totes
++ [Pneumatics](Subsystems/Pneumatics.cpp) for opening/closing container elevator arms (unused)
 
 #### Sensors
 + [Ultrasonic](Subsystems/Collector.cpp#L9) to check if a tote is in the robot (unused)
@@ -40,12 +40,12 @@
 + Button 7 - Check robot
 
 #### Right Joystick (USB 1)
-+ Button 3 - Lowers bin elevator
++ Button 3 - Lowers container elevator
 + Button 4 - Lowers main elevator
-+ Button 5 - Raises bin elevator
++ Button 5 - Raises container elevator
 + Button 6 - Raises main elevator
-+ Button 7 - Opens bin arms (unused)
-+ Button 8 - Closes bin arms (unused)
++ Button 7 - Opens container arms (unused)
++ Button 8 - Closes container arms (unused)
 + Button 12 - Cancel raising and lowering for both elevators
 
 ### Dashboard
@@ -56,10 +56,10 @@
 + Three totes - Collect a third tote if using Auto Sequence 4 or 5 (default: false)
 + Auto Zone Distance - Amount of time in seconds to drive to the auto zone (default: 2.1)
 + Auto Tote Distance - Amount of time in seconds to drive to a second or third tote if using Auto Sequence 4, 5, or 7 (default: 0.5)
-+ Auto Bin Distance - Amount of time in seconds to drive to a bin if using Auto Sequence 6 or 7 (default: 0.5)
++ Auto Container Distance - Amount of time in seconds to drive to a container if using Auto Sequence 6 or 7 (default: 0.5)
 + TurnAmount - Amount of time in seconds to turn the robot (default: 1.8)
-+ Bin Elevator Bottom - Status of the bottom bin elevator sensor (unused)
-+ Bin Elevator Top - Status of the top bin elevator sensor (unused)
++ Container Elevator Bottom - Status of the bottom container elevator sensor (unused)
++ Container Elevator Top - Status of the top container elevator sensor (unused)
 + Elevator Bottom - Status of the bottom elevator sensor
 + Elevator Top - Status of the top elevator sensor
 + DriveSpeedReductionThresh - Maximum y value of the joystick when driving
@@ -67,9 +67,9 @@
 
 #### Autonomous
 1. Drive to auto zone, turn
-2. Lower BinElevator, collect bin, turn, drive to AutoZone, turn
-3. Raise BinElevator, turn, drive to AutoZone, turn
+2. Lower ContainerElevator, collect container, turn, drive to AutoZone, turn
+3. Raise ContainerElevator, turn, drive to AutoZone, turn
 4. Collect 1, 2, or 3 totes, turn, drive to AutoZone, turn
-5. Same as auto 4, but navigate around bins (not implemented)
-6. Collect 1 bin then 1 tote (not implemented)
-7. Collect 3 totes, collect bin, drive to AutoZone (not implemented)
+5. Same as auto 4, but navigate around containers (not implemented)
+6. Collect 1 container then 1 tote (not implemented)
+7. Collect 3 totes, collect container, drive to AutoZone (not implemented)
