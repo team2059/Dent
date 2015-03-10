@@ -10,8 +10,8 @@
 class Collector: public Subsystem{
   private:
     CANTalon *collectorMotorLeft,   //<! Left collector motor
-             *collectorMotorBottom, //<! Bottom collctor motor
-             *collectorMotorRamp,   //<! Ramp collctor motor
+             *collectorMotorBottom, //<! Bottom collector motor
+             *collectorMotorRamp,   //<! Ramp collector motor
              *collectorMotorRight;  //<! Right collector motor
     /**
      * @brief Analog input for sonar (unused)

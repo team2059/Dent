@@ -12,7 +12,7 @@ class Elevator{
     DigitalInput *elevatorBottom, //<! The bottom elevator sensor
                  *elevatorMiddle, //<! The middle elevator sensor
                  *elevatorTop; //<! The top elevator sensor
-    bool useEncoder; //<! Use the elevator enoder (unused)
+    bool useEncoder; //<! Use the elevator encoder (unused)
   public:
     /**
      * @brief Constructs Elevator
@@ -33,7 +33,7 @@ class Elevator{
      */
     void ResetEncoder();
     /**
-     * @brief Gets the height of the elevtor
+     * @brief Gets the height of the elevator
      *
      * @return The hight of the elevator
      */
