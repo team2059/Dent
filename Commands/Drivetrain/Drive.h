@@ -9,7 +9,7 @@
 /**
  * @brief Drives the robot with a joystick
  *
- * Uses mechanum drive
+ * Uses mecanum drive
  */
 class Drive: public Command{
   public:

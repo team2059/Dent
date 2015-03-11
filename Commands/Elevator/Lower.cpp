@@ -11,7 +11,7 @@ void Lower::Execute(){
 }
 bool Lower::IsFinished(){
   if(!DentRobot::elevator->GetElevatorBottom()||IsTimedOut()){
-    printf("Robot stoped lowering. Sensor based? %d\n", !DentRobot::elevator->GetElevatorBottom());
+    printf("Robot stopped lowering. Sensor based? %d\n", !DentRobot::elevator->GetElevatorBottom());
     return true;
   }else{
     return false;
