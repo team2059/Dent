@@ -9,11 +9,10 @@
  */
 class Raise: public Command{
   public:
-    Raise(double timeout=3.5);
     /**
      * @brief Constructs Raise
      */
-    Raise();
+    Raise(double timeout=3.5);
     /**
      * @brief Initializes the class
      */

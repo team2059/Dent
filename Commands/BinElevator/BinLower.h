@@ -13,7 +13,7 @@ class BinLower: public Command{
     /**
      * @brief Constructs BinLower
      *
-     * @param float The timeout
+     * @param timeout The timeout
      */
     BinLower(float timeout);
     /**

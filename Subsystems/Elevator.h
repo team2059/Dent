@@ -25,9 +25,9 @@ class Elevator{
     /**
      * @brief Runs the elevator
      *
-     * @param double The power to run the bin elevator (-1.0 to 1.0)
+     * @param power The power to run the bin elevator (-1.0 to 1.0)
      */
-    void Run(double);
+    void Run(double power);
     /**
      * @brief Sets the encoder value to 0 (unused)
      */
@@ -59,9 +59,9 @@ class Elevator{
     /**
      * @brief Use the elevator encoder (unused)
      *
-     * @param bool State to use encoder
+     * @param use State to use encoder
      */
-    void SetUseEncoder(bool);
+    void SetUseEncoder(bool use);
     /**
      * @brief Gets the state of useEncoder (unused)
      *

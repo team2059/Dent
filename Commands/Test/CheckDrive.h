@@ -16,7 +16,7 @@ class CheckDrive: public CommandGroup{
     /**
      * @brief TODO
      *
-     * @param int
+     * @param motorID
      */
     CheckDrive(int);
     /**

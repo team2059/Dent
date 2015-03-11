@@ -19,6 +19,7 @@ void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, 
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
   double correctZ;
   if(driveStraight){
+    printf("Driving straight at: %f\n", -gyro->GetAngle()*kP);
     correctZ = -gyro->GetAngle()*kP;
   }else{
     correctZ = -z * 0.5;

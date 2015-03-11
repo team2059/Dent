@@ -13,11 +13,10 @@ class RollIn: public Command{
   private:
     double rawSpeed; //<! Raw speed of the collector
   public:
-    RollIn();
     /**
      * @brief Constructs RollIn
      *
-     * @param double Speed to roll the collector
+     * @param speed Speed to roll the collector
      */
     RollIn(double speed);
     /**
