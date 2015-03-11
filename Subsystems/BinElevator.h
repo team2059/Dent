@@ -24,11 +24,11 @@ class BinElevator{
     /**
      * @brief Runs the bin elevator
      *
-     * @param double The power to run the bin elevator
+     * @param power The power to run the bin elevator
      * 
      * Ranges from -1.0 to 1.0
      */
-    void Run(double);
+    void Run(double power);
     /**
      * @brief Sets the encoder value to 0 (unused)
      */

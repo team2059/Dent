@@ -23,9 +23,9 @@ class Pneumatics: public Subsystem{
     /**
      * @brief Sets the state of the arms
      *
-     * @param bool State of the arms
+     * @param state State of the arms
      */
-    void SetOpen(bool);
+    void SetOpen(bool state);
 };
 #endif
 // vim: ts=2:sw=2:et

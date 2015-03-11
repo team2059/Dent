@@ -29,7 +29,6 @@ void DentRobot::RobotInit(){
   // If the robot will be picking up three totes in sequence 3
   SmartDashboard::PutBoolean("Two totes", true);
   SmartDashboard::PutBoolean("Three totes", false);
-  // TODO: Calibrate the following two values
   // Distance (in time) to auto zone
   SmartDashboard::PutNumber("Auto Zone Distance", 2.1);
   // Distance (in time) to auto tote (used in sequence 3)
@@ -43,7 +42,7 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutBoolean("Elevator Bottom", false);
   SmartDashboard::PutBoolean("Elevator Top", false);
   //Drive speed
-  SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2);
+  SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2.0);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
@@ -66,7 +65,7 @@ void DentRobot::TeleopInit(){
 }
 void DentRobot::TeleopPeriodic(){
   Scheduler::GetInstance()->Run();
-  // TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
+  //TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
   if(elevator->GetUseEncoder()&&elevator->GetHeight()<=-1.0){
     // Raise the elevator if it dips below elevatorTop
     oi->raise->Start();

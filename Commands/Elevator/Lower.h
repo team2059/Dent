@@ -9,11 +9,10 @@
  */
 class Lower: public Command{
   public:
-    Lower(double timeout=3.0);
     /**
      * @brief Constructs Lower
      */
-    Lower();
+    Lower(double timeout=3.0);
     /**
      * @brief Initializes the class
      */

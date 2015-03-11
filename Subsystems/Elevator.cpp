@@ -35,8 +35,8 @@ bool Elevator::GetElevatorTop(){
   SmartDashboard::PutBoolean("Elevator Top", !elevatorTop->Get());
   return elevatorTop->Get();
 }
-void Elevator::SetUseEncoder(bool param){
-  useEncoder=param;
+void Elevator::SetUseEncoder(bool use){
+  useEncoder=use;
 }
 bool Elevator::GetUseEncoder(){
   return useEncoder;

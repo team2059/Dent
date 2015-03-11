@@ -8,10 +8,11 @@ AutoDrive::AutoDrive(double duration, double xtmp, double ytmp): Command("AutoDr
   y=ytmp;
 }
 void AutoDrive::Initialize(){
+  DentRobot::drivetrain->ResetGyro();
 }
 void AutoDrive::Execute(){
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
-  DentRobot::drivetrain->DriveMecanum(x, y, 0.0, 0.9);
+  DentRobot::drivetrain->DriveMecanum(x, y, 0.0, 0.9, true);
 }
 bool AutoDrive::IsFinished(){
   return IsTimedOut();

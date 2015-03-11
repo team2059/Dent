@@ -33,9 +33,9 @@ class Collector: public Subsystem{
     /**
      * @brief Moves the collectors
      *
-     * @param double The speed to run the collectors
+     * @param power The speed to run the collectors
      */
-    void MoveRollers(double);
+    void MoveRollers(double power);
     /**
      * @brief Gets the distance of the sonar (unused)
      *
