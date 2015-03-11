@@ -13,6 +13,7 @@ class Drivetrain: public Subsystem{
              *leftFront, //<! Front left motor
              *rightRear, //<! Back right motor
              *leftRear; //<! Back left motor
+    Gyro *gyro; //<! Gyro
   public:
     /**
      * @brief Constructs Drivetrain
@@ -34,27 +35,24 @@ class Drivetrain: public Subsystem{
     /**
      * @brief Drives the robot with mecanum
      *
-     * @param double Joystick x value (-1.0 to 1.0)
-     * @param double Joystick y value (-1.0 to 1.0)
-     * @param double Joystick z value (-1.0 to 1.0)
-     * @param double Sensitivity (0.0 to 1.0)
-     * @param double Gyro value (unused)
+     * @param x Joystick x value (-1.0 to 1.0)
+     * @param y Joystick y value (-1.0 to 1.0)
+     * @param z Joystick z value (-1.0 to 1.0)
+     * @param sensitivity Sensitivity (0.0 to 1.0)
+     * @param driveStraight Overrides z value to correct for motor lag
      */
-    void DriveMecanum(double, double, double, double, double);
-    /**
-     * @brief Drives the robot with arcade drive
-     *
-     * @param double Joystick x value (-1.0 to 1.0)
-     * @param double Joystick y value (-1.0 to 1.0)
-     */
-    void DriveArcade(double, double);
+    void DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight=false);
     /**
      * @brief Tests one motor
      *
-     * @param e_motors Motor to test
-     * @param double Power to set motor
+     * @param motor Motor to test
+     * @param power Power to set motor
      */
-    void TestMotor(e_motors, double);
+    void TestMotor(e_motors motor, double power);
+    /**
+     * @brief Sets the gyro value to 0.0
+     */
+    void ResetGyro();
 };
 #endif
 // vim: ts=2:sw=2:et
