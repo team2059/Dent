@@ -7,14 +7,22 @@ Drivetrain::Drivetrain(): Subsystem("Drivetrain"){
   leftFront = new Victor(DRIVE_FRONT_LEFT);
   rightRear = new Victor(DRIVE_BACK_RIGHT);
   leftRear = new Victor(DRIVE_BACK_LEFT);
+  gyro = new Gyro(DRIVE_GYRO_ANALOG);
 }
 void Drivetrain::InitDefaultCommand(){
   SetDefaultCommand(new Drive());
 }
-void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, double gyro){
+void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight){
+  //TODO: Find the correct value for kP
+  double kP=0.02;
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
-  double correctZ = -z * 0.5;
+  double correctZ;
+  if(driveStraight){
+    correctZ = -gyro->GetAngle()*kP;
+  }else{
+    correctZ = -z * 0.5;
+  }
   if(DentRobot::oi->GetLeftStick()->GetRawButton(9)){
     correctY /= SmartDashboard::GetNumber("DriveSpeedReductionThresh");
   }
@@ -23,7 +31,6 @@ void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, 
   rightRear->Set((correctX + correctY - correctZ));
   leftRear->Set((-correctX + correctY + correctZ)*-1);
 }
-
 //Used in pretest
 void Drivetrain::TestMotor(e_motors motor, double power){
   switch(motor){
@@ -42,5 +49,8 @@ void Drivetrain::TestMotor(e_motors motor, double power){
     default:
       break;
   }
+}
+void Drivetrain::ResetGyro(){
+  gyro->Reset();
 }
 // vim: ts=2:sw=2:et

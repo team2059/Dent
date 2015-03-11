@@ -28,6 +28,7 @@
 #define DRIVE_BACK_LEFT 3
 #define DRIVE_FRONT_RIGHT 4
 #define DRIVE_BACK_RIGHT 5
+#define DRIVE_GYRO_ANALOG 0
 
 // Collector
 #define COLLECTOR_RAMP 7

@@ -17,8 +17,8 @@ void Drive::Execute(){
   //if(DentRobot::oi->GetLeftStick()->GetRawButton(2)){
   //  y=0;
   //}
-  //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle), gyro
-  DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9, 0.0);
+  //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
+  DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9);
 }
 bool Drive::IsFinished(){
   return IsTimedOut();
