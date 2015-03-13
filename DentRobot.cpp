@@ -35,7 +35,6 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
   SmartDashboard::PutNumber("Auto Bin Distance", 0.25);
   SmartDashboard::PutNumber("TurnAmount", 1.8);
-
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
   SmartDashboard::PutBoolean("Bin Elevator Top", false);
@@ -43,6 +42,8 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutBoolean("Elevator Top", false);
   //Drive speed
   SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2.0);
+  //Gyro
+  SmartDashboard::PutNumber("Gyro kP", 0.02);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
