@@ -37,16 +37,14 @@ OI::OI(){
   //right8->WhenPressed(new BinCloseArms());
   binRaise=new BinRaise(3.0);
   binLower=new BinLower(2.0);
-  right3->WhenPressed(binLower);
+  right3->WhileHeld(binLower);
   right3->CancelWhenPressed(binRaise);
-  right5->WhenPressed(binRaise);
+  right5->WhileHeld(binRaise);
   right5->CancelWhenPressed(binLower);
   // Cancel
   JoystickButton *right12=new JoystickButton(rightStick, 12);
   right12->CancelWhenPressed(raise);
   right12->CancelWhenPressed(lower);
-  right12->CancelWhenPressed(binRaise);
-  right12->CancelWhenPressed(binLower);
   // Basic motor test
   CheckRobot* checkRobot=new CheckRobot();
   JoystickButton *left7=new JoystickButton(leftStick, 7);
