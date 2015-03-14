@@ -25,7 +25,7 @@ void DentRobot::RobotInit(){
   // Autonomous
   // Sequence of autonomous command
   SmartDashboard::PutNumber("Auto Sequence", 1.0);
-  SmartDashboard::PutNumber("Auto Wait Time", 2.0);
+  SmartDashboard::PutNumber("Auto Wait Time", 0.5);
   // If the robot will be picking up three totes in sequence 3
   SmartDashboard::PutBoolean("Two totes", true);
   SmartDashboard::PutBoolean("Three totes", false);
@@ -43,7 +43,7 @@ void DentRobot::RobotInit(){
   //Drive speed
   SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2.0);
   //Gyro
-  SmartDashboard::PutNumber("Gyro kP", 0.02);
+  SmartDashboard::PutNumber("Gyro kP", -0.02);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
