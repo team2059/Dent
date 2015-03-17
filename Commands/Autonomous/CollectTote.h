@@ -15,8 +15,10 @@ class CollectTote: public CommandGroup{
   public:
     /**
      * @brief Constructs CollectTote
+     * 
+     * @param z Joystick z value (default: 0.0)
      */
-    CollectTote();
+    CollectTote(double z = 0.0);
 };
 #endif
 // vim: ts=2:sw=2:et
