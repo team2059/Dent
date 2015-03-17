@@ -14,7 +14,9 @@
 class AutoDrive: public Command{
   private:
     double x, //<! The x value of the simulated joystick value
-           y; //<! The y value of the simulated joystick value
+           y, //<! The y value of the simulated joystick value
+           z; //<! The z value of the simulated joystick value
+    bool gyro;
   public:
     /**
      * @brief Constructs AutoDrive
@@ -22,8 +24,10 @@ class AutoDrive: public Command{
      * @param duration Timeout in seconds
      * @param xtmp Joystick x value (default: 0.0)
      * @param ytmp Joystick y value (default: 0.75)
+     * @param ztmp Joystick z value (default: 0.0)
+     * @param useGyro Use the gyro when driving
      */
-    AutoDrive(double duration, double xtmp = 0.0, double ytmp = -0.75);
+    AutoDrive(double duration, double xtmp = 0.0, double ytmp = -0.75, double ztmp = 0.0, bool useGyro = true);
     /**
      * @brief Initializes the class
      */

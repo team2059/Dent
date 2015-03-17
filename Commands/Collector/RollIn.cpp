@@ -7,12 +7,13 @@ void RollIn::Initialize(){
   SetTimeout(2.0);
 }
 void RollIn::Execute(){
-  double cvt=(rawSpeed)*DentRobot::collector->GetSonarDistance()/0.4;
-  if(cvt>=1.0){
-    DentRobot::collector->MoveRollers(1.0);
-  }else{
-    DentRobot::collector->MoveRollers(cvt*1.5);
-  }
+  //double cvt=(rawSpeed)*DentRobot::collector->GetSonarDistance()/0.4;
+  //if(cvt<=1.0){
+  //  DentRobot::collector->MoveRollers(1.0);
+  //}else{
+  //  DentRobot::collector->MoveRollers(cvt*1.5);
+  //}
+  DentRobot::collector->MoveRollers(DentRobot::oi->GetLeftThrottle() * 0.8);
 }
 bool RollIn::IsFinished(){
   return IsTimedOut();
