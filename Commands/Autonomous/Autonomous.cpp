@@ -46,13 +46,13 @@ Autonomous::Autonomous(int seq){
       if(SmartDashboard::GetBoolean("Two totes")){
         AddParallel(new Turn(0.81));
         AddSequential(new Raise(3.5));
-        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance"), 0.0, 0.75));
+        AddSequential(new AutoDrive(SmartDashboard::GetNumber("Two Tote Distance"), 0.0, 0.75));
         AddSequential(new CollectTote());
         AddSequential(new Lower(3.0));
         AddSequential(new Raise(3.5));
         if(SmartDashboard::GetBoolean("Three totes")){
           AddSequential(new Turn(3.8));
-          AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Tote Distance")*2.5, 0.0, 0.75));
+          AddSequential(new AutoDrive(SmartDashboard::GetNumber("Three Tote Distance"), 0.0, 0.75));
           AddSequential(new CollectTote());
           AddSequential(new Lower(3.0));
           AddSequential(new Raise(3.5));
