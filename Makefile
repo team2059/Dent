@@ -19,7 +19,7 @@ clean:
 	$(CLEANSER) $(OBJECTS) bin/FRCUserProgram
 
 deploy:
-		@/home/stonewareslord/git/pv-1.5.7/pv bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram'
+		@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram'
 
 debug:
 		@cat bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram;/home/lvuser/run.sh'
