@@ -1,22 +1,22 @@
-#ifndef BINCLOSEARMS_H
-#define BINCLOSEARMS_H
+#ifndef CONTAINER_CLOSEARMS_H
+#define CONTAINER_CLOSEARMS_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Closes BinElevatorArms (NOT USED)
+ * @brief Closes ContainerElevatorArms (NOT USED)
  *
- * Sets the solenoid to close the arms of the BinElevator
+ * Sets the solenoid to close the arms of the ContainerElevator
  */
-class BinCloseArms: public Command{
+class ContainerCloseArms: public Command{
   public:
     /**
-     * @brief Constructs BinCloseArms
+     * @brief Constructs ContainerCloseArms
      *
      * @param timeout The timeout
      */
-    BinCloseArms(double timeout = 0.5);
+    ContainerCloseArms(double timeout = 0.5);
     /**
      * @brief Initializes the class
      */

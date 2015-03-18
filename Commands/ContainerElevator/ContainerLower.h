@@ -1,27 +1,27 @@
-#ifndef BINRAISE_H
-#define BINRAISE_H
+#ifndef CONTAINER_LOWER_H
+#define CONTAINER_LOWER_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Raises the bin elevator until a timeout is reached
+ * @brief Lowers the container elevator until a timeout is reached
  */
-class BinRaise: public Command{
+class ContainerLower: public Command{
   private:
   public:
     /**
-     * @brief Constructs BinRaise
+     * @brief Constructs ContainerLower
      *
-     * @param timeout Timeout in seconds
+     * @param timeout The timeout
      */
-    BinRaise(double timeout);
+    ContainerLower(float timeout);
     /**
      * @brief Initializes the class
      */
     void Initialize();
     /**
-     * @brief Raises the bin elevator at 1.0 power
+     * @brief Lowers the container elevator at -1.0 power
      */
     void Execute();
     /**
@@ -31,7 +31,7 @@ class BinRaise: public Command{
      */
     bool IsFinished();
     /**
-     * @brief Sets the bin elevator to stop
+     * @brief Sets the container elevator to stop
      */
     void End();
     /**

@@ -3,10 +3,10 @@
 #include "Commands/Elevator/Raise.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
-#include "Commands/BinElevator/BinLower.h"
-#include "Commands/BinElevator/BinRaise.h"
-#include "Commands/BinElevator/BinCloseArms.h"
-#include "Commands/BinElevator/BinOpenArms.h"
+#include "Commands/ContainerElevator/ContainerLower.h"
+#include "Commands/ContainerElevator/ContainerRaise.h"
+#include "Commands/ContainerElevator/ContainerCloseArms.h"
+#include "Commands/ContainerElevator/ContainerOpenArms.h"
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
 #include "Commands/Test/CheckRobot.h"
@@ -28,19 +28,19 @@ OI::OI(){
   right4->CancelWhenPressed(raise);
   right6->WhenPressed(raise);
   right6->CancelWhenPressed(lower);
-  // BinElevator
+  // ContainerElevator
   JoystickButton *right3=new JoystickButton(rightStick, 3);
   JoystickButton *right5=new JoystickButton(rightStick, 5);
   //JoystickButton *right7=new JoystickButton(rightStick, 7);
   //JoystickButton *right8=new JoystickButton(rightStick, 8);
-  //right7->WhenPressed(new BinOpenArms());
-  //right8->WhenPressed(new BinCloseArms());
-  binRaise=new BinRaise(3.0);
-  binLower=new BinLower(2.0);
-  right3->WhileHeld(binLower);
-  right3->CancelWhenPressed(binRaise);
-  right5->WhileHeld(binRaise);
-  right5->CancelWhenPressed(binLower);
+  //right7->WhenPressed(new ContainerOpenArms());
+  //right8->WhenPressed(new ContainerCloseArms());
+  containerRaise=new ContainerRaise(3.0);
+  containerLower=new ContainerLower(2.0);
+  right3->WhileHeld(containerLower);
+  right3->CancelWhenPressed(containerRaise);
+  right5->WhileHeld(containerRaise);
+  right5->CancelWhenPressed(containerLower);
   // Cancel
   JoystickButton *right12=new JoystickButton(rightStick, 12);
   right12->CancelWhenPressed(raise);

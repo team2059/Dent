@@ -6,7 +6,7 @@ OI* DentRobot::oi=NULL;
 Collector* DentRobot::collector=NULL;
 Drivetrain* DentRobot::drivetrain=NULL;
 Elevator* DentRobot::elevator=NULL;
-BinElevator* DentRobot::binElevator=NULL;
+ContainerElevator* DentRobot::containerElevator=NULL;
 CommandGroup* DentRobot::aut=NULL;
 Pneumatics* DentRobot::pneumatics=NULL;
 DentRobot::DentRobot(){
@@ -14,7 +14,7 @@ DentRobot::DentRobot(){
   collector=new Collector();
   drivetrain=new Drivetrain();
   elevator=new Elevator();
-  binElevator=new BinElevator();
+  containerElevator=new ContainerElevator();
   pneumatics=new Pneumatics();
   //CameraServer::GetInstance()->SetQuality(25);
   //CameraServer::GetInstance()->StartAutomaticCapture("cam0");
@@ -33,11 +33,11 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("Auto Zone Distance", 2.1);
   // Distance (in time) to auto tote (used in sequence 3)
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
-  SmartDashboard::PutNumber("Auto Bin Distance", 0.25);
+  SmartDashboard::PutNumber("Auto Container Distance", 0.25);
   SmartDashboard::PutNumber("TurnAmount", 1.8);
   // Elevators
-  SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
-  SmartDashboard::PutBoolean("Bin Elevator Top", false);
+  SmartDashboard::PutBoolean("Container Elevator Bottom", false);
+  SmartDashboard::PutBoolean("Container Elevator Top", false);
   SmartDashboard::PutBoolean("Elevator Bottom", false);
   SmartDashboard::PutBoolean("Elevator Top", false);
   //Drive speed

@@ -3,7 +3,7 @@
 #include "WPILib.h"
 #include "OI.h"
 #include "Subsystems/Elevator.h"
-#include "Subsystems/BinElevator.h"
+#include "Subsystems/ContainerElevator.h"
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/Pneumatics.h"
@@ -41,9 +41,9 @@ class DentRobot: public IterativeRobot{
      */
     static Elevator* elevator;
     /**
-     * @brief The back one-motor Elevator for lifting totes or bins
+     * @brief The back one-motor Elevator for lifting totes or containers
      */
-    static BinElevator* binElevator;
+    static ContainerElevator* containerElevator;
     /**
      * @brief The Pneumatics system (unused)
      */

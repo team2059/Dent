@@ -1,24 +1,24 @@
-#ifndef BINOPENARMS_H
-#define BINOPENARMS_H
+#ifndef CONTAINER_OPENARMS_H
+#define CONTAINER_OPENARMS_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Opens bin arms (unused)
+ * @brief Opens container arms (unused)
  */
-class BinOpenArms: public Command{
+class ContainerOpenArms: public Command{
   public:
     /**
-     * @brief Constructs BinOpenArms
+     * @brief Constructs ContainerOpenArms
      *
      * @param timeout The timeout
      */
-    BinOpenArms(double timeout);
+    ContainerOpenArms(double timeout);
     /**
-     * @brief Constructs BinOpenArms
+     * @brief Constructs ContainerOpenArms
      */
-    BinOpenArms();
+    ContainerOpenArms();
     /**
      * @brief Initializes the class
      */

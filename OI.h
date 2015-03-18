@@ -17,8 +17,8 @@ class OI{
     OI();
     Command *raise,    //!< Raise command
             *lower,    //!< Lower command
-            *binLower, //!< BinLower command
-            *binRaise; //!< BinRaise command
+            *containerLower, //!< ContainerLower command
+            *containerRaise; //!< ContainerRaise command
     /**
      * @brief Returns the right joystick
      *
