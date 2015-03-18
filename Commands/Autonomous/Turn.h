@@ -13,13 +13,14 @@
  */
 class Turn: public Command{
   private:
+    double power; //<! Power to turn (default: 0.6)
   public:
     /**
      * @brief Constructs Turn
      *
      * @param timeout Timeout in seconds
      */
-    Turn(double timeout);
+    Turn(double timeout, double pwr=0.6);
     /**
      * @brief Initializes the class
      */

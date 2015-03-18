@@ -15,6 +15,7 @@ void AutoDrive::Initialize(){
 void AutoDrive::Execute(){
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
   printf("z: %f\n", z);
+  printf("(x, y, z): (%f, %f, %f)\n", x, y, z);
   DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9, gyro);
 }
 bool AutoDrive::IsFinished(){

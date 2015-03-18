@@ -26,6 +26,8 @@ void DentRobot::RobotInit(){
   // Calibration
   // Amount to turn while collecting the initial tote in auto 4
   SmartDashboard::PutNumber("CollectToteTurn", 0.25);
+  SmartDashboard::PutNumber("180Turn", 1.8);
+  SmartDashboard::PutNumber("TwoToteTurn", 0.81);
   // Amount of time to collect a tote
   SmartDashboard::PutNumber("DriveTime", 1.3);
   // Sequence of autonomous command
@@ -41,7 +43,6 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("Three Tote Distance", 2.5);
   SmartDashboard::PutNumber("Auto Bin Distance", 0.25);
   SmartDashboard::PutNumber("TurnAmount", 1.8);
-
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
   SmartDashboard::PutBoolean("Bin Elevator Top", false);
@@ -63,7 +64,6 @@ void DentRobot::AutonomousInit(){
   }
 }
 void DentRobot::AutonomousPeriodic(){
-  printf("Running auto.\n");
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::TeleopInit(){
