@@ -13,7 +13,7 @@ void RollIn::Execute(){
   //}else{
   //  DentRobot::collector->MoveRollers(cvt*1.5);
   //}
-  DentRobot::collector->MoveRollers(DentRobot::oi->GetLeftThrottle() * 0.8);
+  DentRobot::collector->MoveRollers(DentRobot::oi->GetLeftThrottle() * 1.0);
 }
 bool RollIn::IsFinished(){
   return IsTimedOut();

@@ -74,6 +74,20 @@ Autonomous::Autonomous(int seq){
       // Same as auto 4 with (Three|Two) totes checked, collect bin, drive to Auto Zone (TM), release totes
       //TODO: Implement this
       break;
+    case 8:
+      //Use rear elevator to move tote
+      AddSequential(new BinRaise(1));
+      AddSequential(new Turn(2.1));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"),0.0,0.75));
+      AddSequential(new Turn(2.1));
+      break;
+    case 9:
+      //Use rear elevator to move tote
+      AddSequential(new BinLower(1.5));
+      AddSequential(new Turn(2.1));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"),0.0,-0.75));
+      AddSequential(new Turn(2.1));
+      break;
     default:
       printf("Invalid seq: %d\n", seq);
       break;
