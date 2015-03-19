@@ -7,7 +7,7 @@ AutoDrive::AutoDrive(double duration, double xtmp, double ytmp, double ztmp, boo
   x=xtmp;
   y=ytmp;
   z=ztmp;
-  gyro=useGyro;
+  gyro=false;
 }
 void AutoDrive::Initialize(){
   DentRobot::drivetrain->ResetGyro();
