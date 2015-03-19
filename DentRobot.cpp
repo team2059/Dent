@@ -39,8 +39,8 @@ void DentRobot::RobotInit(){
   // Distance (in time) to auto tote (used in sequence 3)
   SmartDashboard::PutNumber("Two Tote Distance", 1.0);
   SmartDashboard::PutNumber("Three Tote Distance", 2.5);
-  SmartDashboard::PutNumber("Auto Bin Distance", 0.25);
-  SmartDashboard::PutNumber("TurnAmount", 1.8);
+  SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
+  SmartDashboard::PutNumber("TurnAmount", 2.6);
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
   SmartDashboard::PutBoolean("Bin Elevator Top", false);
