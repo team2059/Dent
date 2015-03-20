@@ -76,10 +76,9 @@ Autonomous::Autonomous(int seq){
       break;
     case 8:
       //Use rear elevator to move tote
-      AddSequential(new BinRaise(1));
-      AddSequential(new Turn(2.1));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"),0.0,-0.75));
-      AddSequential(new Turn(2.1));
+      AddSequential(new Turn(1.8));
+      AddSequential(new AutoDrive(2.3,0.0,-0.75));
+      AddSequential(new Turn(1.8));
       break;
     case 9:
       //Use rear elevator to move bin
