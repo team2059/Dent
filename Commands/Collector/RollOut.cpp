@@ -1,15 +1,14 @@
 #include "RollOut.h"
-RollOut::RollOut() : Command("RollOut"){
+RollOut::RollOut(double timeout): Command("RollOut"){
   Requires(DentRobot::collector);
+  SetTimeout(timeout);
 }
 void RollOut::Initialize(){
-  SetTimeout(2.0);
 }
 void RollOut::Execute(){
-  //TODO: figure out how to implement this with an Xbox controller
-  //DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle() * 0.8);
-  //Will just move at .8 power for now
-  DentRobot::collector->MoveRollers(-0.8);
+  // Divide by 2 twice because this speed should be half the collector speed
+  DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle() * 0.8);
+  SmartDashboard::PutNumber("DriveThrottle", -DentRobot::oi->GetLeftThrottle());
 }
 bool RollOut::IsFinished(){
   return IsTimedOut();

@@ -1,29 +1,75 @@
 # Dent
+[The Hitchhikers](http://team2059.org) 2015 robot
 
-Dent was designed to have a fast mecanum [drivetrain](Subsystems/Drivetrain.cpp) with ground clearance to traverse the scoring platforms with ease—all while carrying a stack of totes. A main [internal elevator](Subsystems/Elevator.cpp) lifts totes up to six high within the robot, allowing us to move quickly to anywhere on the field without tipping. The [intake system](Subsystems/Collector.cpp) features a ramp leading to the floor with an active roller pulling the totes up to two collector wheels on either side of the robot, both pulling the totes in, and centering them simultaneously. 
+### Features
+#### Subsystems
++ [Mecanum drivetrain](Subsystems/Drivetrain.cpp)
++ [Collector](Subsystems/Collector.cpp) to collect totes in main elevator
++ [Internal elevator](Subsystems/Elevator.cpp) for totes
++ [External elevator](Subsystems/BinElevator.cpp) for bins or totes
++ [Pneumatics](Subsystems/Pneumatics.cpp) for opening/closing bin elevator arms (unused)
 
-But Dent does not stop there; a [taller elevator](Subsystems/BinElevator.cpp) on the back of the robot allows us to lift either recycle containers or totes to a greater height. With this, we can create stacks both internally and externally, with each system providing a backup of the other in case anything breaks.
+#### Sensors
++ [Ultrasonic](Subsystems/Collector.cpp#L9) to check if a tote is in the robot (unused)
++ [hall effect sensors](Subsystems/Elevator.cpp#L6-L8) to check the elevator's position
 
-Dent is programmed in C++ and uses many sensors to determine what to do. An [ultrasonic sensor](Subsystems/Collector.cpp#L9) mounted on the back of the robot looking forward automatically slows down the collector wheels as the totes fly into the internal elevator. Homemade [hall effect sensors](Subsystems/Elevator.cpp#L6-L8) line the elevator shafts of both elevators, allowing the driver to raise totes and containers to pre-programmed heights. 
+#### Automated Commands
++ [AutoDrive](Commands/Autonomous/AutoDrive.cpp) to drive forward without a joystick
++ [CollectTote](Commands/Autonomous/CollectTote.cpp) to drive forwards and roll in collectors in parallel
++ [ReleaseTote](Commands/Autonomous/ReleaseTote.cpp) to drive backwards and roll out collectors in parallel
++ [Turn](Commands/Autonomous/Turn.cpp) to turn the robot
 
-All aspects of Dent’s design come together to produce a robot ready to rank in qualifications, and still provide a fast and capable design for elimination rounds. With all parts made an code written for Dent in-house, this truly is a robot designed by, built by, and programmed by the students on Team 2059, [The Hitchhikers](http://team2059.org/).
+### Running the code
+#### Setup (for Linux)
++ Make sure you have the [toolchain](http://first.wpi.edu/FRC/roborio/toolchains/) installed
++ Edit the path of WPILib and the REMOTEIP on the Makefile
++ Run `make putkey` to put the public key on the rrio for faster deploying (optional)
 
+#### Building
++ Run `make && make deploy`
++ Run `ssh admin@rrio-ip.local '/home/lvuser/FRCUserProgram'` to execute the program
 
-### Controls
-##### Driver Main Joystick (USB 0)
-- X-Axis - Drive forwards and backwards
-- Y-Axis - Strafes left and right
-- Z-Axis - Turns left and right
-- Throttle-Axis - Adjusts collector speed
-- Button 1 - Collects totes
-- Button 2 - Dispenses totes
-- Button 7 - Enable robot test
+### Usage
+#### Left Joystick (USB 0)
++ X-Axis - Drive forwards and backwards
++ Y-Axis - Strafes left and right
++ Z-Axis - Turns left and right
++ Throttle - Adjusts collector speed
++ Button 1 - Collect totes
++ Button 2 - Eject totes
++ Button 7 - Check robot
 
-##### Driver Secondary Joystick (USB 1)
-- Button 3 - Lowers bin elevator
-- Button 4 - Lowers tote elevator
-- Button 5 - Raises bin elevator
-- Button 6 - Raises tote elevator
-- Button 7 - Opens bin arms
-- Button 8 - Closes bin arms
-- Button 12 - Universal cancel button
+#### Right Joystick (USB 1)
++ Button 3 - Lowers bin elevator
++ Button 4 - Lowers main elevator
++ Button 5 - Raises bin elevator
++ Button 6 - Raises main elevator
++ Button 7 - Opens bin arms (unused)
++ Button 8 - Closes bin arms (unused)
++ Button 12 - Cancel raising and lowering for both elevators
+
+### Dashboard
+#### Configuration
++ CodeVersion - The current version of the code
++ Auto Wait Time - The amount of time to wait for any autonomous to run (default: 2.0)
++ Two totes - Collect a second tote if using Auto Sequence 4 or 5 (default: true)
++ Three totes - Collect a third tote if using Auto Sequence 4 or 5 (default: false)
++ Auto Zone Distance - Amount of time in seconds to drive to the auto zone (default: 2.1)
++ Auto Tote Distance - Amount of time in seconds to drive to a second or third tote if using Auto Sequence 4, 5, or 7 (default: 0.5)
++ Auto Bin Distance - Amount of time in seconds to drive to a bin if using Auto Sequence 6 or 7 (default: 0.5)
++ TurnAmount - Amount of time in seconds to turn the robot (default: 1.8)
++ Bin Elevator Bottom - Status of the bottom bin elevator sensor (unused)
++ Bin Elevator Top - Status of the top bin elevator sensor (unused)
++ Elevator Bottom - Status of the bottom elevator sensor
++ Elevator Top - Status of the top elevator sensor
++ DriveSpeedReductionThresh - Maximum y value of the joystick when driving
++ Auto Sequence - The sequence of autonomous to run
+
+#### Autonomous
+1. Drive to auto zone, turn
+2. Lower BinElevator, collect bin, turn, drive to AutoZone, turn
+3. Raise BinElevator, turn, drive to AutoZone, turn
+4. Collect 1, 2, or 3 totes, turn, drive to AutoZone, turn
+5. Same as auto 4, but navigate around bins (not implemented)
+6. Collect 1 bin then 1 tote (not implemented)
+7. Collect 3 totes, collect bin, drive to AutoZone (not implemented)

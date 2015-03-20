@@ -1,7 +1,7 @@
 #include "Collector.h"
 #include "../RobotMap.h"
 
-Collector::Collector() : Subsystem("Collector"){
+Collector::Collector(): Subsystem("Collector"){
   collectorMotorLeft=new CANTalon(COLLECTOR_LEFT_CAN);
   collectorMotorBottom=new CANTalon(COLLECTOR_BOTTOM_CAN);
   collectorMotorRamp=new CANTalon(COLLECTOR_RAMP_CAN);
@@ -10,12 +10,12 @@ Collector::Collector() : Subsystem("Collector"){
 }
 void Collector::InitDefaultCommand(){
 }
-void Collector::MoveRollers(double a){
-  collectorMotorLeft->Set(a);
-  collectorMotorBottom->Set(-a);
-  collectorMotorRamp->Set(a);
-  collectorMotorRight->Set(-a);
-  printf("Roller power: %f\n", a);
+void Collector::MoveRollers(double power){
+  collectorMotorLeft->Set(power);
+  collectorMotorBottom->Set(-power);
+  collectorMotorRamp->Set(power);
+  collectorMotorRight->Set(-power);
+  printf("Roller power: %f\n", power);
 }
 double Collector::GetSonarDistance(){
   return sonarAnalog->GetAverageVoltage();

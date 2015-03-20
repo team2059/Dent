@@ -23,25 +23,33 @@ DentRobot::DentRobot(){
 void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);
   // Autonomous
+  // Calibration
+  // Amount to turn while collecting the initial tote in auto 4
+  SmartDashboard::PutNumber("CollectToteTurn", 0.25);
+  // Amount of time to collect a tote
+  SmartDashboard::PutNumber("DriveTime", 1.3);
   // Sequence of autonomous command
-  SmartDashboard::PutNumber("Auto Sequence", 2.0);
-  SmartDashboard::PutNumber("Auto Wait Time", 3.0);
+  SmartDashboard::PutNumber("Auto Sequence", 9.0);
+  SmartDashboard::PutNumber("Auto Wait Time", 0.5);
   // If the robot will be picking up three totes in sequence 3
-  SmartDashboard::PutBoolean("Three totes", true);
-  // TODO: Calibrate the following two values
+  SmartDashboard::PutBoolean("Two totes", false);
+  SmartDashboard::PutBoolean("Three totes", false);
   // Distance (in time) to auto zone
-  SmartDashboard::PutNumber("Auto Zone Distance", 2.8);
+  SmartDashboard::PutNumber("Auto Zone Distance", 2.1);
   // Distance (in time) to auto tote (used in sequence 3)
+  SmartDashboard::PutNumber("Two Tote Distance", 1.0);
+  SmartDashboard::PutNumber("Three Tote Distance", 2.5);
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
-  SmartDashboard::PutNumber("TurnAmount", 2.0);
-
+  SmartDashboard::PutNumber("TurnAmount", 2.6);
   // Elevators
   SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
   SmartDashboard::PutBoolean("Bin Elevator Top", false);
   SmartDashboard::PutBoolean("Elevator Bottom", false);
   SmartDashboard::PutBoolean("Elevator Top", false);
   //Drive speed
-  SmartDashboard::PutNumber("DriveSpeedReductionThresh",2);
+  SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2.0);
+  //Gyro
+  SmartDashboard::PutNumber("Gyro kP", -0.02);
 }
 void DentRobot::DisabledPeriodic(){
   Scheduler::GetInstance()->Run();
@@ -58,13 +66,13 @@ void DentRobot::AutonomousPeriodic(){
   Scheduler::GetInstance()->Run();
 }
 void DentRobot::TeleopInit(){
-  if (aut != NULL){
+  if(aut != NULL){
     aut->Cancel();
   }
 }
 void DentRobot::TeleopPeriodic(){
   Scheduler::GetInstance()->Run();
-  // TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
+  //TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
   if(elevator->GetUseEncoder()&&elevator->GetHeight()<=-1.0){
     // Raise the elevator if it dips below elevatorTop
     oi->raise->Start();

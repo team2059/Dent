@@ -10,7 +10,7 @@
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
 #include "Commands/Test/CheckRobot.h"
-OI::OI() {
+OI::OI(){
   // Joysticks
   leftController=new Joystick(0);
   rightStick=new Joystick(1);

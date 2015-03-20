@@ -8,7 +8,6 @@ Elevator::Elevator(){
   elevatorTop=new DigitalInput(ELEVATOR_TOP_DIO);
   // Checks if the elevator is drifting
   useEncoder=false;
-  stoppedAtSensor=false;
 }
 void Elevator::InitDefaultCommand(){
 }
@@ -36,8 +35,8 @@ bool Elevator::GetElevatorTop(){
   SmartDashboard::PutBoolean("Elevator Top", !elevatorTop->Get());
   return elevatorTop->Get();
 }
-void Elevator::SetUseEncoder(bool param){
-  useEncoder=param;
+void Elevator::SetUseEncoder(bool use){
+  useEncoder=use;
 }
 bool Elevator::GetUseEncoder(){
   return useEncoder;

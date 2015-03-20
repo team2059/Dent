@@ -3,19 +3,53 @@
 
 #include "WPILib.h"
 #include "Commands/PIDSubsystem.h"
+/**
+ * @brief Controls the bin elevator
+ */
 class BinElevator{
   private:
-    CANTalon *motor;
-    Encoder *elevatorEncoder;
-    static constexpr double kP_real=4, kI_real=.0f, kP_simulation=18, kI_simulation=.2;
-    DigitalInput *elevatorBottom, *elevatorTop;
+    CANTalon *motor; //<! The bin elevator motor
+    Encoder *elevatorEncoder; //<! The bin elevator encoder (unused)
+    DigitalInput *elevatorBottom, //<! The bottom bin elevator sensor (unused)
+                 *elevatorTop; //<! The top bin elevator sensor (unused)
   public:
+    /**
+     * @brief Constructs BinElevator
+     */
     BinElevator();
+    /**
+     * @brief No action
+     */
     void InitDefaultCommand();
-    void Run(double);
+    /**
+     * @brief Runs the bin elevator
+     *
+     * @param power The power to run the bin elevator
+     * 
+     * Ranges from -1.0 to 1.0
+     */
+    void Run(double power);
+    /**
+     * @brief Sets the encoder value to 0 (unused)
+     */
     void ResetEncoder();
+    /**
+     * @brief Gets the height of the bin elevator
+     *
+     * @return The height of the bin elevator
+     */
     double GetHeight();
+    /**
+     * @brief Gets the status of the top sensor
+     *
+     * @return True if the sensor is activated
+     */
     bool GetElevatorTop();
+    /**
+     * @brief Gets the status of the bottom sensor
+     *
+     * @return True if the sensor is activated
+     */
     bool GetElevatorBottom();
 };
 #endif

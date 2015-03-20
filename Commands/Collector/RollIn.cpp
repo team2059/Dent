@@ -1,18 +1,19 @@
 #include "RollIn.h"
-RollIn::RollIn(double k) : Command("RollIn"){
-  rawSpeed=k;
+RollIn::RollIn(double speed): Command("RollIn"){
+  rawSpeed=speed;
 }
 void RollIn::Initialize(){
   printf("Initialized RollIn\n");
   SetTimeout(2.0);
 }
 void RollIn::Execute(){
-  double cvt=(rawSpeed)*DentRobot::collector->GetSonarDistance()/0.4;
-  if(cvt>=1.0){
-    DentRobot::collector->MoveRollers(1.0);
-  }else{
-    DentRobot::collector->MoveRollers(cvt*1.5);
-  }
+  //double cvt=(rawSpeed)*DentRobot::collector->GetSonarDistance()/0.4;
+  //if(cvt<=1.0){
+  //  DentRobot::collector->MoveRollers(1.0);
+  //}else{
+  //  DentRobot::collector->MoveRollers(cvt*1.5);
+  //}
+  DentRobot::collector->MoveRollers(DentRobot::oi->GetLeftThrottle() * 1.0);
 }
 bool RollIn::IsFinished(){
   return IsTimedOut();

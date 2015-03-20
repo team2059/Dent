@@ -1,17 +1,16 @@
 #include "BinRaise.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-BinRaise::BinRaise(float t) : Command("BinRaise"){
-  timeout=t;
+BinRaise::BinRaise(double timeout): Command("BinRaise"){
+  SetTimeout(timeout);
 }
 void BinRaise::Initialize(){
-  SetTimeout(timeout);
 }
 void BinRaise::Execute(){
   DentRobot::binElevator->Run(1.0);
 }
 bool BinRaise::IsFinished(){
-  if (/*!DentRobot::binElevator->GetElevatorTop()||*/IsTimedOut()){
+  if(/*!DentRobot::binElevator->GetElevatorTop()||*/IsTimedOut()){
     printf("Robot stoped raising. Sensor based? %d\n", !DentRobot::binElevator->GetElevatorTop());
     return true;
   }else{

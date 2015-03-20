@@ -2,12 +2,18 @@
 #define CHECKROBOT_H
 
 #include "Commands/CommandGroup.h"
-#include "../../CommandBase.h"
+#include "../../DentRobot.h"
 #include "../../DentRobot.h"
 #include "WPILib.h"
 
+/**
+ * @brief TODO
+ */
 class CheckRobot: public CommandGroup{
   public:
+    /**
+     * @brief TODO
+     */
     CheckRobot();
 };
 #endif
