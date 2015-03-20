@@ -9,7 +9,6 @@
 #include "Commands/BinElevator/BinOpenArms.h"
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
-#include "Commands/Test/CheckRobot.h"
 OI::OI(){
   // Joysticks
   leftStick=new Joystick(0);
@@ -45,10 +44,6 @@ OI::OI(){
   JoystickButton *right12=new JoystickButton(rightStick, 12);
   right12->CancelWhenPressed(raise);
   right12->CancelWhenPressed(lower);
-  // Basic motor test
-  CheckRobot* checkRobot=new CheckRobot();
-  JoystickButton *left7=new JoystickButton(leftStick, 7);
-  left7->WhenPressed(checkRobot);
 }
 Joystick* OI::GetRightStick(){
   return rightStick;
