@@ -18,6 +18,10 @@ void Drive::Execute(){
   //  y=0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
+  if(DentRobot::oi->GetLeftStick()->GetRawButton(11)){
+    x = -x;
+    y = -y;
+  }
   DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9);
 }
 bool Drive::IsFinished(){
