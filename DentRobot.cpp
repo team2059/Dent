@@ -29,7 +29,7 @@ void DentRobot::RobotInit(){
   // Amount of time to collect a tote
   SmartDashboard::PutNumber("DriveTime", 1.3);
   // Sequence of autonomous command
-  SmartDashboard::PutNumber("Auto Sequence", 4.0);
+  SmartDashboard::PutNumber("Auto Sequence", 9.0);
   SmartDashboard::PutNumber("Auto Wait Time", 0.5);
   // If the robot will be picking up three totes in sequence 3
   SmartDashboard::PutBoolean("Two totes", false);
