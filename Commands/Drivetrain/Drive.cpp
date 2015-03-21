@@ -22,7 +22,11 @@ void Drive::Execute(){
     x = -x;
     y = -y;
   }
-  DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9);
+  if(DentRobot::oi->GetLeftStick()->GetRawButton(7)){
+    DentRobot::drivetrain->DriveMecanum(0.0, 0.0, 0.0, 0.9);
+  }else{
+    DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9);
+  }
 }
 bool Drive::IsFinished(){
   return IsTimedOut();
