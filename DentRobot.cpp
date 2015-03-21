@@ -77,6 +77,7 @@ void DentRobot::TeleopPeriodic(){
     // Raise the elevator if it dips below elevatorTop
     oi->raise->Start();
   }
+  SmartDashboard::PutNumber("CollectorThrottle",oi->GetLeftThrottle());
 }
 void DentRobot::TestPeriodic(){
 }
