@@ -18,7 +18,7 @@ void Drive::Execute(){
   //  y=0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(11)){
+  if(DentRobot::oi->GetLeftButton("y")){
     x = -x;
     y = -y;
   }

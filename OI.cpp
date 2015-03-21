@@ -27,24 +27,34 @@ OI::OI(){
   // Left, right stick press 
   leftLPress = new JoystickButton(leftController, 9);
   leftRPress = new JoystickButton(leftController, 10);
+
+  // Commands
+  Raise *raise = new Raise(2.0);
+  Lower *lower = new Lower(2.0);
+  leftA->WhileHeld(raise);
+  leftA->CancelWhenPressed(lower);
+  leftB->WhenPressed(lower);
+  leftB->CancelWhenPressed(raise);
 }
 float OI::GetLeftAxis(std::string stick, std::string axis){
   if(stick=="left"){
     if(axis=="x"){
-      return leftController->GetX();
+      return leftController->GetRawAxis(0);
     }else if(axis=="y"){
-      return -leftController->GetY();
+      return -leftController->GetRawAxis(1);
     }else if(axis=="trigger"){
       //TODO: Figure out what axis this is
+      return leftController->GetRawAxis(4);
       return -4;
     }
   }else if(stick=="right"){
     if(axis=="x"){
-      return leftController->GetTwist();
+      return leftController->GetRawAxis(2);
     }else if(axis=="y"){
-      return -leftController->GetRawAxis(4);
+      return -leftController->GetRawAxis(3);
     }else if(axis=="trigger"){
       //TODO: Figure out what axis this is
+      return leftController->GetRawAxis(5);
       return -4;
     }
   }

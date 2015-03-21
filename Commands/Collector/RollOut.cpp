@@ -7,8 +7,8 @@ void RollOut::Initialize(){
 }
 void RollOut::Execute(){
   // Divide by 2 twice because this speed should be half the collector speed
-  DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftThrottle() * 0.8);
-  SmartDashboard::PutNumber("DriveThrottle", -DentRobot::oi->GetLeftThrottle());
+  DentRobot::collector->MoveRollers(-DentRobot::oi->GetLeftAxis("right", "trigger") * 0.8);
+  SmartDashboard::PutNumber("DriveThrottle", -DentRobot::oi->GetLeftAxis("right", "trigger"));
 }
 bool RollOut::IsFinished(){
   return IsTimedOut();
