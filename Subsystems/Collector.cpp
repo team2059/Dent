@@ -11,11 +11,20 @@ Collector::Collector(): Subsystem("Collector"){
 void Collector::InitDefaultCommand(){
 }
 void Collector::MoveRollers(double power){
+  MoveLeftRoller(power);
+  MoveRightRoller(-power);
+  MoveBottomRollers(power);
+  printf("Roller power: %f\n", power);
+}
+void Collector::MoveLeftRoller(double power){
   collectorMotorLeft->Set(power);
+}
+void Collector::MoveRightRoller(double power){
+  collectorMotorRight->Set(power);
+}
+void Collector::MoveBottomRollers(double power){
   collectorMotorBottom->Set(-power);
   collectorMotorRamp->Set(power);
-  collectorMotorRight->Set(-power);
-  printf("Roller power: %f\n", power);
 }
 double Collector::GetSonarDistance(){
   return sonarAnalog->GetAverageVoltage();

@@ -3,6 +3,7 @@
 #include "Commands/Elevator/Raise.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
+#include "Commands/Collector/RollVar.h"
 #include "Commands/BinElevator/BinLower.h"
 #include "Commands/BinElevator/BinRaise.h"
 #include "Commands/BinElevator/BinCloseArms.h"
@@ -16,8 +17,11 @@ OI::OI(){
   // Collector
   JoystickButton *left1=new JoystickButton(leftStick, 1);
   JoystickButton *left2=new JoystickButton(leftStick, 2);
+  JoystickButton *left7=new JoystickButton(leftStick, 7);
   left1->WhileHeld(new RollIn(GetLeftThrottle()));
   left2->WhileHeld(new RollOut(2.0));
+  // 0.8 is the multiplier, so they roll at 80% power
+  left7->WhileHeld(new RollVar(0.8));
   // Elevator
   raise=new Raise(3.5);
   lower=new Lower(3.0);
