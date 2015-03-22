@@ -8,9 +8,8 @@ void RollVar::Initialize(){
   Requires(DentRobot::drivetrain);
 }
 void RollVar::Execute(){
-  DentRobot::collector->MoveRollers(DentRobot::oi->GetLeftThrottle() * 1.0);
-  DentRobot::collector->MoveLeftRoller(speed*DentRobot::oi->GetLeftStick()->GetRawAxis(2));
-  DentRobot::collector->MoveRightRoller(speed*-DentRobot::oi->GetLeftStick()->GetRawAxis(2));
+  DentRobot::collector->MoveLeftRoller(1-(speed*(DentRobot::oi->GetLeftStick()->GetRawAxis(2)+1)/2));
+  DentRobot::collector->MoveRightRoller(-(speed*(DentRobot::oi->GetLeftStick()->GetRawAxis(2)+1)/2));
   DentRobot::collector->MoveBottomRollers(speed*1.0);
 }
 bool RollVar::IsFinished(){
