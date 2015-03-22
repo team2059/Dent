@@ -11,7 +11,7 @@
  */
 class RollVar: public Command{
   private:
-    double speed; //<! Speed control of the collector
+    double speed; //<! Speed multiplier of the collector
   public:
     /**
      * @brief Constructs RollVar

@@ -72,12 +72,11 @@ void DentRobot::TeleopInit(){
 }
 void DentRobot::TeleopPeriodic(){
   Scheduler::GetInstance()->Run();
-  //TODO: Calibrate 1.0 to the height we want the elevator to automatically raise
   if(elevator->GetUseEncoder()&&elevator->GetHeight()<=-1.0){
     // Raise the elevator if it dips below elevatorTop
     oi->raise->Start();
   }
-  SmartDashboard::PutNumber("CollectorThrottle",oi->GetLeftThrottle());
+  SmartDashboard::PutNumber("CollectorThrottle", oi->GetLeftThrottle());
 }
 void DentRobot::TestPeriodic(){
 }

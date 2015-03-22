@@ -19,6 +19,18 @@
  * Sequence 2: Collects a tote, turns, then drives to the auto zone
  *
  * Sequence 3: Collects two or three totes then drives to auto zone
+ *
+ * Sequence 4: Collect one, two, or three totes, drive to Auto Zone, release totes
+ *
+ * Sequence 5: Same as auto 4, but navigate around bins (not implemented)
+ *
+ * Sequence 6: Collect 1 bin and 1 tote (not implemented)
+ *
+ * Sequence 7: Same as auto 4, then collect bin, drive to auto zone, release totes (not implemented)
+ *
+ * Sequence 8: Use rear elevator to move tote
+ *
+ * Sequence 9: Use rear elevator to move bin
  */
 class Autonomous: public CommandGroup{
   public:

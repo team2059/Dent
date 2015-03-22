@@ -5,7 +5,7 @@
 #include "WPILib.h"
 
 /**
- * @brief Closes BinElevatorArms (NOT USED)
+ * @brief Closes BinElevatorArms (unused)
  *
  * Sets the solenoid to close the arms of the BinElevator
  */
@@ -40,6 +40,5 @@ class BinCloseArms: public Command{
      */
     void Interrupted();
 };
-
 #endif
 // vim: ts=2:sw=2:et

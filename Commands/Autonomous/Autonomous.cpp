@@ -71,19 +71,19 @@ Autonomous::Autonomous(int seq){
       //TODO: Implement this
       break;
     case 7:
-      // Same as auto 4 with (Three|Two) totes checked, collect bin, drive to Auto Zone (TM), release totes
+      // Same as auto 4, then collect bin, drive to Auto Zone (TM), release totes
       //TODO: Implement this
       break;
     case 8:
       //Use rear elevator to move tote
       AddSequential(new Turn(1.8));
-      AddSequential(new AutoDrive(2.3,0.0,-0.75));
+      AddSequential(new AutoDrive(2.3, 0.0, -0.75));
       AddSequential(new Turn(1.8));
       break;
     case 9:
       //Use rear elevator to move bin
-      AddSequential(new BinLower(.1));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"),0.0,0.75));
+      AddSequential(new BinLower(0.1));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, 0.75));
       AddSequential(new Turn(2.1));
       break;
     default:
