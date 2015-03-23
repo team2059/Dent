@@ -24,7 +24,7 @@ void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, 
   }else{
     correctZ = -z * 0.5;
   }
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(10)){
+  if(DentRobot::oi->GetLeftButton("b")){
     correctY /= SmartDashboard::GetNumber("DriveSpeedReductionThresh");
   }
   rightFront->Set((-correctX + correctY - correctZ));

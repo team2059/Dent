@@ -8,6 +8,7 @@ void RollVar::Initialize(){
   Requires(DentRobot::drivetrain);
 }
 void RollVar::Execute(){
+  //TODO: Find a good controller throttle/button for this
   DentRobot::collector->MoveLeftRoller(1-(speed*(DentRobot::oi->GetLeftStick()->GetRawAxis(2)+1)/2));
   DentRobot::collector->MoveRightRoller(-(speed*(DentRobot::oi->GetLeftStick()->GetRawAxis(2)+1)/2));
   DentRobot::collector->MoveBottomRollers(speed*1.0);

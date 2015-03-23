@@ -9,7 +9,7 @@
  */
 class OI{
   private:
-    Joystick *leftStick, *rightStick;
+    Joystick *leftController, *rightController;
   public:
     /**
      * @brief Constructs OI
@@ -19,6 +19,23 @@ class OI{
             *lower,    //!< Lower command
             *binLower, //!< BinLower command
             *binRaise; //!< BinRaise command
+    /**
+     * @brief Gets the value of a throttle on the left controller
+     *
+     * @param stick The stick to get. Can be "left" or "right"
+     * @param axis The axis to get. Can be "x", "y", or "trigger"
+     *
+     * @return 
+     */
+    float GetLeftAxis(std::string stick, std::string axis);
+    /**
+     * @brief Gets the state of a button on the left controller
+     *
+     * @param button The button to get. Can be "x", "y", "a", "b", "lb", "rb", "back", "start", "lpress", "or" "rpress"
+     *
+     * @return True if the button is pressed
+     */
+    bool GetLeftButton(std::string button);
     /**
      * @brief Returns the right joystick
      *

@@ -7,9 +7,9 @@ void Drive::Initialize(){
 }
 void Drive::Execute(){
   double x, y, z;
-  x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
-  y = -DentRobot::oi->GetLeftStick()->GetRawAxis(1);
-  z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
+  x = DentRobot::oi->GetLeftAxis("left", "x");
+  y = -DentRobot::oi->GetLeftAxis("left", "y");
+  z = DentRobot::oi->GetLeftAxis("right", "x");
   // Lock the x axis when not holding button 1
   //if(DentRobot::oi->GetLeftStick()->GetRawButton(1)){
   //  x=0;
@@ -18,11 +18,11 @@ void Drive::Execute(){
   //  y=0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(11)){
+  if(DentRobot::oi->GetLeftButton("y")){
     x = -x;
     y = -y;
   }
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(7)){
+  if(DentRobot::oi->GetLeftButton("a")){
     DentRobot::drivetrain->DriveMecanum(0.0, 0.0, 0.0, 0.9);
   }else{
     DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9);
