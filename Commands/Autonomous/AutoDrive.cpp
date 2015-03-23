@@ -4,10 +4,10 @@
 AutoDrive::AutoDrive(double duration, double xtmp, double ytmp, double ztmp, bool useGyro): Command("AutoDrive"){
   Requires(DentRobot::drivetrain);
   SetTimeout(duration);
-  x=xtmp;
-  y=ytmp;
-  z=ztmp;
-  gyro=useGyro;
+  x = xtmp;
+  y = ytmp;
+  z = ztmp;
+  gyro = useGyro;
 }
 void AutoDrive::Initialize(){
   DentRobot::drivetrain->ResetGyro();

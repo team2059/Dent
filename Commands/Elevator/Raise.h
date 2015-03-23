@@ -11,8 +11,10 @@ class Raise: public Command{
   public:
     /**
      * @brief Constructs Raise
+     *
+     * @param timeout Timeout in seconds (default: 3.5)
      */
-    Raise(double timeout=3.5);
+    Raise(double timeout = 3.5);
     /**
      * @brief Initializes the class
      */

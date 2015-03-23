@@ -1,6 +1,6 @@
 #include "RollVar.h"
 RollVar::RollVar(double speedVal): Command("RollVar"){
-  speed=speedVal;
+  speed = speedVal;
 }
 void RollVar::Initialize(){
   printf("Initialized RollVar\n");

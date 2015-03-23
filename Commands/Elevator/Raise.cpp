@@ -11,11 +11,11 @@ void Raise::Execute(){
 }
 bool Raise::IsFinished(){
   //if(!DentRobot::elevator->GetElevatorMiddle()){
-  //  DentRobot::elevator->stoppedAtSensor=true;
+  //  DentRobot::elevator->stoppedAtSensor = true;
   //}
   //if((DentRobot::elevator->stoppedAtSensor)){
   //  printf("Stopped at the middle sensor\n");
-  //  DentRobot::elevator->stoppedAtSensor=false;
+  //  DentRobot::elevator->stoppedAtSensor = false;
   //  return true;
   //}else if(!DentRobot::elevator->GetElevatorTop()){
   if(!DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle()||IsTimedOut()){

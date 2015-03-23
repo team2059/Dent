@@ -39,9 +39,9 @@ class Drivetrain: public Subsystem{
      * @param y Joystick y value (-1.0 to 1.0)
      * @param z Joystick z value (-1.0 to 1.0)
      * @param sensitivity Sensitivity (0.0 to 1.0)
-     * @param driveStraight Overrides z value to correct for motor lag
+     * @param driveStraight Overrides z value to correct for motor lag (default: false)
      */
-    void DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight=false);
+    void DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight = false);
     /**
      * @brief Tests one motor
      *

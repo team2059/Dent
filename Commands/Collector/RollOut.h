@@ -14,9 +14,9 @@ class RollOut: public Command{
     /**
      * @brief Constructs RollOut
      *
-     * @param timeout The timeout
+     * @param timeout Timeout in seconds (default: 2.0)
      */
-    RollOut(double timeout=2.0);
+    RollOut(double timeout = 2.0);
     /**
      * @brief Initializes the class
      */

@@ -23,9 +23,9 @@ class AutoDrive: public Command{
      *
      * @param duration Timeout in seconds
      * @param xtmp Joystick x value (default: 0.0)
-     * @param ytmp Joystick y value (default: 0.75)
+     * @param ytmp Joystick y value (default: -0.75)
      * @param ztmp Joystick z value (default: 0.0)
-     * @param useGyro Use the gyro when driving
+     * @param useGyro Use the gyro when driving (default: true)
      */
     AutoDrive(double duration, double xtmp = 0.0, double ytmp = -0.75, double ztmp = 0.0, bool useGyro = true);
     /**

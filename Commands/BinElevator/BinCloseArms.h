@@ -5,7 +5,7 @@
 #include "WPILib.h"
 
 /**
- * @brief Closes BinElevatorArms (NOT USED)
+ * @brief Closes BinElevatorArms (unused)
  *
  * Sets the solenoid to close the arms of the BinElevator
  */
@@ -14,7 +14,7 @@ class BinCloseArms: public Command{
     /**
      * @brief Constructs BinCloseArms
      *
-     * @param timeout The timeout
+     * @param timeout Timeout in seconds (default: 0.5)
      */
     BinCloseArms(double timeout = 0.5);
     /**
@@ -40,6 +40,5 @@ class BinCloseArms: public Command{
      */
     void Interrupted();
 };
-
 #endif
 // vim: ts=2:sw=2:et

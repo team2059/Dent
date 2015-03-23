@@ -13,8 +13,7 @@ void Drivetrain::InitDefaultCommand(){
   SetDefaultCommand(new Drive());
 }
 void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight){
-  //TODO: Find the correct value for kP
-  double kP=SmartDashboard::GetNumber("Gyro kP");
+  double kP = SmartDashboard::GetNumber("Gyro kP");
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
   double correctZ;

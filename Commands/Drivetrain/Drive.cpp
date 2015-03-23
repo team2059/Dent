@@ -12,10 +12,10 @@ void Drive::Execute(){
   z = DentRobot::oi->GetLeftAxis("right", "x");
   // Lock the x axis when not holding button 1
   //if(DentRobot::oi->GetLeftStick()->GetRawButton(1)){
-  //  x=0;
+  //  x = 0;
   //}
   //if(DentRobot::oi->GetLeftStick()->GetRawButton(2)){
-  //  y=0;
+  //  y = 0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
   if(DentRobot::oi->GetLeftButton("y")){

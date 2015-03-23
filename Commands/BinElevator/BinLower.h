@@ -8,12 +8,11 @@
  * @brief Lowers the bin elevator until a timeout is reached
  */
 class BinLower: public Command{
-  private:
   public:
     /**
      * @brief Constructs BinLower
      *
-     * @param timeout The timeout
+     * @param timeout Timeout in seconds
      */
     BinLower(float timeout);
     /**

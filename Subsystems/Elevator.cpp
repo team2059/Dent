@@ -1,13 +1,13 @@
 #include "Elevator.h"
 #include "../RobotMap.h"
 Elevator::Elevator(){
-  motor=new CANTalon(ELEVATOR_CAN);
-  elevatorEncoder=new Encoder(ELEVATOR_ENCODERA, ELEVATOR_ENCODERB, false);
-  elevatorBottom=new DigitalInput(ELEVATOR_BOTTOM_DIO);
-  elevatorMiddle=new DigitalInput(ELEVATOR_MIDDLE_DIO);
-  elevatorTop=new DigitalInput(ELEVATOR_TOP_DIO);
+  motor = new CANTalon(ELEVATOR_CAN);
+  elevatorEncoder = new Encoder(ELEVATOR_ENCODERA, ELEVATOR_ENCODERB, false);
+  elevatorBottom = new DigitalInput(ELEVATOR_BOTTOM_DIO);
+  elevatorMiddle = new DigitalInput(ELEVATOR_MIDDLE_DIO);
+  elevatorTop = new DigitalInput(ELEVATOR_TOP_DIO);
   // Checks if the elevator is drifting
-  useEncoder=false;
+  useEncoder = false;
 }
 void Elevator::InitDefaultCommand(){
 }
@@ -36,7 +36,7 @@ bool Elevator::GetElevatorTop(){
   return elevatorTop->Get();
 }
 void Elevator::SetUseEncoder(bool use){
-  useEncoder=use;
+  useEncoder = use;
 }
 bool Elevator::GetUseEncoder(){
   return useEncoder;
