@@ -33,25 +33,25 @@ class Collector: public Subsystem{
     /**
      * @brief Moves the collectors
      *
-     * @param power The speed to run the collectors
+     * @param power The power to run the collectors
      */
     void MoveRollers(double power);
     /**
      * @brief Moves the left roller
      *
-     * @param power The speed to run the left roller
+     * @param power The power to run the left roller
      */
     void MoveLeftRoller(double power);
     /**
      * @brief Moves the right roller
      *
-     * @param power The speed to run the right roller
+     * @param power The power to run the right roller
      */
     void MoveRightRoller(double power);
     /**
      * @brief Moves the bottom rollers
      *
-     * @param power The speed to run the bottom rollers
+     * @param power The power to run the bottom rollers
      */
     void MoveBottomRollers(double power);
     /**

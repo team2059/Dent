@@ -12,7 +12,6 @@
  * Turns the robot until a timeout is reached
  */
 class Turn: public Command{
-  private:
   public:
     /**
      * @brief Constructs Turn

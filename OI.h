@@ -9,16 +9,17 @@
  */
 class OI{
   private:
-    Joystick *leftStick, *rightStick;
+    Joystick *leftStick,  //<! Left joystick
+             *rightStick; //<! Right joystick
   public:
     /**
      * @brief Constructs OI
      */
     OI();
-    Command *raise,    //!< Raise command
-            *lower,    //!< Lower command
-            *binLower, //!< BinLower command
-            *binRaise; //!< BinRaise command
+    Command *raise,    //<! Raise command
+            *lower,    //<! Lower command
+            *binLower, //<! BinLower command
+            *binRaise; //<! BinRaise command
     /**
      * @brief Returns the right joystick
      *

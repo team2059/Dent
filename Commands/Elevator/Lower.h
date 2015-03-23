@@ -11,8 +11,10 @@ class Lower: public Command{
   public:
     /**
      * @brief Constructs Lower
+     *
+     * @param timeout Timeout in seconds (default: 3.0)
      */
-    Lower(double timeout=3.0);
+    Lower(double timeout = 3.0);
     /**
      * @brief Initializes the class
      */

@@ -24,9 +24,7 @@ class BinElevator{
     /**
      * @brief Runs the bin elevator
      *
-     * @param power The power to run the bin elevator
-     * 
-     * Ranges from -1.0 to 1.0
+     * @param power The power to run the bin elevator (-1.0 to 1.0)
      */
     void Run(double power);
     /**
