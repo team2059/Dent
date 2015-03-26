@@ -3,7 +3,7 @@
 
 #include "WPILib.h"
 
-#define CODE_VERSION 2.0
+#define CODE_VERSION 2.1
 
 // Elevator
 #define ELEVATOR_CAN 1
