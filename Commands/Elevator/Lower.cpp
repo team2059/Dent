@@ -1,8 +1,9 @@
 #include "Lower.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-Lower::Lower(double timeout): Command("Lower"){
+Lower::Lower(double timeout, bool useSoftLimits): Command("Lower"){
   SetTimeout(timeout);
+  softLimits=useSoftLimits;
 }
 void Lower::Initialize(){
 }
@@ -10,8 +11,12 @@ void Lower::Execute(){
   DentRobot::elevator->Run(-1.0);
 }
 bool Lower::IsFinished(){
-  if(!DentRobot::elevator->GetElevatorBottom()||IsTimedOut()){
-    printf("Robot stopped lowering. Sensor based? %d\n", !DentRobot::elevator->GetElevatorBottom());
+  if(softLimits){
+    if(!DentRobot::elevator->GetElevatorBottom()){
+      return true;
+    }
+  }
+  if(IsTimedOut()){
     return true;
   }else{
     return false;

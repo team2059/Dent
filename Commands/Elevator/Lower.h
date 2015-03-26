@@ -8,13 +8,17 @@
  * @brief Lowers the elevator until a timeout is reached
  */
 class Lower: public Command{
+  private:
+    bool softLimits;
   public:
     /**
      * @brief Constructs Lower
      *
      * @param timeout Timeout in seconds (default: 3.0)
+     *
+     * @param useSoftLimits Enables/Disables soft limits via hall effect sensors (default: true)
      */
-    Lower(double timeout = 3.0);
+    Lower(double timeout = 3.0, bool useSoftLimits = true);
     /**
      * @brief Initializes the class
      */
