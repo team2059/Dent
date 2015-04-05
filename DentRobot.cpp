@@ -29,7 +29,7 @@ void DentRobot::RobotInit(){
   // Amount of time to collect a tote
   SmartDashboard::PutNumber("DriveTime", 1.3);
   // Sequence of autonomous command
-  SmartDashboard::PutNumber("Auto Sequence", 9.0);
+  SmartDashboard::PutNumber("Auto Sequence", 1.0);
   SmartDashboard::PutNumber("Auto Wait Time", 0.5);
   // If the robot will be picking up three totes in sequence 3
   SmartDashboard::PutBoolean("Two totes", false);
@@ -42,12 +42,8 @@ void DentRobot::RobotInit(){
   SmartDashboard::PutNumber("Auto Tote Distance", 0.5);
   SmartDashboard::PutNumber("TurnAmount", 2.6);
   // Elevators
-  SmartDashboard::PutBoolean("Bin Elevator Bottom", false);
-  SmartDashboard::PutBoolean("Bin Elevator Top", false);
   SmartDashboard::PutBoolean("Elevator Bottom", false);
   SmartDashboard::PutBoolean("Elevator Top", false);
-  //Drive speed
-  SmartDashboard::PutNumber("DriveSpeedReductionThresh", 2.0);
   //Gyro
   SmartDashboard::PutNumber("Gyro kP", -0.02);
 }

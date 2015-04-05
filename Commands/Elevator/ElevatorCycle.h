@@ -15,7 +15,7 @@
 class ElevatorCycle: public CommandGroup{
   public:
     /**
-     * @brief Constructs Elevatorcycle
+     * @brief Constructs ElevatorCycle
      */
     ElevatorCycle();
 };
