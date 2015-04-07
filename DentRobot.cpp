@@ -9,6 +9,7 @@ Elevator* DentRobot::elevator = NULL;
 BinElevator* DentRobot::binElevator = NULL;
 CommandGroup* DentRobot::aut = NULL;
 Pneumatics* DentRobot::pneumatics = NULL;
+BinCollector* DentRobot::binCollector = NULL;
 DentRobot::DentRobot(){
   oi = new OI();
   collector = new Collector();
@@ -16,6 +17,7 @@ DentRobot::DentRobot(){
   elevator = new Elevator();
   binElevator = new BinElevator();
   pneumatics = new Pneumatics();
+  binCollector = new BinCollector();
   //CameraServer::GetInstance()->SetQuality(25);
   //CameraServer::GetInstance()->StartAutomaticCapture("cam0");
   printf("The robot is on\n");

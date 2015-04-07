@@ -9,6 +9,8 @@
 #include "Commands/BinElevator/BinRaise.h"
 #include "Commands/BinElevator/BinCloseArms.h"
 #include "Commands/BinElevator/BinOpenArms.h"
+#include "Commands/BinCollector/BinIn.h"
+#include "Commands/BinCollector/BinOut.h"
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
 OI::OI(){
@@ -47,16 +49,18 @@ OI::OI(){
   // BinElevator
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
-  //JoystickButton *right7 = new JoystickButton(rightStick, 7);
-  //JoystickButton *right8 = new JoystickButton(rightStick, 8);
-  //right7->WhenPressed(new BinOpenArms());
-  //right8->WhenPressed(new BinCloseArms());
   binRaise = new BinRaise(3.0);
   binLower = new BinLower(2.0);
   right3->WhileHeld(binLower);
   right3->CancelWhenPressed(binRaise);
   right5->WhileHeld(binRaise);
   right5->CancelWhenPressed(binLower);
+
+  // BinCollector
+  JoystickButton *left3 = new JoystickButton(leftStick, 3);
+  JoystickButton *left4 = new JoystickButton(leftStick, 4);
+  left3->WhileHeld(new BinIn(2.0));
+  left4->WhileHeld(new BinOut(2.0));
 }
 Joystick* OI::GetRightStick(){
   return rightStick;

@@ -37,5 +37,8 @@
 #define COLLECTOR_RIGHT_CAN 9
 #define COLLECTOR_SONAR_ANALOG 3
 
+// BinCollector
+#define BINCOLLECTOR 0
+
 #endif
 // vim: ts=2:sw=2:et
