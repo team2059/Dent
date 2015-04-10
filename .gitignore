@@ -1,5 +1,4 @@
 *.o
-bin
 wpilib
 CMakeCache.txt
 CMakeFiles
@@ -7,3 +6,5 @@ cmake_install.cmake
 vision
 latex
 html
+Makefile
+FRCUserProgram
