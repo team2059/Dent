@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.11)
 project(dent)
 
+set(REMOTEIP 10.20.59.2)
+
 # Compiler flags
 set(CMAKE_CXX_COMPILER "/usr/bin/arm-frc-linux-gnueabi-g++")
 set(CMAKE_EXE_LINKER_FLAGS -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a)
@@ -13,8 +15,8 @@ set(DENT_SOURCES DentRobot.cpp OI.cpp ${DENT_SOURCES} ${TMP})
 file(GLOB_RECURSE DENT_HEADERS "Commands/*.h")
 file(GLOB_RECURSE DENT_HEADERS "Subsystems/*.h")
 set(DENT_HEADERS DentRobot.h OI.h ${DENT_HEADERS} ${TMP})
-message(STATUS DENT_SOURCES: ${DENT_SOURCES})
-message(STATUS DENT_HEADERS: ${DENT_HEADERS})
+message(STATUS "DENT_SOURCES: ${DENT_SOURCES}")
+message(STATUS "DENT_HEADERS: ${DENT_HEADERS}")
 set(DENT_INCLUDE_DIRS "")
 foreach(_headerFile ${DENT_HEADERS})
   get_filename_component(_dir ${_headerFile} PATH)
@@ -27,4 +29,11 @@ include_directories(/var/frc/wpilib/include)
 include_directories(${DENT_INCLUDE_DIRS})
 add_executable(FRCUserProgram ${DENT_SOURCES})
 target_link_libraries(FRCUserProgram /var/frc/wpilib/lib/libwpi_2015.so)
+find_program(READER pv)
+if(!READER)
+  find_program(READER cat)
+endif()
+find_program(echo echo)
+#TODO: This should be working, but doesn't...
+add_custom_target(deploy ${READER} FRCUserProgram|ssh admin@${REMOTEIP} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram')
 # vim: ts=2:sw=2:et
