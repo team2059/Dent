@@ -2,7 +2,8 @@ REMOTEIP=10.20.59.2
 CC=arm-frc-linux-gnueabi-g++
 CFLAGS=-std=c++11 -O0 -g3 -Wall -c -fmessage-length=0
 LDFLAGS=-Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a
-SOURCES=$(shell find -type f -name "*.cpp")
+rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+SOURCES=$(call rwildcard,./,*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 WPILIB=/var/frc/wpilib
 EXEC=bin/FRCUserProgram
