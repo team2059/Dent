@@ -33,7 +33,9 @@ find_program(READER pv)
 if(!READER)
   find_program(READER cat)
 endif()
-find_program(echo echo)
 #TODO: This should be working, but doesn't...
-add_custom_target(deploy ${READER} FRCUserProgram|ssh admin@${REMOTEIP} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram')
+add_custom_target(deploy ${READER} FRCUserProgram|ssh admin@${REMOTEIP} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram' VERBATIM)
+add_custom_target(putkey test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh -v admin@$(REMOTEIP) 'cat >> /tmp/key;mkdir -p ~/.ssh;cat /tmp/key >> ~/.ssh/authorized_keys;rm /tmp/key')
+add_custom_target(test echo test | cat | tee -a /tmp/test > /tmp/test2 VERBATIM)
+add_custom_target(clean-all COMMAND make clean COMMAND rm -rf cmake_install.cmake CMakeCache.txt CMakeFiles)
 # vim: ts=2:sw=2:et
