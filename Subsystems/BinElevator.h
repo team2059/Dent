@@ -8,7 +8,8 @@
  */
 class BinElevator{
   private:
-    CANTalon *motor; //<! The bin elevator motor
+    CANTalon *leftMotor,//<! The left bin elevator motor
+             *rightMotor; //<! The right bin elevator motor
     Encoder *elevatorEncoder; //<! The bin elevator encoder (unused)
     DigitalInput *elevatorBottom, //<! The bottom bin elevator sensor (unused)
                  *elevatorTop; //<! The top bin elevator sensor (unused)
