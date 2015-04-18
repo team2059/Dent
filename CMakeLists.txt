@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8.11)
 project(dent)
 
-set(REMOTEIP 10.20.59.2)
+# The roboRIO (default: admin@10.20.59.2)
+set(REMHOST admin@10.20.59.2)
 
 # Compiler flags
 set(CMAKE_CXX_COMPILER "/usr/bin/arm-frc-linux-gnueabi-g++")
@@ -15,8 +16,9 @@ set(DENT_SOURCES DentRobot.cpp OI.cpp ${DENT_SOURCES} ${TMP})
 file(GLOB_RECURSE DENT_HEADERS "Commands/*.h")
 file(GLOB_RECURSE DENT_HEADERS "Subsystems/*.h")
 set(DENT_HEADERS DentRobot.h OI.h ${DENT_HEADERS} ${TMP})
-message(STATUS "DENT_SOURCES: ${DENT_SOURCES}")
-message(STATUS "DENT_HEADERS: ${DENT_HEADERS}")
+# Just for debugging
+#message(STATUS "DENT_SOURCES: ${DENT_SOURCES}")
+#message(STATUS "DENT_HEADERS: ${DENT_HEADERS}")
 set(DENT_INCLUDE_DIRS "")
 foreach(_headerFile ${DENT_HEADERS})
   get_filename_component(_dir ${_headerFile} PATH)
@@ -33,9 +35,9 @@ find_program(READER pv)
 if(!READER)
   find_program(READER cat)
 endif()
-#TODO: This should be working, but doesn't...
-add_custom_target(deploy ${READER} FRCUserProgram|ssh admin@${REMOTEIP} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram' VERBATIM)
-add_custom_target(putkey test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh -v admin@$(REMOTEIP) 'cat >> /tmp/key;mkdir -p ~/.ssh;cat /tmp/key >> ~/.ssh/authorized_keys;rm /tmp/key')
-add_custom_target(test echo test | cat | tee -a /tmp/test > /tmp/test2 VERBATIM)
-add_custom_target(clean-all COMMAND make clean COMMAND rm -rf cmake_install.cmake CMakeCache.txt CMakeFiles)
-# vim: ts=2:sw=2:et
+add_custom_target(deploy sh -c "${READER} FRCUserProgram|ssh ${REMHOST} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram'" VERBATIM)
+# UNTESTED
+add_custom_target(run sh -c "ssh ${REMHOST} 'mkdir -p /home/lvuser/FRCUserProgram;chmod +x /home/lvuser/FRCUserProgram;/home/lvuser/FRCUserProgram 2>&1|tee /home/lvuser/logs/$(date +%F_%T).log'" VERBATIM)
+add_custom_target(putkey sh -c "test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh ${REMHOST} '(mkdir -p ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -b 4096 -q -N \'\')</dev/null;cat>>~/.ssh/authorized_keys'" VERBATIM)
+add_custom_target(clean-all sh -c "make clean;rm -rf cmake_install.cmake CMakeCache.txt CMakeFiles" VERBATIM)
+# vim: ts=2:sw=2:et:tw=0
