@@ -7,18 +7,18 @@ BinIn::BinIn(float timeout): Command("BinIn"){
 void BinIn::Initialize(){
 }
 void BinIn::Execute(){
-  DentRobot::binCollector->Set(0.75);
-  End();
+  DentRobot::binCollector->MoveArms(0.75);
 }
 bool BinIn::IsFinished(){
   if(IsTimedOut()){
-    printf("Robot stoped collecting bin.\n");
+    printf("Robot stopped collecting bin.\n");
     return true;
   }else{
     return false;
   }
 }
 void BinIn::End(){
+  DentRobot::binCollector->MoveArms(0.0);
 }
 void BinIn::Interrupted(){
   End();

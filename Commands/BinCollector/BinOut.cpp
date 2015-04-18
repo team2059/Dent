@@ -7,18 +7,18 @@ BinOut::BinOut(double timeout): Command("BinOut"){
 void BinOut::Initialize(){
 }
 void BinOut::Execute(){
-  DentRobot::binCollector->Set(0.1);
-  End();
+  DentRobot::binCollector->MoveArms(-0.1);
 }
 bool BinOut::IsFinished(){
   if(IsTimedOut()){
-    printf("Robot stoped ejecting bin.\n");
+    printf("Robot stopped ejecting bin.\n");
     return true;
   }else{
     return false;
   }
 }
 void BinOut::End(){
+  DentRobot::binCollector->MoveArms(0.0);
 }
 void BinOut::Interrupted(){
   End();

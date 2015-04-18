@@ -4,12 +4,13 @@
 #include "WPILib.h"
 /**
  * @brief Collects bins
- * 
+ *
  * Collects bins with a servo
  */
 class BinCollector: public Subsystem{
   private:
-    Servo *binCollectorMotor; //<! BinCollector motor
+    CANTalon *leftBinCollectorMotor, //<<! Left bin collector motor
+             *rightBinCollectorMotor; //<<! Right bin collector motor
   public:
     /**
      * @brief Constructs BinCollector
@@ -20,17 +21,11 @@ class BinCollector: public Subsystem{
      */
     void InitDefaultCommand();
     /**
-     * @brief Sets the servo angle
+     * @brief Moves bin collector arms at given speed
      *
-     * @param pos The angle of the servo (0.0 to 1.0)
+     * @param speed the speed to move the bin collector arms
      */
-    void Set(double pos);
-    /**
-     * @brief Gets the servo angle
-     *
-     * @return The servo angle (0.0 to 1.0)
-     */
-    double Get();
+    void MoveArms(double speed);
 };
 #endif
 // vim: ts=2:sw=2:et
