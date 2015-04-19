@@ -38,6 +38,6 @@ endif()
 add_custom_target(deploy sh -c "${READER} FRCUserProgram|ssh ${REMHOST} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram'" VERBATIM)
 # UNTESTED
 add_custom_target(run sh -c "ssh ${REMHOST} 'mkdir -p /home/lvuser/FRCUserProgram;chmod +x /home/lvuser/FRCUserProgram;/home/lvuser/FRCUserProgram 2>&1|tee /home/lvuser/logs/$(date +%F_%T).log'" VERBATIM)
-add_custom_target(putkey sh -c "test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh ${REMHOST} '(mkdir -p ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -b 4096 -q -N \'\')</dev/null;cat>>~/.ssh/authorized_keys'" VERBATIM)
+add_custom_target(putkey sh -c "test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh ${REMHOST} '(mkdir -p ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -b 4096 -q -N $(cat /dev/null))</dev/null;cat>>~/.ssh/authorized_keys'" VERBATIM)
 add_custom_target(clean-all sh -c "make clean;rm -rf cmake_install.cmake CMakeCache.txt CMakeFiles" VERBATIM)
 # vim: ts=2:sw=2:et:tw=0
