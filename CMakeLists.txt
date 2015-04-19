@@ -3,6 +3,8 @@ project(dent)
 
 # The roboRIO (default: admin@10.20.59.2)
 set(REMHOST admin@10.20.59.2)
+# WPILib Directory
+set(WPILIB /var/frc/wpilib)
 
 # Compiler flags
 set(CMAKE_CXX_COMPILER "/usr/bin/arm-frc-linux-gnueabi-g++")
@@ -25,12 +27,12 @@ foreach(_headerFile ${DENT_HEADERS})
   list(APPEND DENT_INCLUDE_DIRS ${_dir})
 endforeach()
 list(REMOVE_DUPLICATES DENT_INCLUDE_DIRS)
-include_directories(/var/frc/wpilib/include)
+include_directories(${WPILIB}/include)
 
 # Build binary
 include_directories(${DENT_INCLUDE_DIRS})
 add_executable(FRCUserProgram ${DENT_SOURCES})
-target_link_libraries(FRCUserProgram /var/frc/wpilib/lib/libwpi_2015.so)
+target_link_libraries(FRCUserProgram ${WPILIB}/lib/libwpi_2015.so)
 find_program(READER pv)
 if(!READER)
   find_program(READER cat)
