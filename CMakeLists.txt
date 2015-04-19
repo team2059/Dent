@@ -35,9 +35,12 @@ find_program(READER pv)
 if(!READER)
   find_program(READER cat)
 endif()
+# Put binary on ${REMHOST}
 add_custom_target(deploy sh -c "${READER} FRCUserProgram|ssh ${REMHOST} '(rm /home/lvuser/FRCUserProgram)</dev/null;cat>/home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram'" VERBATIM)
-# UNTESTED
-add_custom_target(run sh -c "ssh ${REMHOST} 'mkdir -p /home/lvuser/FRCUserProgram;chmod +x /home/lvuser/FRCUserProgram;/home/lvuser/FRCUserProgram 2>&1|tee /home/lvuser/logs/$(date +%F_%T).log'" VERBATIM)
-add_custom_target(putkey sh -c "test -d ~/.ssh||mkdir ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -q -N '';cat ~/.ssh/id_rsa.pub|ssh ${REMHOST} '(mkdir -p ~/.ssh;test -f ~/.ssh/id_rsa||ssh-keygen -t rsa -b 4096 -q -N $(cat /dev/null))</dev/null;cat>>~/.ssh/authorized_keys'" VERBATIM)
+# Runs robot code
+add_custom_target(run sh -c "ssh ${REMHOST} '(test -f /home/lvuser/run.sh&&(echo Using /home/lvuser/run.sh;/home/lvuser/run.sh)||(test -f /home/admin/run.sh&&(echo Using /home/admin/run.sh;/home/admin/run.sh)))||(echo Manually running;mkdir -p /home/lvuser/FRCUserProgram/logs;chmod +x /home/lvuser/FRCUserProgram;/home/lvuser/FRCUserProgram 2>&1|tee /home/lvuser/logs/$(date +%F_%T).log)'" VERBATIM)
+# Put key on ${REMHOST}
+add_custom_target(putkey sh -c "cat ~/.ssh/id_rsa.pub|ssh ${REMHOST} 'mkdir -p ~/.ssh</dev/null;echo Uploading key;cat>>~/.ssh/authorized_keys'" VERBATIM)
+# Runs make clean and erases cmake files
 add_custom_target(clean-all sh -c "make clean;rm -rf cmake_install.cmake CMakeCache.txt CMakeFiles" VERBATIM)
 # vim: ts=2:sw=2:et:tw=0
