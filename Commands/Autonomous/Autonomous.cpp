@@ -65,6 +65,12 @@ Autonomous::Autonomous(int seq){
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, 0.75));
       AddSequential(new Turn(2.1));
       break;
+    case 6:
+      //Drive forward and collect a single gray tote
+      AddSequential(new Lower(3.0));
+      AddSequential(new CollectTote(SmartDashboard::GetNumber("CollectToteTurn")));
+      AddSequential(new Lower(3.0));
+      AddSequential(new Raise(3.5));
     default:
       printf("Invalid seq: %d\n", seq);
       break;
