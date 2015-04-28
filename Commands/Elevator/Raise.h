@@ -8,13 +8,17 @@
  * @brief Raises the elevator until a timeout is reached
  */
 class Raise: public Command{
+  private:
+    bool softLimits;
   public:
     /**
      * @brief Constructs Raise
      *
      * @param timeout Timeout in seconds (default: 3.5)
+     *
+     * @param useSoftLimits Enables/Disables soft limits via hall effect sensors (default: true)
      */
-    Raise(double timeout = 3.5);
+    Raise(double timeout = 3.5, bool useSoftLimits = true);
     /**
      * @brief Initializes the class
      */

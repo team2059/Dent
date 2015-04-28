@@ -1,6 +1,7 @@
 #include "OI.h"
 #include "Commands/Elevator/Lower.h"
 #include "Commands/Elevator/Raise.h"
+#include "Commands/Elevator/ElevatorCycle.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
 #include "Commands/Collector/RollVar.h"
@@ -25,12 +26,24 @@ OI::OI(){
   // Elevator
   raise = new Raise(3.5);
   lower = new Lower(3.0);
+  cycle = new ElevatorCycle();
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
+  JoystickButton *right7 = new JoystickButton(rightStick, 7);
+  JoystickButton *right12 = new JoystickButton(rightStick, 12);
   right4->WhenPressed(lower);
-  right4->CancelWhenPressed(raise);
   right6->WhenPressed(raise);
+  right7->WhenPressed(cycle);
+  right4->CancelWhenPressed(raise);
   right6->CancelWhenPressed(lower);
+  right4->CancelWhenPressed(cycle);
+  right6->CancelWhenPressed(cycle);
+  right7->CancelWhenPressed(raise);
+  right7->CancelWhenPressed(lower);
+  // Killall elevator functions
+  right12->CancelWhenPressed(raise);
+  right12->CancelWhenPressed(lower);
+  right12->CancelWhenPressed(cycle);
   // BinElevator
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
@@ -44,10 +57,6 @@ OI::OI(){
   right3->CancelWhenPressed(binRaise);
   right5->WhileHeld(binRaise);
   right5->CancelWhenPressed(binLower);
-  // Cancel
-  JoystickButton *right12 = new JoystickButton(rightStick, 12);
-  right12->CancelWhenPressed(raise);
-  right12->CancelWhenPressed(lower);
 }
 Joystick* OI::GetRightStick(){
   return rightStick;

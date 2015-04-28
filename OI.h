@@ -20,6 +20,7 @@ class OI{
             *lower,    //<! Lower command
             *binLower, //<! BinLower command
             *binRaise; //<! BinRaise command
+    CommandGroup *cycle; //<! ElevatorCycle commandgroup
     /**
      * @brief Returns the right joystick
      *

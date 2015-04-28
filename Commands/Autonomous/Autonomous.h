@@ -3,7 +3,6 @@
 
 #include "Commands/CommandGroup.h"
 #include "../../DentRobot.h"
-#include "../../DentRobot.h"
 #include "WPILib.h"
 
 /**

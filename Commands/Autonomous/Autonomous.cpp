@@ -16,7 +16,7 @@ Autonomous::Autonomous(int seq){
     case 0:
       // Just for testing
       // Turn testing
-      AddSequential(new Turn(3.8));
+      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 1:
       // Drive to Auto Zone (TM)
@@ -24,15 +24,6 @@ Autonomous::Autonomous(int seq){
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 2:
-      // Lower BinElevator, collect bin, turn, drive to AutoZone (TM)
-      AddSequential(new BinLower(0.5));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Bin Distance"), 0.0, 0.75));
-      AddSequential(new BinRaise(1.0));
-      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
-      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
-      AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
-      break;
-    case 3:
       // Collect a tote with BinElevator, turn, drive to Auto Zone (TM)
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       AddSequential(new BinRaise(1.2));
@@ -40,7 +31,7 @@ Autonomous::Autonomous(int seq){
       AddSequential(new BinLower(1.0));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
-    case 4:
+    case 3:
       // Collect one, two, or three totes, drive to Auto Zone (TM), release totes
       AddSequential(new CollectTote(SmartDashboard::GetNumber("CollectToteTurn")));
       if(SmartDashboard::GetBoolean("Two totes")){
@@ -62,30 +53,25 @@ Autonomous::Autonomous(int seq){
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, 0.75));
       AddSequential(new ReleaseTote());
       break;
-    case 5:
-      // Same as auto 4, but navigate around bins
-      //TODO: Implement this
-      break;
-    case 6:
-      // Collect 1 bin and 1 tote
-      //TODO: Implement this
-      break;
-    case 7:
-      // Same as auto 4, then collect bin, drive to Auto Zone (TM), release totes
-      //TODO: Implement this
-      break;
-    case 8:
+    case 4:
       //Use rear elevator to move tote
       AddSequential(new Turn(1.8));
       AddSequential(new AutoDrive(2.3, 0.0, -0.75));
       AddSequential(new Turn(1.8));
       break;
-    case 9:
+    case 5:
       //Use rear elevator to move bin
       AddSequential(new BinLower(0.1));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, 0.75));
       AddSequential(new Turn(2.1));
       break;
+    case 6:
+      //Drive forward and collect a single gray tote
+      AddSequential(new Lower(3.0));
+      AddSequential(new CollectTote(SmartDashboard::GetNumber("CollectToteTurn")));
+      AddSequential(new Lower(3.0));
+      AddSequential(new Raise(3.5));
+      AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
     default:
       printf("Invalid seq: %d\n", seq);
       break;

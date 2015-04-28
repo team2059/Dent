@@ -18,11 +18,9 @@ double BinElevator::GetHeight(){
   return elevatorEncoder->Get();
 }
 bool BinElevator::GetElevatorBottom(){
-  SmartDashboard::PutBoolean("Bin Elevator Bottom", elevatorBottom->Get());
   return elevatorBottom->Get();
 }
 bool BinElevator::GetElevatorTop(){
-  SmartDashboard::PutBoolean("Bin Elevator Top", elevatorTop->Get());
   return elevatorTop->Get();
 }
 // vim: ts=2:sw=2:et
