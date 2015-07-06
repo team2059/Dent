@@ -5,6 +5,7 @@
 * @section Subsystems
 *   -# @ref Drivetrain
 *   -# @ref BinElevator
+*   -# @ref BinCollector
 *   -# @ref Elevator
 *   -# @ref Collector
 *   -# @ref Pneumatics (unused)
@@ -15,6 +16,8 @@
 *   -# @ref BinLower
 *   -# @ref BinOpenArms
 *   -# @ref BinRaise
+*   -# @ref BinIn
+*   -# @ref BinOut
 *   -# @ref RollIn
 *   -# @ref RollOut
 *   -# @ref Drive

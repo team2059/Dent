@@ -37,15 +37,13 @@
 + Throttle - Adjusts collector speed
 + Button 1 - Collect totes
 + Button 2 - Eject totes
-+ Button 7 - Check robot
 
 #### Right Joystick (USB 1)
 + Button 3 - Lowers bin elevator
 + Button 4 - Lowers main elevator
 + Button 5 - Raises bin elevator
 + Button 6 - Raises main elevator
-+ Button 7 - Opens bin arms (unused)
-+ Button 8 - Closes bin arms (unused)
++ Button 7 - Runs an elevator cycle
 + Button 12 - Cancel raising and lowering for both elevators
 
 ### Dashboard
@@ -57,12 +55,9 @@
 + Auto Zone Distance - Amount of time in seconds to drive to the auto zone (default: 2.1)
 + Auto Tote Distance - Amount of time in seconds to drive to a second or third tote if using Auto Sequence 4, 5, or 7 (default: 0.5)
 + Auto Bin Distance - Amount of time in seconds to drive to a bin if using Auto Sequence 6 or 7 (default: 0.5)
-+ TurnAmount - Amount of time in seconds to turn the robot (default: 1.8)
-+ Bin Elevator Bottom - Status of the bottom bin elevator sensor (unused)
-+ Bin Elevator Top - Status of the top bin elevator sensor (unused)
++ TurnAmount - Amount of time in seconds to turn the robot 90 degrees
 + Elevator Bottom - Status of the bottom elevator sensor
 + Elevator Top - Status of the top elevator sensor
-+ DriveSpeedReductionThresh - Maximum y value of the joystick when driving
 + Auto Sequence - The sequence of autonomous to run
 
 #### Autonomous

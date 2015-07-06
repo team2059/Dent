@@ -7,6 +7,7 @@
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Collector.h"
 #include "Subsystems/Pneumatics.h"
+#include "Subsystems/BinCollector.h"
 #include "Commands/Autonomous/Autonomous.h"
 /**
  * @brief The Hitchhikers 2015 robot, Dent
@@ -48,6 +49,10 @@ class DentRobot: public IterativeRobot{
      * @brief The Pneumatics system (unused)
      */
     static Pneumatics* pneumatics;
+    /**
+     * @brief The BinCollector for collecting bins
+     */
+    static BinCollector* binCollector;
     /**
      * @brief The Autonomous command
      */

@@ -1,6 +1,7 @@
 #include "OI.h"
 #include "Commands/Elevator/Lower.h"
 #include "Commands/Elevator/Raise.h"
+#include "Commands/Elevator/ElevatorCycle.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
 #include "Commands/Collector/RollVar.h"
@@ -8,6 +9,8 @@
 #include "Commands/BinElevator/BinRaise.h"
 #include "Commands/BinElevator/BinCloseArms.h"
 #include "Commands/BinElevator/BinOpenArms.h"
+#include "Commands/BinCollector/BinIn.h"
+#include "Commands/BinCollector/BinOut.h"
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
 OI::OI(){
@@ -25,29 +28,39 @@ OI::OI(){
   // Elevator
   raise = new Raise(3.5);
   lower = new Lower(3.0);
+  cycle = new ElevatorCycle();
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
+  JoystickButton *right7 = new JoystickButton(rightStick, 7);
+  JoystickButton *right12 = new JoystickButton(rightStick, 12);
   right4->WhenPressed(lower);
-  right4->CancelWhenPressed(raise);
   right6->WhenPressed(raise);
+  right7->WhenPressed(cycle);
+  right4->CancelWhenPressed(raise);
   right6->CancelWhenPressed(lower);
+  right4->CancelWhenPressed(cycle);
+  right6->CancelWhenPressed(cycle);
+  right7->CancelWhenPressed(raise);
+  right7->CancelWhenPressed(lower);
+  // Killall elevator functions
+  right12->CancelWhenPressed(raise);
+  right12->CancelWhenPressed(lower);
+  right12->CancelWhenPressed(cycle);
   // BinElevator
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
-  //JoystickButton *right7 = new JoystickButton(rightStick, 7);
-  //JoystickButton *right8 = new JoystickButton(rightStick, 8);
-  //right7->WhenPressed(new BinOpenArms());
-  //right8->WhenPressed(new BinCloseArms());
   binRaise = new BinRaise(3.0);
   binLower = new BinLower(2.0);
   right3->WhileHeld(binLower);
   right3->CancelWhenPressed(binRaise);
   right5->WhileHeld(binRaise);
   right5->CancelWhenPressed(binLower);
-  // Cancel
-  JoystickButton *right12 = new JoystickButton(rightStick, 12);
-  right12->CancelWhenPressed(raise);
-  right12->CancelWhenPressed(lower);
+
+  // BinCollector
+  JoystickButton *left3 = new JoystickButton(leftStick, 3);
+  JoystickButton *left4 = new JoystickButton(leftStick, 4);
+  left3->WhileHeld(new BinIn(2.0));
+  left4->WhileHeld(new BinOut(2.0));
 }
 Joystick* OI::GetRightStick(){
   return rightStick;
