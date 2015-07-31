@@ -68,3 +68,7 @@
 5. Same as auto 4, but navigate around bins (not implemented)
 6. Collect 1 bin then 1 tote (not implemented)
 7. Collect 3 totes, collect bin, drive to AutoZone (not implemented)
+
+### Contributing
+
+This project uses [1TBS](https://en.wikipedia.org/wiki/1TBS) (Astyle Google variant with -j) and the `-xc -xn -xl -xG -j -s2 -C -S -K -N` [Astyle (2.04+)](http://astyle.sourceforge.net/) flags.
