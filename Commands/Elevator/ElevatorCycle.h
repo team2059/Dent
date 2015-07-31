@@ -12,12 +12,12 @@
  * Timeouts are still in place in the event of a sensor failure.
  */
 
-class ElevatorCycle: public CommandGroup{
-  public:
-    /**
-     * @brief Constructs ElevatorCycle
-     */
-    ElevatorCycle();
+class ElevatorCycle: public CommandGroup {
+ public:
+  /**
+   * @brief Constructs ElevatorCycle
+   */
+  ElevatorCycle();
 };
 #endif
 // vim: ts=2:sw=2:et

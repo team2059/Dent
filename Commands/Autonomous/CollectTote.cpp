@@ -2,7 +2,7 @@
 #include "../../DentRobot.h"
 #include "AutoDrive.h"
 #include "../Collector/RollIn.h"
-CollectTote::CollectTote(double z){
+CollectTote::CollectTote(double z) {
   AddParallel(new AutoDrive(SmartDashboard::GetNumber("DriveTime"), 0.0, 0.75, z, false));
   AddSequential(new RollIn(1.0));
 }

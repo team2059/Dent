@@ -1,11 +1,11 @@
 #include "Drive.h"
 #include "../../DentRobot.h"
-Drive::Drive(): Command("Drive"){
+Drive::Drive(): Command("Drive") {
   Requires(DentRobot::drivetrain);
 }
-void Drive::Initialize(){
+void Drive::Initialize() {
 }
-void Drive::Execute(){
+void Drive::Execute() {
   double x, y, z;
   x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
   y = -DentRobot::oi->GetLeftStick()->GetRawAxis(1);
@@ -18,22 +18,22 @@ void Drive::Execute(){
   //  y = 0;
   //}
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(11)){
+  if(DentRobot::oi->GetLeftStick()->GetRawButton(11)) {
     x = -x;
     y = -y;
   }
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(7)){
+  if(DentRobot::oi->GetLeftStick()->GetRawButton(7)) {
     DentRobot::drivetrain->DriveMecanum(0.0, 0.0, 0.0, 0.9);
-  }else{
+  } else {
     DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9);
   }
 }
-bool Drive::IsFinished(){
+bool Drive::IsFinished() {
   return IsTimedOut();
 }
-void Drive::End(){
+void Drive::End() {
 }
-void Drive::Interrupted(){
+void Drive::Interrupted() {
   End();
 }
 // vim: ts=2:sw=2:et

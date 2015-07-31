@@ -31,14 +31,14 @@
  *
  * Sequence 9: Use rear elevator to move bin
  */
-class Autonomous: public CommandGroup{
-  public:
-    /**
-     * @brief Constructs Autonomous
-     *
-     * @param seq The sequence to run (default: 0)
-     */
-    Autonomous(int seq = 0);
+class Autonomous: public CommandGroup {
+ public:
+  /**
+   * @brief Constructs Autonomous
+   *
+   * @param seq The sequence to run (default: 0)
+   */
+  Autonomous(int seq = 0);
 };
 #endif
 // vim: ts=2:sw=2:et

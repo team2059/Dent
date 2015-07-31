@@ -13,7 +13,7 @@
 #include "Commands/BinCollector/BinOut.h"
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
-OI::OI(){
+OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
   rightStick = new Joystick(1);
@@ -62,16 +62,16 @@ OI::OI(){
   left3->WhileHeld(new BinIn(2.0));
   left4->WhileHeld(new BinOut(2.0));
 }
-Joystick* OI::GetRightStick(){
+Joystick* OI::GetRightStick() {
   return rightStick;
 }
-Joystick* OI::GetLeftStick(){
+Joystick* OI::GetLeftStick() {
   return leftStick;
 }
-double OI::GetRightThrottle(){
+double OI::GetRightThrottle() {
   return (-rightStick->GetRawAxis(3)+1.0)/2;
 }
-double OI::GetLeftThrottle(){
+double OI::GetLeftThrottle() {
   return (-leftStick->GetRawAxis(3)+1.0)/2;
 }
 // vim: ts=2:sw=2:et

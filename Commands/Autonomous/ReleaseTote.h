@@ -11,12 +11,12 @@
  *
  * Rolls collector wheels out and drives backwards in parallel
  */
-class ReleaseTote: public CommandGroup{
-  public:
-    /**
-     * @brief Constructs ReleaseTote
-     */
-    ReleaseTote();
+class ReleaseTote: public CommandGroup {
+ public:
+  /**
+   * @brief Constructs ReleaseTote
+   */
+  ReleaseTote();
 };
 #endif
 // vim: ts=2:sw=2:et

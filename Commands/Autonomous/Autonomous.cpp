@@ -10,9 +10,9 @@
 #include "../Collector/RollIn.h"
 #include "CollectTote.h"
 #include "ReleaseTote.h"
-Autonomous::Autonomous(int seq){
+Autonomous::Autonomous(int seq) {
   Wait(SmartDashboard::GetNumber("Auto Wait Time"));
-  switch(seq){
+  switch(seq) {
     case 0:
       // Just for testing
       // Turn testing
@@ -34,14 +34,14 @@ Autonomous::Autonomous(int seq){
     case 3:
       // Collect one, two, or three totes, drive to Auto Zone (TM), release totes
       AddSequential(new CollectTote(SmartDashboard::GetNumber("CollectToteTurn")));
-      if(SmartDashboard::GetBoolean("Two totes")){
+      if(SmartDashboard::GetBoolean("Two totes")) {
         AddParallel(new Turn(0.81));
         AddSequential(new Raise(3.5));
         AddSequential(new AutoDrive(SmartDashboard::GetNumber("Two Tote Distance"), 0.0, 0.75));
         AddSequential(new CollectTote());
         AddSequential(new Lower(3.0));
         AddSequential(new Raise(3.5));
-        if(SmartDashboard::GetBoolean("Three totes")){
+        if(SmartDashboard::GetBoolean("Three totes")) {
           AddSequential(new Turn(3.8));
           AddSequential(new AutoDrive(SmartDashboard::GetNumber("Three Tote Distance"), 0.0, 0.75));
           AddSequential(new CollectTote());

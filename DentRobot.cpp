@@ -10,7 +10,7 @@ BinElevator* DentRobot::binElevator = NULL;
 CommandGroup* DentRobot::aut = NULL;
 Pneumatics* DentRobot::pneumatics = NULL;
 BinCollector* DentRobot::binCollector = NULL;
-DentRobot::DentRobot(){
+DentRobot::DentRobot() {
   oi = new OI();
   collector = new Collector();
   drivetrain = new Drivetrain();
@@ -22,7 +22,7 @@ DentRobot::DentRobot(){
   //CameraServer::GetInstance()->StartAutomaticCapture("cam0");
   printf("The robot is on\n");
 }
-void DentRobot::RobotInit(){
+void DentRobot::RobotInit() {
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);
   // Autonomous
   // Calibration
@@ -49,34 +49,34 @@ void DentRobot::RobotInit(){
   //Gyro
   SmartDashboard::PutNumber("Gyro kP", -0.02);
 }
-void DentRobot::DisabledPeriodic(){
+void DentRobot::DisabledPeriodic() {
   Scheduler::GetInstance()->Run();
 }
-void DentRobot::AutonomousInit(){
+void DentRobot::AutonomousInit() {
   aut = new Autonomous(SmartDashboard::GetNumber("Auto Sequence"));
   printf("Enabling Auto Sequence %f\n", SmartDashboard::GetNumber("Auto Sequence"));
-  if(aut != NULL){
+  if(aut != NULL) {
     aut->Start();
   }
 }
-void DentRobot::AutonomousPeriodic(){
+void DentRobot::AutonomousPeriodic() {
   printf("Running auto.\n");
   Scheduler::GetInstance()->Run();
 }
-void DentRobot::TeleopInit(){
-  if(aut != NULL){
+void DentRobot::TeleopInit() {
+  if(aut != NULL) {
     aut->Cancel();
   }
 }
-void DentRobot::TeleopPeriodic(){
+void DentRobot::TeleopPeriodic() {
   Scheduler::GetInstance()->Run();
-  if(elevator->GetUseEncoder()&&elevator->GetHeight() <= -1.0){
+  if(elevator->GetUseEncoder()&&elevator->GetHeight() <= -1.0) {
     // Raise the elevator if it dips below elevatorTop
     oi->raise->Start();
   }
   SmartDashboard::PutNumber("CollectorThrottle", oi->GetLeftThrottle());
 }
-void DentRobot::TestPeriodic(){
+void DentRobot::TestPeriodic() {
 }
 START_ROBOT_CLASS(DentRobot);
 // vim: ts=2:sw=2:et
