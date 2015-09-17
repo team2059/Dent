@@ -9,9 +9,7 @@
  */
 class Drivetrain: public Subsystem {
  private:
-  CANTalon *rightFront, //<! Front right motor
-           *leftFront, //<! Front left motor
-           *rightRear, //<! Back right motor
+  CANTalon *rightRear, //<! Back right motor
            *leftRear; //<! Back left motor
   Gyro *gyro; //<! Gyro
  public:
@@ -23,8 +21,6 @@ class Drivetrain: public Subsystem {
    * @brief Current motor to test
    */
   enum e_motors {
-    FRONTRIGHT, //<! Front right motor
-    FRONTLEFT, //<! Front left motor
     BACKRIGHT, //<! Back right motor
     BACKLEFT //<! Back left motor
   };
@@ -33,7 +29,7 @@ class Drivetrain: public Subsystem {
    */
   void InitDefaultCommand();
   /**
-   * @brief Drives the robot with mecanum
+   * @brief Drives the robot with arcade
    *
    * @param x Joystick x value (-1.0 to 1.0)
    * @param y Joystick y value (-1.0 to 1.0)
@@ -41,7 +37,7 @@ class Drivetrain: public Subsystem {
    * @param sensitivity Sensitivity (0.0 to 1.0)
    * @param driveStraight Overrides z value to correct for motor lag (default: false)
    */
-  void DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight = false);
+  void DriveArcade(double x, double y, double z, double sensitivity, bool driveStraight = false);
   /**
    * @brief Tests one motor
    *

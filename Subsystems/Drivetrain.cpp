@@ -3,8 +3,6 @@
 #include "../Commands/Drivetrain/Drive.h"
 
 Drivetrain::Drivetrain(): Subsystem("Drivetrain") {
-  rightFront = new CANTalon(DRIVE_FRONT_RIGHT_CAN);
-  leftFront = new CANTalon(DRIVE_FRONT_LEFT_CAN);
   rightRear = new CANTalon(DRIVE_BACK_RIGHT_CAN);
   leftRear = new CANTalon(DRIVE_BACK_LEFT_CAN);
   gyro = new Gyro(DRIVE_GYRO_ANALOG);
@@ -12,34 +10,31 @@ Drivetrain::Drivetrain(): Subsystem("Drivetrain") {
 void Drivetrain::InitDefaultCommand() {
   SetDefaultCommand(new Drive());
 }
-void Drivetrain::DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight) {
+void Drivetrain::DriveArcade(double x, double y, double z, double sensitivity, bool driveStraight) {
   double kP = SmartDashboard::GetNumber("Gyro kP");
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
   double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
-  double correctZ;
+  double correctZ = z;
   if(driveStraight) {
     printf("Driving straight at: %f\n", -gyro->GetAngle()*kP);
     correctZ = -gyro->GetAngle()*kP;
   } else {
     correctZ = -z * 0.5;
   }
+
   if(DentRobot::oi->GetLeftStick()->GetRawButton(9)) {
     correctY /= 2.0;
   }
-  rightFront->Set((-correctX + correctY - correctZ));
-  leftFront->Set((correctX + correctY + correctZ)*-1);
-  rightRear->Set((correctX + correctY - correctZ));
-  leftRear->Set((-correctX + correctY + correctZ)*-1);
+  int leftPower=((correctY+(correctX+correctZ))/2+1)*127+1;
+  int rightPower=((correctY-(correctX+correctZ))/2+1)*127+1;
+  printf("rightPower:%d\n",rightPower);
+  printf("leftPower:%d\n",leftPower);
+  leftRear->Set(leftPower);
+  rightRear->Set(rightPower);
 }
 //Used in pretest
 void Drivetrain::TestMotor(e_motors motor, double power) {
   switch(motor) {
-    case FRONTRIGHT:
-      rightFront->Set(power);
-      break;
-    case FRONTLEFT:
-      leftFront->Set(power);
-      break;
     case BACKRIGHT:
       rightRear->Set(power);
       break;
