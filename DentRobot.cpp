@@ -48,6 +48,8 @@ void DentRobot::RobotInit() {
   SmartDashboard::PutBoolean("Elevator Top", false);
   //Gyro
   SmartDashboard::PutNumber("Gyro kP", -0.02);
+  printf("Starting compressor\n");
+  pneumatics->SetCompressorEnabled(true);
 }
 void DentRobot::DisabledPeriodic() {
   Scheduler::GetInstance()->Run();

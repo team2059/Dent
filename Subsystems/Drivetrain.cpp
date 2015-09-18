@@ -21,16 +21,10 @@ void Drivetrain::DriveArcade(double x, double y, double z, double sensitivity, b
   } else {
     correctZ = -z * 0.5;
   }
-
-  if(DentRobot::oi->GetLeftStick()->GetRawButton(9)) {
-    correctY /= 2.0;
-  }
-  int leftPower=((correctY+(correctX+correctZ))/2+1)*127+1;
-  int rightPower=((correctY-(correctX+correctZ))/2+1)*127+1;
-  printf("rightPower:%d\n",rightPower);
-  printf("leftPower:%d\n",leftPower);
-  leftRear->Set(leftPower);
-  rightRear->Set(rightPower);
+  double leftPower=(y-x);
+  double rightPower=(y+x);
+  leftRear->Set((correctX + correctY + correctZ));
+  rightRear->Set((correctX + correctY - correctZ));
 }
 //Used in pretest
 void Drivetrain::TestMotor(e_motors motor, double power) {

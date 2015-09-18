@@ -11,7 +11,9 @@ class Pneumatics: public Subsystem {
  private:
   Compressor *compressor; //<! Compressor
   Solenoid *solenoid1, //<! Solenoid 1
-           *solenoid2; //<! Solenoid 2
+           *solenoid2, //<! Solenoid 2
+           *solenoid3, //<! Solenoid 3
+           *solenoid4; //<! Solenoid 4
   bool armState; //<! State of the arm
  public:
   /**

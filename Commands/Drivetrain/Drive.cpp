@@ -22,6 +22,8 @@ void Drive::Execute() {
     x = -x;
     y = -y;
   }
+  printf("X:%d\n",x);
+  printf("Y:%d\n",y);
   DentRobot::drivetrain->DriveArcade(x, y, z, 0.9);
 }
 bool Drive::IsFinished() {
