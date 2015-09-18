@@ -8,7 +8,7 @@
 *   -# @ref BinCollector
 *   -# @ref Elevator
 *   -# @ref Collector
-*   -# @ref Pneumatics (unused)
+*   -# @ref Pneumatics
 * @section Commands
 *   -# @ref AutoDrive
 *   -# @ref Turn

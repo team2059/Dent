@@ -7,7 +7,7 @@ BinOpenArms::BinOpenArms(double timeout): Command("BinOpenArms") {
 void BinOpenArms::Initialize() {
 }
 void BinOpenArms::Execute() {
-  DentRobot::pneumatics->SetOpen(true);
+  DentRobot::pneumatics->SetArmsOpen(true);
 }
 bool BinOpenArms::IsFinished() {
   return true;
