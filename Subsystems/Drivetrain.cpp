@@ -21,10 +21,8 @@ void Drivetrain::DriveArcade(double x, double y, double z, double sensitivity, b
   } else {
     correctZ = -z * 0.5;
   }
-  double leftPower=(y-x);
-  double rightPower=(y+x);
-  leftRear->Set((correctX + correctY + correctZ));
-  rightRear->Set((correctX + correctY - correctZ));
+  leftRear->Set(correctY+correctX);
+  rightRear->Set(correctY-correctX);
 }
 //Used in pretest
 void Drivetrain::TestMotor(e_motors motor, double power) {

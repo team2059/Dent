@@ -26,13 +26,13 @@ void Pneumatics::SetArmsOpen(bool state) {
     armState = false;
   }
 }
-void Pneumatics::SetCompressorEnabled(bool state){
+void Pneumatics::SetCompressorEnabled(bool state) {
   compressor->SetClosedLoopControl(state);
 }
-bool Pneumatics::GetArmsOpen(){
+bool Pneumatics::GetArmsOpen() {
   return armState;
 }
-bool Pneumatics::GetCompressorEnabled(){
+bool Pneumatics::GetCompressorEnabled() {
   return compressor->Enabled();
 }
 // vim: ts=2:sw=2:et
