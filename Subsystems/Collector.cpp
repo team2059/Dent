@@ -8,8 +8,7 @@ Collector::Collector(): Subsystem("Collector") {
   collectorMotorRight = new CANTalon(COLLECTOR_RIGHT_CAN);
   sonarAnalog = new AnalogInput(COLLECTOR_SONAR_ANALOG);
 }
-void Collector::InitDefaultCommand() {
-}
+void Collector::InitDefaultCommand() {}
 void Collector::MoveRollers(double power) {
   MoveLeftRoller(power);
   MoveRightRoller(-power);

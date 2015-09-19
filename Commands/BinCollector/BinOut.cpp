@@ -4,8 +4,7 @@
 BinOut::BinOut(double timeout): Command("BinOut") {
   SetTimeout(timeout);
 }
-void BinOut::Initialize() {
-}
+void BinOut::Initialize() {}
 void BinOut::Execute() {
   DentRobot::binCollector->MoveArms(-0.1);
 }

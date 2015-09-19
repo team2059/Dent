@@ -4,8 +4,7 @@
 BinLower::BinLower(float timeout): Command("BinLower") {
   SetTimeout(timeout);
 }
-void BinLower::Initialize() {
-}
+void BinLower::Initialize() {}
 void BinLower::Execute() {
   DentRobot::binElevator->Run(-1.0);
 }

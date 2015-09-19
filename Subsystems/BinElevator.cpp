@@ -7,8 +7,7 @@ BinElevator::BinElevator() {
   elevatorBottom = new DigitalInput(BINELEVATOR_BOTTOM_DIO);
   elevatorTop = new DigitalInput(BINELEVATOR_TOP_DIO);
 }
-void BinElevator::InitDefaultCommand() {
-}
+void BinElevator::InitDefaultCommand() {}
 void BinElevator::Run(double power) {
   leftMotor->Set(power);
   rightMotor->Set(-power);

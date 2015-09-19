@@ -4,8 +4,7 @@
 BinIn::BinIn(float timeout): Command("BinIn") {
   SetTimeout(timeout);
 }
-void BinIn::Initialize() {
-}
+void BinIn::Initialize() {}
 void BinIn::Execute() {
   DentRobot::binCollector->MoveArms(0.75);
 }

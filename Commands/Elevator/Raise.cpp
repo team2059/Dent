@@ -5,8 +5,7 @@ Raise::Raise(double timeout, bool useSoftLimits): Command("Raise") {
   SetTimeout(timeout);
   softLimits=useSoftLimits;
 }
-void Raise::Initialize() {
-}
+void Raise::Initialize() {}
 void Raise::Execute() {
   DentRobot::elevator->Run(1.0);
 }

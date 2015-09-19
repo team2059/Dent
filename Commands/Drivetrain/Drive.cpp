@@ -3,8 +3,7 @@
 Drive::Drive(): Command("Drive") {
   Requires(DentRobot::drivetrain);
 }
-void Drive::Initialize() {
-}
+void Drive::Initialize() {}
 void Drive::Execute() {
   double x, y, z;
   x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
@@ -29,8 +28,7 @@ void Drive::Execute() {
 bool Drive::IsFinished() {
   return IsTimedOut();
 }
-void Drive::End() {
-}
+void Drive::End() {}
 void Drive::Interrupted() {
   End();
 }

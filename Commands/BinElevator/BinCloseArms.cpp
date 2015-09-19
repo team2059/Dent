@@ -4,16 +4,14 @@
 BinCloseArms::BinCloseArms(double timeout): Command("BinCloseArms") {
   SetTimeout(timeout);
 }
-void BinCloseArms::Initialize() {
-}
+void BinCloseArms::Initialize() {}
 void BinCloseArms::Execute() {
   DentRobot::pneumatics->SetArmsOpen(false);
 }
 bool BinCloseArms::IsFinished() {
   return true;
 }
-void BinCloseArms::End() {
-}
+void BinCloseArms::End() {}
 void BinCloseArms::Interrupted() {
   End();
 }

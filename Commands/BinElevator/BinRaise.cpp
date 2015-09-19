@@ -4,8 +4,7 @@
 BinRaise::BinRaise(double timeout): Command("BinRaise") {
   SetTimeout(timeout);
 }
-void BinRaise::Initialize() {
-}
+void BinRaise::Initialize() {}
 void BinRaise::Execute() {
   DentRobot::binElevator->Run(1.0);
 }

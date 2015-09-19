@@ -9,8 +9,7 @@ Elevator::Elevator() {
   // Checks if the elevator is drifting
   useEncoder = false;
 }
-void Elevator::InitDefaultCommand() {
-}
+void Elevator::InitDefaultCommand() {}
 void Elevator::Run(double power) {
   // If we're not telling it to stop
   if(power != 0.0) {

@@ -9,8 +9,7 @@ Pneumatics::Pneumatics(): Subsystem("Pneumatics") {
   solenoid4 = new Solenoid(COMPRESSOR_PCM_CAN, BINELEVATOR_SOLENOID_FOUR);
   armState = false;
 }
-void Pneumatics::InitDefaultCommand() {
-}
+void Pneumatics::InitDefaultCommand() {}
 void Pneumatics::SetArmsOpen(bool state) {
   if(state) {
     solenoid1->Set(true);

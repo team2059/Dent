@@ -78,7 +78,6 @@ void DentRobot::TeleopPeriodic() {
   }
   SmartDashboard::PutNumber("CollectorThrottle", oi->GetLeftThrottle());
 }
-void DentRobot::TestPeriodic() {
-}
+void DentRobot::TestPeriodic() {}
 START_ROBOT_CLASS(DentRobot);
 // vim: ts=2:sw=2:et

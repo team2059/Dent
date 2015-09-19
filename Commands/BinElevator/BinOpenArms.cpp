@@ -4,16 +4,14 @@
 BinOpenArms::BinOpenArms(double timeout): Command("BinOpenArms") {
   SetTimeout(timeout);
 }
-void BinOpenArms::Initialize() {
-}
+void BinOpenArms::Initialize() {}
 void BinOpenArms::Execute() {
   DentRobot::pneumatics->SetArmsOpen(true);
 }
 bool BinOpenArms::IsFinished() {
   return true;
 }
-void BinOpenArms::End() {
-}
+void BinOpenArms::End() {}
 void BinOpenArms::Interrupted() {
   End();
 }

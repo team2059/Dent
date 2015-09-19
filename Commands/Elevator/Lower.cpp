@@ -5,8 +5,7 @@ Lower::Lower(double timeout, bool useSoftLimits): Command("Lower") {
   SetTimeout(timeout);
   softLimits=useSoftLimits;
 }
-void Lower::Initialize() {
-}
+void Lower::Initialize() {}
 void Lower::Execute() {
   DentRobot::elevator->Run(-1.0);
 }
