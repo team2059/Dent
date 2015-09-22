@@ -6,7 +6,7 @@ Drive::Drive(): Command("Drive") {
 void Drive::Initialize() {}
 void Drive::Execute() {
   float x, y, z;
-  x = -DentRobot::oi->GetLeftStick()->GetRawAxis(0);
+  x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
   y = DentRobot::oi->GetLeftStick()->GetRawAxis(1);
   z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
