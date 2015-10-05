@@ -7,7 +7,7 @@ Raise::Raise(double timeout, bool useSoftLimits): Command("Raise") {
 }
 void Raise::Initialize() {}
 void Raise::Execute() {
-  DentRobot::elevator->Run(1.0);
+  DentRobot::elevator->Run(DentRobot::oi->GetRightThrottle()*1.0);
 }
 bool Raise::IsFinished() {
   if(softLimits) {

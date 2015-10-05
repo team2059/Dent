@@ -7,7 +7,7 @@ Lower::Lower(double timeout, bool useSoftLimits): Command("Lower") {
 }
 void Lower::Initialize() {}
 void Lower::Execute() {
-  DentRobot::elevator->Run(-1.0);
+  DentRobot::elevator->Run(DentRobot::oi->GetRightThrottle()*1.0);
 }
 bool Lower::IsFinished() {
   if(softLimits) {
