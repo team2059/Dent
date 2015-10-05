@@ -35,8 +35,8 @@ OI::OI() {
   JoystickButton *right10 = new JoystickButton(rightStick, 10);
   JoystickButton *right11 = new JoystickButton(rightStick, 11);
   JoystickButton *right12 = new JoystickButton(rightStick, 12);
-  right4->WhenPressed(lower);
-  right6->WhenPressed(raise);
+  right4->WhileHeld(lower);
+  right6->WhileHeld(raise);
   right7->WhenPressed(cycle);
   right10->WhenPressed(new BinCloseArms(2));
   right11->WhenPressed(new BinOpenArms(2));

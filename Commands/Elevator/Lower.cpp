@@ -10,11 +10,11 @@ void Lower::Execute() {
   DentRobot::elevator->Run(DentRobot::oi->GetRightThrottle()*1.0);
 }
 bool Lower::IsFinished() {
-  if(softLimits) {
-    if(!DentRobot::elevator->GetElevatorBottom()) {
-      return true;
-    }
-  }
+//  if(softLimits) {
+//    if(!DentRobot::elevator->GetElevatorBottom()) {
+//      return true;
+//    }
+//  }
   if(IsTimedOut()) {
     return true;
   } else {

@@ -7,14 +7,14 @@ Raise::Raise(double timeout, bool useSoftLimits): Command("Raise") {
 }
 void Raise::Initialize() {}
 void Raise::Execute() {
-  DentRobot::elevator->Run(DentRobot::oi->GetRightThrottle()*1.0);
+  DentRobot::elevator->Run(DentRobot::oi->GetRightThrottle()*-1.0);
 }
 bool Raise::IsFinished() {
-  if(softLimits) {
-    if(!DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle()) {
-      return true;
-    }
-  }
+//  if(softLimits) {
+//    if(!DentRobot::elevator->GetElevatorTop()||!DentRobot::elevator->GetElevatorMiddle()) {
+//      return true;
+//    }
+//  }
   if(IsTimedOut()) {
     return true;
   } else {
@@ -23,9 +23,9 @@ bool Raise::IsFinished() {
 }
 void Raise::End() {
   // If the elevator is at the top
-  if(DentRobot::elevator->GetElevatorTop()) {
-    DentRobot::elevator->SetUseEncoder(true);
-  }
+//  if(DentRobot::elevator->GetElevatorTop()) {
+//    DentRobot::elevator->SetUseEncoder(true);
+//  }
   DentRobot::elevator->Run(0.0f);
 }
 void Raise::Interrupted() {

@@ -13,7 +13,7 @@ void Drivetrain::InitDefaultCommand() {
 void Drivetrain::DriveArcade(double x, double y, double z, double sensitivity, bool driveStraight) {
   double kP = SmartDashboard::GetNumber("Gyro kP");
   double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
-  double correctY = -(sensitivity*(pow(y, 3))+(1-sensitivity)*y);
+  double correctY = (sensitivity*(pow(y, 3))+(1-sensitivity)*y);
   double correctZ = z;
   if(driveStraight) {
     printf("Driving straight at: %f\n", -gyro->GetAngle()*kP);
