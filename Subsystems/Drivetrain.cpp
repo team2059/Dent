@@ -11,16 +11,7 @@ void Drivetrain::InitDefaultCommand() {
   SetDefaultCommand(new Drive());
 }
 void Drivetrain::DriveArcade(double x, double y, double z, double sensitivity, bool driveStraight) {
-  double kP = SmartDashboard::GetNumber("Gyro kP");
-  double correctX = -(sensitivity*(pow(x, 3))+(1-sensitivity)*x);
-  double correctY = (sensitivity*(pow(y, 3))+(1-sensitivity)*y);
-  double correctZ = z;
-  if(driveStraight) {
-    printf("Driving straight at: %f\n", -gyro->GetAngle()*kP);
-    correctZ = -gyro->GetAngle()*kP;
-  } else {
-    correctZ = -z * 0.5;
-  }
+  //TODO add encoder support for driving straight
   leftRear->Set(-y+(x+z));
   rightRear->Set(y+(x+z));
 }
