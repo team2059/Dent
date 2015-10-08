@@ -37,11 +37,11 @@ class Pneumatics: public Subsystem {
    */
   void SetCompressorEnabled(bool state);
   /**
-   * @brief Sets the state of the bin arm
+   * @brief Sets the state of the elevator arm
    *
    * @param state State of the arm
    */
-  void SetBinArm(bool state);
+  void SetElevatorArmOpen(bool state);
   /**
    * @brief Gets the state of the arms
    *

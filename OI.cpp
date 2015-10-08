@@ -1,6 +1,8 @@
 #include "OI.h"
 #include "Commands/Elevator/Lower.h"
 #include "Commands/Elevator/Raise.h"
+#include "Commands/Elevator/OpenArm.h"
+#include "Commands/Elevator/CloseArm.h"
 #include "Commands/Elevator/ElevatorCycle.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
@@ -29,12 +31,16 @@ OI::OI() {
   raise = new Raise(3.5);
   lower = new Lower(3.0);
   cycle = new ElevatorCycle();
+  JoystickButton *left11 = new JoystickButton(leftStick, 11);
+  JoystickButton *left12 = new JoystickButton(leftStick, 12);
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
   JoystickButton *right7 = new JoystickButton(rightStick, 7);
   JoystickButton *right10 = new JoystickButton(rightStick, 10);
   JoystickButton *right11 = new JoystickButton(rightStick, 11);
   JoystickButton *right12 = new JoystickButton(rightStick, 12);
+  left11->WhenPressed(new OpenArm(2));
+  left12->WhenPressed(new CloseArm(2));
   right4->WhileHeld(lower);
   right6->WhileHeld(raise);
   right7->WhenPressed(cycle);

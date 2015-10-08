@@ -15,7 +15,7 @@ void Pneumatics::SetArmsOpen(bool state) {
     solenoid2->Set(!state);
     armState=state;
 }
-void Pneumatics::SetBinArm(bool state){
+void Pneumatics::SetElevatorArmOpen(bool state){
   solenoid3->Set(state);
   solenoid4->Set(!state);
 }
