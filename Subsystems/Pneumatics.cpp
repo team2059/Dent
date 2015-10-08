@@ -11,19 +11,13 @@ Pneumatics::Pneumatics(): Subsystem("Pneumatics") {
 }
 void Pneumatics::InitDefaultCommand() {}
 void Pneumatics::SetArmsOpen(bool state) {
-  if(state) {
-    solenoid1->Set(true);
-    solenoid2->Set(false);
-    solenoid3->Set(true);
-    solenoid4->Set(false);
-    armState = true;
-  } else {
-    solenoid1->Set(false);
-    solenoid2->Set(true);
-    solenoid3->Set(false);
-    solenoid4->Set(true);
-    armState = false;
-  }
+    solenoid1->Set(state);
+    solenoid2->Set(!state);
+    armState=state;
+}
+void Pneumatics::SetBinArm(bool state){
+  solenoid3->Set(state);
+  solenoid4->Set(!state);
 }
 void Pneumatics::SetCompressorEnabled(bool state) {
   compressor->SetClosedLoopControl(state);
