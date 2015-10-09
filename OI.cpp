@@ -44,14 +44,15 @@ OI::OI() {
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
   JoystickButton *right11 = new JoystickButton(rightStick, 11);
   JoystickButton *right12 = new JoystickButton(rightStick, 12);
-  right11->WhenPressed(new OpenArm(2));
-  right12->WhenPressed(new CloseArm(2));
 
   //Full speed lift
   right3->WhileHeld(new Lower(3.5,false,0.5));
   right5->WhileHeld(new Lower(3.5,false,1));
   right4->WhileHeld(new Raise(3.4,false,-0.5));
   right6->WhileHeld(new Raise(3.5,false,-1));
+
+  right11->WhenPressed(new OpenArm(2));
+  right12->WhenPressed(new CloseArm(2));
 }
 Joystick* OI::GetRightStick() {
   return rightStick;

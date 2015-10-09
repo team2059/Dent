@@ -50,6 +50,7 @@ void DentRobot::RobotInit() {
   SmartDashboard::PutNumber("Gyro kP", -0.02);
   printf("Starting compressor\n");
   pneumatics->SetCompressorEnabled(true);
+  pneumatics->SetElevatorArmOpen(true);
 }
 void DentRobot::DisabledPeriodic() {
   Scheduler::GetInstance()->Run();
