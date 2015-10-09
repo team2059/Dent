@@ -39,6 +39,7 @@ OI::OI() {
 
   // Elevator
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
+  JoystickButton *right5 = new JoystickButton(rightStick, 5);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
   JoystickButton *right11 = new JoystickButton(rightStick, 11);
   JoystickButton *right12 = new JoystickButton(rightStick, 12);
@@ -46,7 +47,8 @@ OI::OI() {
   right12->WhenPressed(new CloseArm(2));
   //Full speed lift
   right4->WhileHeld(new Lower(3.5,false,1));
-  right6->WhileHeld(new Raise(3.5,false,-1));
+  right5->WhileHeld(new Raise(3.5,false,0.5));
+  right6->WhileHeld(new Raise(3.5,false,-0.5));
 }
 Joystick* OI::GetRightStick() {
   return rightStick;
