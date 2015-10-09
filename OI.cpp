@@ -15,6 +15,8 @@
 #include "Commands/BinCollector/BinOut.h"
 #include "Commands/Autonomous/CollectTote.h"
 #include "Commands/Autonomous/ReleaseTote.h"
+#include "Commands/Pneumatics/EnableCompressor.h"
+#include "Commands/Pneumatics/DisableCompressor.h"
 OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
@@ -23,10 +25,17 @@ OI::OI() {
   JoystickButton *left1 = new JoystickButton(leftStick, 1);
   JoystickButton *left2 = new JoystickButton(leftStick, 2);
   JoystickButton *left7 = new JoystickButton(leftStick, 7);
+  JoystickButton *left8 = new JoystickButton(leftStick, 8);
+  JoystickButton *left9 = new JoystickButton(rightStick, 9);
+  JoystickButton *left10 = new JoystickButton(rightStick, 10);
   left1->WhileHeld(new RollIn(GetLeftThrottle()));
   left2->WhileHeld(new RollOut(2.0));
-  // 0.8 is the multiplier, so they roll at 80% power
-  left7->WhileHeld(new RollVar(0.8));
+  //Disable/enable the compressor
+  left7->WhenPressed(new DisableCompressor(2));
+  left8->WhenPressed(new EnableCompressor(2));
+  //Open front collector wheels
+  left9->WhenPressed(new BinOpenArms(2));
+  left10->WhenPressed(new BinCloseArms(2));
   // Elevator
   raise = new Raise(3.5,false,1);
   lower = new Lower(3.0);
@@ -37,8 +46,6 @@ OI::OI() {
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
-  JoystickButton *right10 = new JoystickButton(rightStick, 10);
-  JoystickButton *right9 = new JoystickButton(rightStick, 9);
   left11->WhenPressed(new OpenArm(2));
   left12->WhenPressed(new CloseArm(2));
   //Full speed lift
@@ -46,10 +53,9 @@ OI::OI() {
   right6->WhileHeld(new Raise(3.5,false,-1));
   //Half speed lift
   right5->WhileHeld(new Raise(3.5,false,-0.5));
+  right5->WhileHeld(new RollIn(0.35));
   right3->WhileHeld(new Lower(3.5,false,0.5));
 
-  right9->WhenPressed(new BinOpenArms(2));
-  right10->WhenPressed(new BinCloseArms(2));
 
   // BinCollector
   JoystickButton *left3 = new JoystickButton(leftStick, 3);
