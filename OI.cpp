@@ -28,43 +28,28 @@ OI::OI() {
   // 0.8 is the multiplier, so they roll at 80% power
   left7->WhileHeld(new RollVar(0.8));
   // Elevator
-  raise = new Raise(3.5);
+  raise = new Raise(3.5,false,1);
   lower = new Lower(3.0);
   cycle = new ElevatorCycle();
   JoystickButton *left11 = new JoystickButton(leftStick, 11);
   JoystickButton *left12 = new JoystickButton(leftStick, 12);
+  JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
+  JoystickButton *right5 = new JoystickButton(rightStick, 5);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
-  JoystickButton *right7 = new JoystickButton(rightStick, 7);
   JoystickButton *right10 = new JoystickButton(rightStick, 10);
   JoystickButton *right9 = new JoystickButton(rightStick, 9);
-  JoystickButton *right12 = new JoystickButton(rightStick, 12);
   left11->WhenPressed(new OpenArm(2));
   left12->WhenPressed(new CloseArm(2));
-  right4->WhileHeld(lower);
-  right6->WhileHeld(raise);
-  right7->WhenPressed(cycle);
+  //Full speed lift
+  right4->WhileHeld(new Lower(3.5,false,1));
+  right6->WhileHeld(new Raise(3.5,false,-1));
+  //Half speed lift
+  right5->WhileHeld(new Raise(3.5,false,-0.5));
+  right3->WhileHeld(new Lower(3.5,false,0.5));
+
   right9->WhenPressed(new BinOpenArms(2));
   right10->WhenPressed(new BinCloseArms(2));
-  right4->CancelWhenPressed(raise);
-  right6->CancelWhenPressed(lower);
-  right4->CancelWhenPressed(cycle);
-  right6->CancelWhenPressed(cycle);
-  right7->CancelWhenPressed(raise);
-  right7->CancelWhenPressed(lower);
-  // Killall elevator functions
-  right12->CancelWhenPressed(raise);
-  right12->CancelWhenPressed(lower);
-  right12->CancelWhenPressed(cycle);
-  // BinElevator
-  JoystickButton *right3 = new JoystickButton(rightStick, 3);
-  JoystickButton *right5 = new JoystickButton(rightStick, 5);
-  binRaise = new BinRaise(3.0);
-  binLower = new BinLower(2.0);
-  right3->WhileHeld(binLower);
-  right3->CancelWhenPressed(binRaise);
-  right5->WhileHeld(binRaise);
-  right5->CancelWhenPressed(binLower);
 
   // BinCollector
   JoystickButton *left3 = new JoystickButton(leftStick, 3);

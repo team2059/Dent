@@ -36,17 +36,17 @@ Autonomous::Autonomous(int seq) {
       AddSequential(new CollectTote(SmartDashboard::GetNumber("CollectToteTurn")));
       if(SmartDashboard::GetBoolean("Two totes")) {
         AddParallel(new Turn(0.81));
-        AddSequential(new Raise(3.5));
+        AddSequential(new Raise(3.5,false,-1));
         AddSequential(new AutoDrive(SmartDashboard::GetNumber("Two Tote Distance"), 0.0, 0.75));
         AddSequential(new CollectTote());
-        AddSequential(new Lower(3.0));
-        AddSequential(new Raise(3.5));
+        AddSequential(new Lower(3.0,false,1));
+        AddSequential(new Raise(3.5,false,-1));
         if(SmartDashboard::GetBoolean("Three totes")) {
           AddSequential(new Turn(3.8));
           AddSequential(new AutoDrive(SmartDashboard::GetNumber("Three Tote Distance"), 0.0, 0.75));
           AddSequential(new CollectTote());
-          AddSequential(new Lower(3.0));
-          AddSequential(new Raise(3.5));
+          AddSequential(new Lower(3.0,false,1));
+          AddSequential(new Raise(3.5,false,-1));
         }
       }
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
@@ -67,10 +67,10 @@ Autonomous::Autonomous(int seq) {
       break;
     case 6:
       //Drive forward and collect a single gray tote
-      AddSequential(new Lower(3.0));
+      AddSequential(new Lower(3.0,false,1));
       AddSequential(new CollectTote(SmartDashboard::GetNumber("CollectToteTurn")));
-      AddSequential(new Lower(3.0));
-      AddSequential(new Raise(3.5));
+      AddSequential(new Lower(3.0,false,1));
+      AddSequential(new Raise(3.5,false,-1));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
     default:
       printf("Invalid seq: %d\n", seq);

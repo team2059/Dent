@@ -10,6 +10,7 @@
 class Raise: public Command {
  private:
   bool softLimits;
+  double speed;
  public:
   /**
    * @brief Constructs Raise
@@ -17,8 +18,10 @@ class Raise: public Command {
    * @param timeout Timeout in seconds (default: 3.5)
    *
    * @param useSoftLimits Enables/Disables soft limits via hall effect sensors (default: true)
+   *
+   * @param speed Speed at which to raise the elevator
    */
-  Raise(double timeout = 3.5, bool useSoftLimits = true);
+  Raise(double timeout = 3.5, bool useSoftLimits = true, double liftSpeed=0);
   /**
    * @brief Initializes the class
    */

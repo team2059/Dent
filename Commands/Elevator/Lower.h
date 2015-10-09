@@ -10,14 +10,16 @@
 class Lower: public Command {
  private:
   bool softLimits; //<! Enables/Disables hall effect sensors
+  double speed;
  public:
   /**
    * @brief Constructs Lower
    *
    * @param timeout Timeout in seconds (default: 3.0)
    * @param useSoftLimits Enables/Disables soft limits via hall effect sensors (default: true)
+   * @param liftSpeed Speed at which to lower the lift
    */
-  Lower(double timeout = 3.0, bool useSoftLimits = true);
+  Lower(double timeout = 3.0, bool useSoftLimits = true, double liftSpeed=0);
   /**
    * @brief Initializes the class
    */

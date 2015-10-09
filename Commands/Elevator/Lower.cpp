@@ -1,20 +1,16 @@
 #include "Lower.h"
 #include "../../DentRobot.h"
 #include "../../OI.h"
-Lower::Lower(double timeout, bool useSoftLimits): Command("Lower") {
+Lower::Lower(double timeout, bool useSoftLimits, double liftSpeed): Command("Lower") {
   SetTimeout(timeout);
   softLimits=useSoftLimits;
+  speed=liftSpeed;
 }
 void Lower::Initialize() {}
 void Lower::Execute() {
-  DentRobot::elevator->Run(DentRobot::oi->GetRightThrottle()*1.0);
+  DentRobot::elevator->Run(speed);
 }
 bool Lower::IsFinished() {
-//  if(softLimits) {
-//    if(!DentRobot::elevator->GetElevatorBottom()) {
-//      return true;
-//    }
-//  }
   if(IsTimedOut()) {
     return true;
   } else {
