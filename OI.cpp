@@ -26,8 +26,8 @@ OI::OI() {
   JoystickButton *left2 = new JoystickButton(leftStick, 2);
   JoystickButton *left7 = new JoystickButton(leftStick, 7);
   JoystickButton *left8 = new JoystickButton(leftStick, 8);
-  JoystickButton *left9 = new JoystickButton(rightStick, 9);
-  JoystickButton *left10 = new JoystickButton(rightStick, 10);
+  JoystickButton *left9 = new JoystickButton(leftStick, 9);
+  JoystickButton *left10 = new JoystickButton(leftStick, 10);
   left1->WhileHeld(new RollIn(GetLeftThrottle()));
   left2->WhileHeld(new RollOut(2.0));
   //Disable/enable the compressor
@@ -38,6 +38,7 @@ OI::OI() {
   left10->WhenPressed(new BinCloseArms(2));
 
   // Elevator
+  JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
@@ -45,10 +46,12 @@ OI::OI() {
   JoystickButton *right12 = new JoystickButton(rightStick, 12);
   right11->WhenPressed(new OpenArm(2));
   right12->WhenPressed(new CloseArm(2));
+
   //Full speed lift
-  right4->WhileHeld(new Lower(3.5,false,1));
-  right5->WhileHeld(new Raise(3.5,false,0.5));
-  right6->WhileHeld(new Raise(3.5,false,-0.5));
+  right3->WhileHeld(new Lower(3.5,false,0.5));
+  right5->WhileHeld(new Lower(3.5,false,1));
+  right4->WhileHeld(new Raise(3.4,false,-0.5));
+  right6->WhileHeld(new Raise(3.5,false,-1));
 }
 Joystick* OI::GetRightStick() {
   return rightStick;
