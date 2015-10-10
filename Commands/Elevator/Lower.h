@@ -10,13 +10,15 @@
 class Lower: public Command {
  private:
   bool softLimits; //<! Enables/Disables hall effect sensors
-  double speed;
+  double speed; //<! speed to lower the elevator
  public:
   /**
    * @brief Constructs Lower
    *
    * @param timeout Timeout in seconds (default: 3.0)
+   *
    * @param useSoftLimits Enables/Disables soft limits via hall effect sensors (default: true)
+   *
    * @param liftSpeed Speed at which to lower the lift
    */
   Lower(double timeout = 3.0, bool useSoftLimits = true, double liftSpeed=0);
@@ -31,7 +33,7 @@ class Lower: public Command {
   /**
    * @brief Checks if the command is finished
    *
-   * @return True if the timeout was reached or if the bottom elevator sensor was triggered
+   * @return True if the timeout was reached
    */
   bool IsFinished();
   /**

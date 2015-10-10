@@ -5,9 +5,7 @@
 #include "WPILib.h"
 
 /**
- * @brief Closes BinElevatorArms (unused)
- *
- * Sets the solenoid to close the arms of the BinElevator
+ * @brief Closes BinElevatorArms
  */
 class BinCloseArms: public Command {
  public:

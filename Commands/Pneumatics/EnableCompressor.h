@@ -5,7 +5,7 @@
 #include "WPILib.h"
 
 /**
- * @brief EnableCompressors the elevator until a timeout is reached
+ * @brief allows the compressor to run if the system is within the psi threshold
  */
 class EnableCompressor: public Command {
  private:
@@ -23,17 +23,17 @@ class EnableCompressor: public Command {
    */
   void Initialize();
   /**
-   * @brief EnableCompressors the elevator at 1.0 power
+   * @brief EnableCompressors sets the compressor to enabled
    */
   void Execute();
   /**
    * @brief Checks if the command is finished
    *
-   * @return True if the timeout was reached or if the top elevator was triggered or if the middle elevator is triggered
+   * @return True if the timeout was reached
    */
   bool IsFinished();
   /**
-   * @brief Sets the elevator to stop
+   * @brief required for the command
    */
   void End();
   /**

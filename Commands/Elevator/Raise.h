@@ -9,8 +9,8 @@
  */
 class Raise: public Command {
  private:
-  bool softLimits;
-  double speed;
+  bool softLimits; //<!Enabled/Disables soft limits
+  double speed; //<! speed to lower the elevator
  public:
   /**
    * @brief Constructs Raise
@@ -19,7 +19,7 @@ class Raise: public Command {
    *
    * @param useSoftLimits Enables/Disables soft limits via hall effect sensors (default: true)
    *
-   * @param speed Speed at which to raise the elevator
+   * @param liftSpeed Speed at which to raise the elevator
    */
   Raise(double timeout = 3.5, bool useSoftLimits = true, double liftSpeed=0);
   /**
@@ -33,7 +33,7 @@ class Raise: public Command {
   /**
    * @brief Checks if the command is finished
    *
-   * @return True if the timeout was reached or if the top elevator was triggered or if the middle elevator is triggered
+   * @return True if the timeout was reached
    */
   bool IsFinished();
   /**

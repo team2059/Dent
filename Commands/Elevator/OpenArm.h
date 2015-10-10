@@ -5,7 +5,7 @@
 #include "WPILib.h"
 
 /**
- * @brief Opens bin arms (unused)
+ * @brief Opens bin retaining arm
  */
 class OpenArm: public Command {
  public:
@@ -24,7 +24,7 @@ class OpenArm: public Command {
    */
   void Initialize();
   /**
-   * @brief Sets the solenoid to open the arms
+   * @brief Sets the solenoid to open the arm
    */
   void Execute();
   /**

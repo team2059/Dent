@@ -5,7 +5,7 @@
 #include "WPILib.h"
 
 /**
- * @brief Opens bin arms (unused)
+ * @brief Opens bin arms
  */
 class BinOpenArms: public Command {
  public:

@@ -8,6 +8,7 @@
 #include "AutoDrive.h"
 #include "Turn.h"
 #include "../Collector/RollIn.h"
+#include "../Collector/RollOut.h"
 #include "CollectTote.h"
 #include "ReleaseTote.h"
 Autonomous::Autonomous(int seq) {
@@ -24,11 +25,10 @@ Autonomous::Autonomous(int seq) {
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 2:
-      // Collect a tote with BinElevator, turn, drive to Auto Zone (TM)
+      //Collect a bin upright into the robot upright, turn, drive to Auto Zone (TM),turn
+      AddSequential(new RollIn(1.0));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
-      AddSequential(new BinRaise(1.2));
       AddSequential(new AutoDrive(SmartDashboard::GetNumber("Auto Zone Distance"), 0.0, -0.75));
-      AddSequential(new BinLower(1.0));
       AddSequential(new Turn(SmartDashboard::GetNumber("TurnAmount")));
       break;
     case 3:

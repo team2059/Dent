@@ -1,7 +1,7 @@
 /**
-* @mainpage Dent
+* @mainpage Arthur
 * 
-* The Hitchhikers Team 2015 robot, Dent. Features an elevator, bin elevator, and mecanum drive
+* The Hitchhikers Team 2015 off-season robot, Arthur. Features an elevator, pneumatic collector wheels, and arcade drive
 * @section Subsystems
 *   -# @ref Drivetrain
 *   -# @ref BinElevator
@@ -20,6 +20,10 @@
 *   -# @ref BinOut
 *   -# @ref RollIn
 *   -# @ref RollOut
+*   -# @ref EnableCompressor
+*   -# @ref DisableCompressor
+*   -# @ref OpenArm
+*   -# @ref CloseArm
 *   -# @ref Drive
 *   -# @ref Lower
 *   -# @ref Raise
