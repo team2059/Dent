@@ -36,26 +36,17 @@ OI::OI() {
   //Open front collector wheels
   left9->WhenPressed(new BinOpenArms(2));
   left10->WhenPressed(new BinCloseArms(2));
+
   // Elevator
-  raise = new Raise(3.5,false,1);
-  lower = new Lower(3.0);
-  cycle = new ElevatorCycle();
-  JoystickButton *left11 = new JoystickButton(leftStick, 11);
-  JoystickButton *left12 = new JoystickButton(leftStick, 12);
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
-  left11->WhenPressed(new OpenArm(2));
-  left12->WhenPressed(new CloseArm(2));
+  JoystickButton *right11 = new JoystickButton(rightStick, 11);
+  JoystickButton *right12 = new JoystickButton(rightStick, 12);
+  right11->WhenPressed(new OpenArm(2));
+  right12->WhenPressed(new CloseArm(2));
   //Full speed lift
   right4->WhileHeld(new Lower(3.5,false,1));
   right6->WhileHeld(new Raise(3.5,false,-1));
-
-
-  // BinCollector
-  JoystickButton *left3 = new JoystickButton(leftStick, 3);
-  JoystickButton *left4 = new JoystickButton(leftStick, 4);
-  left3->WhileHeld(new BinIn(2.0));
-  left4->WhileHeld(new BinOut(2.0));
 }
 Joystick* OI::GetRightStick() {
   return rightStick;

@@ -19,23 +19,6 @@ class OI {
   /**
    * Raise command
    */
-  Command *raise,
-          /**
-           * @brief Lower command
-           */
-          *lower,
-          /**
-           * @brief BinLower command
-           */
-          *binLower,
-          /**
-           * @brief BinRaise command
-           */
-          *binRaise;
-  /**
-   * @brief ElevatorCycle commandgroup
-   */
-  CommandGroup *cycle;
   /**
    * @brief Returns the right joystick
    *
