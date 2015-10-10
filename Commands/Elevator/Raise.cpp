@@ -8,6 +8,9 @@ Raise::Raise(double timeout, bool useSoftLimits, double liftSpeed): Command("Rai
 }
 void Raise::Initialize() {}
 void Raise::Execute() {
+  if(DentRobot::oi->GetRightStick()->GetRawButton(11)){
+    speed*=0.5;
+  }
   DentRobot::elevator->Run(speed);
 }
 bool Raise::IsFinished() {

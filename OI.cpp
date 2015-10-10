@@ -42,19 +42,13 @@ OI::OI() {
   cycle = new ElevatorCycle();
   JoystickButton *left11 = new JoystickButton(leftStick, 11);
   JoystickButton *left12 = new JoystickButton(leftStick, 12);
-  JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
-  JoystickButton *right5 = new JoystickButton(rightStick, 5);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
   left11->WhenPressed(new OpenArm(2));
   left12->WhenPressed(new CloseArm(2));
   //Full speed lift
   right4->WhileHeld(new Lower(3.5,false,1));
   right6->WhileHeld(new Raise(3.5,false,-1));
-  //Half speed lift
-  right5->WhileHeld(new Raise(3.5,false,-0.5));
-  right5->WhileHeld(new RollIn(0.35));
-  right3->WhileHeld(new Lower(3.5,false,0.5));
 
 
   // BinCollector
