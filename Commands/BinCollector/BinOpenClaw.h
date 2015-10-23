@@ -1,30 +1,26 @@
-#ifndef OPENARM_H
-#define OPENARM_H
+#ifndef BINOPENCLAW_H
+#define BINOPENCLAW_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Opens bin retaining arm
+ * @brief Closes BinElevatorArms
  */
-class OpenArm: public Command {
+class BinOpenClaw: public Command {
  public:
   /**
-   * @brief Constructs OpenArm
+   * @brief Constructs BinOpenClaw
    *
-   * @param timeout Timeout in seconds
+   * @param timeout Timeout in seconds (default: 0.5)
    */
-  OpenArm(double timeout);
-  /**
-   * @brief Constructs OpenArm
-   */
-  OpenArm();
+  BinOpenClaw(double timeout = 0.5);
   /**
    * @brief Initializes the class
    */
   void Initialize();
   /**
-   * @brief Sets the solenoid to open the arm
+   * @brief Sets the solenoid to open the claw
    */
   void Execute();
   /**

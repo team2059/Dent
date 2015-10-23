@@ -1,8 +1,6 @@
 #include "OI.h"
 #include "Commands/Elevator/Lower.h"
 #include "Commands/Elevator/Raise.h"
-#include "Commands/Elevator/OpenArm.h"
-#include "Commands/Elevator/CloseArm.h"
 #include "Commands/Elevator/ElevatorCycle.h"
 #include "Commands/Collector/RollIn.h"
 #include "Commands/Collector/RollOut.h"
@@ -11,6 +9,8 @@
 #include "Commands/BinElevator/BinRaise.h"
 #include "Commands/BinCollector/BinCloseArms.h"
 #include "Commands/BinCollector/BinOpenArms.h"
+#include "Commands/BinCollector/BinCloseClaw.h"
+#include "Commands/BinCollector/BinOpenClaw.h"
 #include "Commands/BinCollector/BinIn.h"
 #include "Commands/BinCollector/BinOut.h"
 #include "Commands/Autonomous/CollectTote.h"
@@ -38,12 +38,12 @@ OI::OI() {
   left10->WhenPressed(new BinCloseArms(2));
 
   // Elevator
+  JoystickButton *right1 = new JoystickButton(rightStick, 1);
+  JoystickButton *right2 = new JoystickButton(rightStick, 2);
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
   JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
   JoystickButton *right6 = new JoystickButton(rightStick, 6);
-  JoystickButton *right11 = new JoystickButton(rightStick, 11);
-  JoystickButton *right12 = new JoystickButton(rightStick, 12);
 
   //Full speed lift
   right3->WhileHeld(new Lower(3.5,false,0.5));
@@ -52,8 +52,8 @@ OI::OI() {
   right4->WhileHeld(new RollIn(1));
   right6->WhileHeld(new Raise(3.5,false,-1));
 
-  right11->WhenPressed(new OpenArm(2));
-  right12->WhenPressed(new CloseArm(2));
+  right1->WhenPressed(new BinOpenClaw(2));
+  right2->WhenPressed(new BinCloseClaw(2));
 }
 Joystick* OI::GetRightStick() {
   return rightStick;

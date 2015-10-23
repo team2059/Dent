@@ -14,7 +14,8 @@ class Pneumatics: public Subsystem {
            *solenoid2, //<! Solenoid 2
            *solenoid3, //<! Solenoid 3
            *solenoid4; //<! Solenoid 4
-  bool armState; //<! State of the arm
+  bool armState, //<! State of the arm
+       clawState; //<! State of the claw
  public:
   /**
    * @brief Constructs Pneumatics
@@ -37,22 +38,23 @@ class Pneumatics: public Subsystem {
    */
   void SetCompressorEnabled(bool state);
   /**
-   * @brief Sets the state of the elevator arm
+   * @brief Sets the state of the bin claw
    *
    * @param state State of the arm
    */
-  void SetElevatorArmOpen(bool state);
+  void SetClawOpen(bool state);
   /**
-   * @brief Gets the state of the arms
+   * @brief Gets the state of the front collectors
    *
    * @return State of the arms
    */
   bool GetArmsOpen();
   /**
-   * @brief Gets the state of the compressor
+   * @brief Gets the state of the bin claw
    *
-   * @return State of the compressor
+   * @return State of the claw
    */
+  bool GetClawOpen();
   bool GetCompressorEnabled();
 
 };

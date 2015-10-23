@@ -1,30 +1,26 @@
-#ifndef CLOSEARM_H
-#define CLOSEARM_H
+#ifndef BINCLOSECLAW_H
+#define BINCLOSECLAW_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Closes bin retaining arm
+ * @brief Closes BinElevatorArms
  */
-class CloseArm: public Command {
+class BinCloseClaw: public Command {
  public:
   /**
-   * @brief Constructs CloseArm
+   * @brief Constructs BinCloseClaw
    *
-   * @param timeout Timeout in seconds
+   * @param timeout Timeout in seconds (default: 0.5)
    */
-  CloseArm(double timeout);
-  /**
-   * @brief Constructs CloseArm
-   */
-  CloseArm();
+  BinCloseClaw(double timeout = 0.5);
   /**
    * @brief Initializes the class
    */
   void Initialize();
   /**
-   * @brief Sets the solenoid to close the arm
+   * @brief Sets the solenoid to close the claw
    */
   void Execute();
   /**
