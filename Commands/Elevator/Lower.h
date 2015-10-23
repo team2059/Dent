@@ -21,7 +21,7 @@ class Lower: public Command {
    *
    * @param liftSpeed Speed at which to lower the lift
    */
-  Lower(double timeout = 3.0, bool useSoftLimits = true, double liftSpeed=0);
+  Lower(double timeout = 3.0, bool useSoftLimits = true, double liftSpeed=1);
   /**
    * @brief Initializes the class
    */

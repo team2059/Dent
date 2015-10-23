@@ -29,7 +29,8 @@ void DentRobot::RobotInit() {
   // Amount to turn while collecting the initial tote in auto 4
   SmartDashboard::PutNumber("CollectToteTurn", 0.25);
   // Amount of time to collect a tote
-  SmartDashboard::PutNumber("DriveTime", 1.3);
+  SmartDashboard::PutNumber("DriveTime1", 1.3);
+  SmartDashboard::PutNumber("DriveTime2", 1.3);
   // Sequence of autonomous command
   SmartDashboard::PutNumber("Auto Sequence", -1.0);
   SmartDashboard::PutNumber("Auto Wait Time", 0.5);

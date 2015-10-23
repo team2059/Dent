@@ -16,7 +16,7 @@ void Pneumatics::SetArmsOpen(bool state) {
   solenoid2->Set(!state);
   armState=state;
 }
-void Pneumatics::SetClawOpen(bool state){
+void Pneumatics::SetClawOpen(bool state) {
   solenoid3->Set(state);
   solenoid4->Set(!state);
   clawState=state;

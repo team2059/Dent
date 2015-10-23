@@ -21,7 +21,7 @@ class Raise: public Command {
    *
    * @param liftSpeed Speed at which to raise the elevator
    */
-  Raise(double timeout = 3.5, bool useSoftLimits = true, double liftSpeed=0);
+  Raise(double timeout = 3.5, bool useSoftLimits = true, double liftSpeed=-1);
   /**
    * @brief Initializes the class
    */
