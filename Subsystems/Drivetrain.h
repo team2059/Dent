@@ -4,12 +4,12 @@
 #include "WPILib.h"
 /**
  * @brief Drives the robot
- * 
+ *
  * 4 wheel mecanum drive
  */
 class Drivetrain: public Subsystem{
   private:
-    CANTalon *rightFront, //<! Front right motor
+    Talon *rightFront, //<! Front right motor
              *leftFront, //<! Front left motor
              *rightRear, //<! Back right motor
              *leftRear; //<! Back left motor
@@ -32,23 +32,7 @@ class Drivetrain: public Subsystem{
      * @brief No action
      */
     void InitDefaultCommand();
-    /**
-     * @brief Drives the robot with mecanum
-     *
-     * @param x Joystick x value (-1.0 to 1.0)
-     * @param y Joystick y value (-1.0 to 1.0)
-     * @param z Joystick z value (-1.0 to 1.0)
-     * @param sensitivity Sensitivity (0.0 to 1.0)
-     * @param driveStraight Overrides z value to correct for motor lag (default: false)
-     */
-    void DriveMecanum(double x, double y, double z, double sensitivity, bool driveStraight = false);
-    /**
-     * @brief Tests one motor
-     *
-     * @param motor Motor to test
-     * @param power Power to set motor
-     */
-    void TestMotor(e_motors motor, double power);
+    void DriveMecanum(double x, double y, double z);
     /**
      * @brief Sets the gyro value to 0.0
      */

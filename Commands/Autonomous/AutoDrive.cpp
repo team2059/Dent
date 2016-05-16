@@ -14,13 +14,11 @@ void AutoDrive::Initialize(){
 }
 void AutoDrive::Execute(){
   //X axis, Y axis, Z axis, sensitivity, speed threshold (usually throttle)
-  DentRobot::drivetrain->DriveMecanum(x, y, z, 0.9, gyro);
 }
 bool AutoDrive::IsFinished(){
   return IsTimedOut();
 }
 void AutoDrive::End(){
-  DentRobot::drivetrain->DriveMecanum(0.0, 0.0, 0.0, 0.9);
 }
 void AutoDrive::Interrupted(){
   End();
