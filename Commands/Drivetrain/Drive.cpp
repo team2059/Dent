@@ -10,6 +10,7 @@ void Drive::Execute(){
   x = DentRobot::oi->GetLeftStick()->GetRawAxis(0);
   y = -DentRobot::oi->GetLeftStick()->GetRawAxis(1);
   z = DentRobot::oi->GetLeftStick()->GetRawAxis(2);
+  printf("Driving: %f,%f,%f",x,y,z);
   DentRobot::drivetrain->DriveMecanum(x, y, z);
 }
 bool Drive::IsFinished(){

@@ -1,4 +1,4 @@
-REMOTEIP=10.20.59.2
+REMOTEIP=10.20.59.26
 CC=arm-frc-linux-gnueabi-g++
 CFLAGS=-std=c++11 -O0 -g3 -Wall -c -fmessage-length=0
 LDFLAGS=-Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a

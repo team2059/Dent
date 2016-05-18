@@ -13,6 +13,9 @@ void Drivetrain::InitDefaultCommand(){
   SetDefaultCommand(new Drive());
 }
 void Drivetrain::DriveMecanum(double x, double y, double z){
+  printf("Driving: %f,%f,%f",x,y,z);
+  printf("Right: %f",(y+(x+z)));
+  printf("Left: %f",(-y+(x+z)));
   rightFront->Set(y+(x+z));
   rightRear->Set(y+(x+z));
   leftFront->Set(-y+(x+z));
